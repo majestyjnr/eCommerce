@@ -369,7 +369,7 @@ const Navbar = () => {
                                                         <ul>
                                                             <li><a href="contact.html">Contact</a></li>
                                                             <li><a href="about-us.html">About Us</a></li>
-                                                            <li><a href="faq.html">FAQ</a></li>
+                                                            <li><Link to="/faq">FAQ</Link></li>
                                                             <li><a href="404.html">404 Error</a></li>
                                                         </ul>
                                                     </li>
