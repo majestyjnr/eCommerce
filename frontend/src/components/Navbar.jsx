@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useScript } from 'react-use-scripts';
 
 import '../style.css'
 import '../css/bootstrap.min.css'
@@ -19,8 +20,17 @@ import '../css/venobox.css'
 import Logo from '../images/menu/logo/1.jpg'
 
 const Navbar = () => {
+    const { ScriptLoader } = useScript();
+
     return (
         <header>
+            <ScriptLoader
+                id="custom-script"
+                src="../js/main.js"
+                delayMs={0}
+                onCreate={() => console.log('created!')}
+                type="text/javascript"
+            />
                 <div className="header-top">
                     <div className="container">
                         <div className="row">
