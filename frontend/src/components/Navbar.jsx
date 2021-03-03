@@ -362,7 +362,7 @@ const Navbar = () => {
                                                             <li><a href="checkout.html">Checkout</a></li>
                                                             <li><a href="compare.html">Compare</a></li>
                                                             <li><a href="wishlist.html">Wishlist</a></li>
-                                                            <li><a href="shopping-cart.html">Shopping Cart</a></li>
+                                                            <li><Link to="/shopping-cart">Shopping Cart</Link></li>
                                                         </ul>
                                                     </li>
                                                     <li><a href="index.html">Other Pages 2</a>
