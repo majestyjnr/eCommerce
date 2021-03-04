@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import '../../style.css'
 import '../../css/bootstrap.min.css'
 import '../../css/font-awesome.min.css'
@@ -16,6 +16,9 @@ import '../../css/slick.css'
 import '../../css/venobox.css'
 
 const login = () => {
+    useEffect(() => {
+        document.title = 'Login | Limpupa'
+    }, [])
     return (
         <div>
             <div className="breadcrumb-area">

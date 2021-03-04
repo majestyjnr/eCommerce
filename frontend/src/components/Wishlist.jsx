@@ -1,6 +1,10 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 
 const Wishlist = () => {
+    useEffect(() => {
+        document.title = 'Wishlist | Limpupa'
+    }, []);
+    
     return (
         <div>
             <div className="breadcrumb-area">
