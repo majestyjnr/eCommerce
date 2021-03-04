@@ -8,6 +8,7 @@ import Contact from './components/ContactUs'
 import Cart from './components/Cart'
 import Faq from './components/Faq'
 import Login from './components/account/Login'
+import Checkout from './components/Checkout'
 import Footer from './components/Footer'
 
 
@@ -20,6 +21,8 @@ function App() {
       <Route path= '/contact-us' exact component={Contact}/>
       <Route path= '/shopping-cart' exact component={Cart}/>
       <Route path= '/faq' exact component={Faq}/>
+      <Route path= '/checkout' exact component={Checkout}/>
+      <Route path= '/wishlist' exact component={Checkout}/>
       <Route path= '/account/login' exact component={Login}/>
       <Footer />
     </Router>
