@@ -7,7 +7,9 @@ import AboutUs from './components/AboutUs'
 import Contact from './components/ContactUs'
 import Cart from './components/Cart'
 import Faq from './components/Faq'
+import Login from './components/account/Login'
 import Footer from './components/Footer'
+
 
 function App() {
   return (
@@ -18,6 +20,7 @@ function App() {
       <Route path= '/contact-us' exact component={Contact}/>
       <Route path= '/shopping-cart' exact component={Cart}/>
       <Route path= '/faq' exact component={Faq}/>
+      <Route path= '/account/login' exact component={Login}/>
       <Footer />
     </Router>
   );

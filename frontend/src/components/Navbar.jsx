@@ -358,7 +358,7 @@ const Navbar = () => {
                                                     </li>
                                                     <li><a href="index.html">Other Pages</a>
                                                         <ul>
-                                                            <li><a href="login-register.html">My Account</a></li>
+                                                            <li><Link to="/account/login">My Account</Link></li>
                                                             <li><a href="checkout.html">Checkout</a></li>
                                                             <li><a href="compare.html">Compare</a></li>
                                                             <li><a href="wishlist.html">Wishlist</a></li>
