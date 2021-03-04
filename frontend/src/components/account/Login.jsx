@@ -15,10 +15,10 @@ import '../../css/responsive.css'
 import '../../css/slick.css'
 import '../../css/venobox.css'
 
-const login = () => {
+const Login = () => {
     useEffect(() => {
         document.title = 'Login | Limpupa'
-    }, [])
+    }, []);
     return (
         <div>
             <div className="breadcrumb-area">
@@ -102,4 +102,4 @@ const login = () => {
     )
 }
 
-export default login
+export default Login
