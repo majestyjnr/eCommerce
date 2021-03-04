@@ -274,7 +274,7 @@ const Navbar = () => {
                                                         <ul>
                                                             <li><a href="shop-3-column.html">Shop 3 Column</a></li>
                                                             <li><a href="shop-4-column.html">Shop 4 Column</a></li>
-                                                            <li><a href="shop-left-sidebar.html">Shop Left Sidebar</a></li>
+                                                            <li><Link to="/shop">Shop</Link></li>
                                                             <li><a href="shop-right-sidebar.html">Shop Right Sidebar</a></li>
                                                             <li><a href="shop-list.html">Shop List</a></li>
                                                             <li><a href="shop-list-left-sidebar.html">Shop List Left Sidebar</a></li>
