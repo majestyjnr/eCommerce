@@ -45,6 +45,7 @@ function App() {
       <Route path= '/shopping-cart' exact component={Cart}/>
       <Route path= '/wishlist' exact component={Wishlist}/>
 
+      {/* About Limpupa */}
       <Route path= '/about-us' exact component={AboutUs}/>
       <Route path= '/contact-us' exact component={Contact}/>
       <Route path= '/faq' exact component={Faq}/>
