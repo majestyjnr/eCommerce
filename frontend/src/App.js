@@ -54,7 +54,7 @@ function App() {
       <Route path= '/' exact component={Index}/>
       <Route path= '/products' exact component={Products}/>
       <Route path= '/product-detail/:id' exact component={Product}/>
-      <Route path= '/todays-deals' exact component={TodaysDeals}/>
+      <Route path= "/today's-deals" exact component={TodaysDeals}/>
       <Route path= '/sell' exact component={Sell}/>
 
       {/* About Limpupa */}

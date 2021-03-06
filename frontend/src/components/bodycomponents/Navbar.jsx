@@ -238,28 +238,29 @@ const Navbar = () => {
                                         <ul>
                                             <li className="megamenu-holder"><Link to={'/'}>All</Link>
                                                 <ul className="megamenu hb-megamenu">
-                                                    <li><a href="shop-left-sidebar.html">Shop Page Layout</a>
+                                                    <li><a href="#">Electronics</a>
                                                         <ul>
-                                                            <li><a href="shop-3-column.html">Shop 3 Column</a></li>
-                                                            <li><a href="shop-4-column.html">Shop 4 Column</a></li>
-                                                            <li><Link to="/shop">Shop</Link></li>
-                                                            <li><a href="shop-right-sidebar.html">Shop Right Sidebar</a></li>
-                                                            <li><a href="shop-list.html">Shop List</a></li>
+                                                            <li><Link to="/products">Blenders</Link></li>
+                                                            <li><Link to="/products">Computers & Accessories</Link></li>
+                                                            <li><Link to="/products">Electronic Stoves</Link></li>
+                                                            <li><li><Link to="/products">Home Theatres/Speakers</Link></li></li>
+                                                            <li><Link to="/products">Phones & Accessories</Link></li>
+                                                            <li><li><Link to="/products">TV's</Link></li></li>
                                                             <li><a href="shop-list-left-sidebar.html">Shop List Left Sidebar</a></li>
-                                                            <li><a href="shop-list-right-sidebar.html">Shop List Right Sidebar</a></li>
                                                         </ul>
                                                     </li>
-                                                    <li><a href="single-product-gallery-left.html">Single Product Style</a>
+                                                    <li><a href="#">Clothing & Accessories</a>
                                                         <ul>
-                                                            <li><a href="single-product-carousel.html">Single Product Carousel</a></li>
-                                                            <li><a href="single-product-gallery-left.html">Single Product Gallery Left</a></li>
-                                                            <li><a href="single-product-gallery-right.html">Single Product Gallery Right</a></li>
-                                                            <li><a href="single-product-tab-style-top.html">Single Product Tab Style Top</a></li>
-                                                            <li><a href="single-product-tab-style-left.html">Single Product Tab Style Left</a></li>
-                                                            <li><a href="single-product-tab-style-right.html">Single Product Tab Style Right</a></li>
+                                                        <li><li><Link to="/products">Men's Wear</Link></li></li>
+                                                        <li><li><Link to="/products">Women's Wear</Link></li></li>
+                                                        <li><li><Link to="/products">Kid's Wear</Link></li></li>
+                                                        <li><li><Link to="/products">Perfumes</Link></li></li>
+                                                        <li><li><Link to="/products">Watches</Link></li></li>
+                                                        <li><li><Link to="/products">Shoes</Link></li></li>
+                                                        <li><li><Link to="/products">Jewellry</Link></li></li>
                                                         </ul>
                                                     </li>
-                                                    <li><a href="single-product.html">Single Products</a>
+                                                    <li><a href="#">Accessories</a>
                                                         <ul>
                                                             <li><a href="single-product.html">Single Product</a></li>
                                                             <li><a href="single-product-sale.html">Single Product Sale</a></li>
@@ -271,7 +272,7 @@ const Navbar = () => {
                                                 </ul>
                                             </li>
                                             <li><Link to="/about-us">About Us</Link></li>
-                                            <li><Link to="/todays-deals">Today's Deals</Link></li>
+                                            <li><Link to="/today's-deals">Today's Deals</Link></li>
                                             <li><Link to="/sell">Sell</Link></li>
                                             <li><Link to="/contact-us">Customer Service</Link></li>
                                         </ul>
