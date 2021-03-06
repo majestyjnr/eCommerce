@@ -6,6 +6,7 @@ import Banner2 from "../../images/banner/1_2.jpg"
 const Index = () => {
     useEffect(() => {
         document.title = 'Limpupa | A Shop Online';
+        
      }, [])
      
     return (
