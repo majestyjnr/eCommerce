@@ -23,6 +23,7 @@ import Index from './components/Index'
 import AboutUs from './components/AboutUs'
 import Contact from './components/ContactUs'
 import Shop from './components/Shop'
+import Product from './components/ProductDetail'
 import Cart from './components/Cart'
 import Faq from './components/Faq'
 import Login from './components/account/Login'
@@ -39,6 +40,7 @@ function App() {
       <Route path= '/about-us' exact component={AboutUs}/>
       <Route path= '/contact-us' exact component={Contact}/>
       <Route path= '/shop' exact component={Shop}/>
+      <Route path= '/product-detail' exact component={Product}/>
       <Route path= '/shopping-cart' exact component={Cart}/>
       <Route path= '/faq' exact component={Faq}/>
       <Route path= '/checkout' exact component={Checkout}/>
