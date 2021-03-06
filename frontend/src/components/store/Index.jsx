@@ -1,4 +1,7 @@
 import React, {useEffect} from 'react'
+import Banner1 from "../../images/banner/1_1.jpg"
+import Banner2 from "../../images/banner/1_2.jpg"
+
 
 const Index = () => {
     useEffect(() => {
@@ -35,6 +38,7 @@ const Index = () => {
                                             </div>
                                         </div>
                                     </div>
+                                    {/* style={{backgroundImage: `url(${Banner1})`}} */}
                                     <div class="single-slide align-center-left animation-style-01 bg-3">
                                         <div class="slider-progress"></div>
                                         <div class="slider-content">
@@ -52,12 +56,12 @@ const Index = () => {
                         <div class="col-lg-4 col-md-4 text-center pt-xs-30">
                             <div class="li-banner">
                                 <a href="#">
-                                    <img src="images/banner/1_1.jpg" alt=""/>
+                                    <img src={Banner1} alt=""/>
                                 </a>
                             </div>
                             <div class="li-banner mt-15 mt-sm-30 mt-xs-30">
                                 <a href="#">
-                                    <img src="images/banner/1_2.jpg" alt=""/>
+                                    <img src={Banner2} alt=""/>
                                 </a>
                             </div>
                         </div>
