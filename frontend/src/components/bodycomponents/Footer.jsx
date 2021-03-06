@@ -1,29 +1,10 @@
 import React from "react";
-import '../style.css'
-import '../css/bootstrap.min.css'
-import '../css/font-awesome.min.css'
-import '../css/fontawesome-stars.css'
-import '../css/helper.css'
-import '../css/jquery-ui.min.css'
-import '../css/magnific-popup.css'
-import '../css/material-design-iconic-font.min.css'
-import '../css/meanmenu.css'
-import '../css/nice-select.css'
-import '../css/owl.carousel.min.css'
-import '../css/owl.video.play.png'
-import '../css/responsive.css'
-import '../css/slick.css'
-import '../css/venobox.css'
-import shippingIcon1 from '../images/shipping-icon/1.png'
-import shippingIcon2 from '../images/shipping-icon/2.png'
-import shippingIcon3 from '../images/shipping-icon/3.png'
-import shippingIcon4 from '../images/shipping-icon/4.png'
-import Logo from '../images/menu/logo/1.jpg'
 
-
-
-
-
+import shippingIcon1 from '../../images/shipping-icon/1.png'
+import shippingIcon2 from '../../images/shipping-icon/2.png'
+import shippingIcon3 from '../../images/shipping-icon/3.png'
+import shippingIcon4 from '../../images/shipping-icon/4.png'
+import Logo from '../../images/menu/logo/1.jpg'
 
 
 const Footer = () => {
@@ -326,7 +307,7 @@ const Footer = () => {
 
               <div className="copyright text-center">
                 <a href="#">
-                  <img src="../images/payment/1.png" alt="" />
+                  <img src="../../images/payment/1.png" alt="" />
                 </a>
               </div>
 

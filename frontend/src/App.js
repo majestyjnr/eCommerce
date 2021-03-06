@@ -18,18 +18,18 @@ import './css/slick.css'
 import './css/venobox.css'
 
 // Import Necessary Components
-import Navbar from './components/Navbar'
-import Index from './components/Index'
-import AboutUs from './components/AboutUs'
-import Contact from './components/ContactUs'
-import Shop from './components/Shop'
-import Product from './components/ProductDetail'
-import Cart from './components/Cart'
-import Faq from './components/Faq'
+import Navbar from './components/bodycomponents/Navbar'
+import Index from './components/store/Index'
+import AboutUs from './components/store/AboutUs'
+import Contact from './components/store/ContactUs'
+import Products from './components/store/Products'
+import Product from './components/store/ProductDetail'
+import Cart from './components/store/Cart'
+import Faq from './components/store/Faq'
 import Login from './components/account/Login'
-import Checkout from './components/Checkout'
-import Wishlist from './components/Wishlist'
-import Footer from './components/Footer'
+import Checkout from './components/payment/Checkout'
+import Wishlist from './components/store/Wishlist'
+import Footer from './components/bodycomponents/Footer'
 
 
 function App() {
@@ -39,7 +39,7 @@ function App() {
       <Route path= '/' exact component={Index}/>
       <Route path= '/about-us' exact component={AboutUs}/>
       <Route path= '/contact-us' exact component={Contact}/>
-      <Route path= '/shop' exact component={Shop}/>
+      <Route path= '/products' exact component={Products}/>
       <Route path= '/product-detail' exact component={Product}/>
       <Route path= '/shopping-cart' exact component={Cart}/>
       <Route path= '/faq' exact component={Faq}/>
