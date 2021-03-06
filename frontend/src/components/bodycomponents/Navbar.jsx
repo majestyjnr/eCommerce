@@ -257,7 +257,7 @@ const Navbar = () => {
                                                         <li><li><Link to="/products">Perfumes</Link></li></li>
                                                         <li><li><Link to="/products">Watches</Link></li></li>
                                                         <li><li><Link to="/products">Shoes</Link></li></li>
-                                                        <li><li><Link to="/products">Jewellry</Link></li></li>
+                                                        <li><li><Link to="/products">Jewelry</Link></li></li>
                                                         </ul>
                                                     </li>
                                                     <li><a href="#">Accessories</a>
