@@ -26,6 +26,7 @@ import Contact from './components/store/ContactUs'
 import Products from './components/store/Products'
 import Product from './components/store/ProductDetail'
 import TodaysDeals from './components/store/TodaysDeal'
+import Sell from './components/store/Sell'
 import Cart from './components/store/Cart'
 import Faq from './components/store/Faq'
 import Login from './components/account/Login'
@@ -52,10 +53,9 @@ function App() {
       {/* Store */}
       <Route path= '/' exact component={Index}/>
       <Route path= '/products' exact component={Products}/>
-      <Route path= '/product-detail' exact component={Product}/>
+      <Route path= '/product-detail/:id' exact component={Product}/>
       <Route path= '/todays-deals' exact component={TodaysDeals}/>
-      <Route path= '/shopping-cart' exact component={Cart}/>
-      <Route path= '/wishlist' exact component={Wishlist}/>
+      <Route path= '/sell' exact component={Sell}/>
 
       {/* About Limpupa */}
       <Route path= '/about-us' exact component={AboutUs}/>
@@ -67,6 +67,8 @@ function App() {
 
       {/* Account */}
       <Route path= '/account/login' exact component={Login}/>
+      <Route path= '/shopping-cart' exact component={Cart}/>
+      <Route path= '/wishlist' exact component={Wishlist}/>
      
       {/* Footer */}
       <Footer />

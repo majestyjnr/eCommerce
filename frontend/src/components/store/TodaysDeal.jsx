@@ -1,8 +1,11 @@
-import React from 'react'
-
+import React, {useEffect} from 'react'
 import Banner from "../../images/bg-banner/2.jpg"
 
 const TodaysDeal = () => {
+    useEffect(() => {
+        document.title = "Today's Deals | Limpupa"
+    }, []);
+
     return (
         <div>
             <div class="breadcrumb-area">

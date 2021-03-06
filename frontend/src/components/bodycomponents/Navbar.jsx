@@ -236,7 +236,7 @@ const Navbar = () => {
                                 <div className="hb-menu">
                                     <nav>
                                         <ul>
-                                            <li className="megamenu-holder"><a href="shop-left-sidebar.html">All</a>
+                                            <li className="megamenu-holder"><Link to={'/'}>All</Link>
                                                 <ul className="megamenu hb-megamenu">
                                                     <li><a href="shop-left-sidebar.html">Shop Page Layout</a>
                                                         <ul>
@@ -272,7 +272,7 @@ const Navbar = () => {
                                             </li>
                                             <li><Link to="/about-us">About Us</Link></li>
                                             <li><Link to="/todays-deals">Today's Deals</Link></li>
-                                            <li><a href="shop-left-sidebar.html">Sell</a></li>
+                                            <li><Link to="/sell">Sell</Link></li>
                                             <li><Link to="/contact-us">Customer Service</Link></li>
                                         </ul>
                                     </nav>
