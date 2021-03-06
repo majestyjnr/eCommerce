@@ -1,4 +1,5 @@
 import {BrowserRouter as Router, Route} from 'react-router-dom'
+import { useScript } from 'react-use-scripts';
 
 // Import Necessary CSS
 import './style.css'
@@ -33,6 +34,15 @@ import Footer from './components/bodycomponents/Footer'
 
 
 function App() {
+  const { ScriptLoader } = useScript();
+
+  // <ScriptLoader
+  //               id="custom-script"
+  //               src="../../js/main.js"
+  //               delayMs={0}
+  //               onCreate={() => console.log('created!')}
+  //               type="text/javascript"
+  //           />
   return (
     <Router>
       {/* Navbar */}

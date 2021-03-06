@@ -1778,7 +1778,7 @@ textarea:focus {
 	transition: all 0.3s ease-in-out;
 	color: #242424;
 }
-.hb-menu nav > ul > li:nth-child(n+5) > a::after {
+.hb-menu nav > ul > li:nth-child(n+2) > a::after {
 	content: none;
 }
 .hb-menu nav > ul > li:hover  a::after {

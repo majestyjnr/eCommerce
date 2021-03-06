@@ -1,21 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { useScript } from 'react-use-scripts';
 
 import Logo from '../../images/menu/logo/1.jpg'
 
 const Navbar = () => {
-    const { ScriptLoader } = useScript();
 
     return (
         <header>
-            <ScriptLoader
-                id="custom-script"
-                src="../../js/main.js"
-                delayMs={0}
-                onCreate={() => console.log('created!')}
-                type="text/javascript"
-            />
                 <div className="header-top">
                     <div className="container">
                         <div className="row">
@@ -23,7 +14,7 @@ const Navbar = () => {
                             <div className="col-lg-3 col-md-4">
                                 <div className="header-top-left">
                                     <ul className="phone-wrap">
-                                        <li><span>Telephone Enquiry:</span><a href="#">(+123) 123 321 345</a></li>
+                                        <li><span>Telephone Enquiry:</span><a href="#">(+233) 544 174 142</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -245,15 +236,15 @@ const Navbar = () => {
                                 <div className="hb-menu">
                                     <nav>
                                         <ul>
-                                            <li className="dropdown-holder"><a href="index.html">Home</a>
+                                            {/* <li className="dropdown-holder"><a href="index.html">Home</a>
                                                 <ul className="hb-dropdown">
                                                     <li className="active"><a href="index.html">Home One</a></li>
                                                     <li><a href="index-2.html">Home Two</a></li>
                                                     <li><a href="index-3.html">Home Three</a></li>
                                                     <li><a href="index-4.html">Home Four</a></li>
                                                 </ul>
-                                            </li>
-                                            <li className="megamenu-holder"><a href="shop-left-sidebar.html">Shop</a>
+                                            </li> */}
+                                            <li className="megamenu-holder"><a href="shop-left-sidebar.html">All</a>
                                                 <ul className="megamenu hb-megamenu">
                                                     <li><a href="shop-left-sidebar.html">Shop Page Layout</a>
                                                         <ul>
@@ -287,7 +278,7 @@ const Navbar = () => {
                                                     </li>
                                                 </ul>
                                             </li>
-                                            <li className="dropdown-holder"><a href="blog-left-sidebar.html">Blog</a>
+                                            {/* <li className="dropdown-holder"><a href="blog-left-sidebar.html">Blog</a>
                                                 <ul className="hb-dropdown">
                                                     <li className="sub-dropdown-holder"><a href="blog-left-sidebar.html">Blog Grid View</a>
                                                         <ul className="hb-dropdown hb-sub-dropdown">
@@ -318,8 +309,8 @@ const Navbar = () => {
                                                         </ul>
                                                     </li>
                                                 </ul>
-                                            </li>
-                                            <li className="megamenu-static-holder"><a href="index.html">Pages</a>
+                                            </li> */}
+                                            {/* <li className="megamenu-static-holder"><a href="index.html">Pages</a>
                                                 <ul className="megamenu hb-megamenu">
                                                     <li><a href="blog-left-sidebar.html">Blog Layouts</a>
                                                         <ul>
@@ -359,11 +350,11 @@ const Navbar = () => {
                                                         </ul>
                                                     </li>
                                                 </ul>
-                                            </li>
+                                            </li> */}
                                             <li><Link to="/about-us">About Us</Link></li>
-                                            <li><Link to="/contact-us">Contact</Link></li>
-                                            <li><a href="shop-left-sidebar.html">Smartwatch</a></li>
-                                            <li><a href="shop-left-sidebar.html">Accessories</a></li>
+                                            <li><Link to="/contact-us">Today's Deals</Link></li>
+                                            <li><a href="shop-left-sidebar.html">Sell</a></li>
+                                            <li><Link to="/contact-us">Customer Service</Link></li>
                                         </ul>
                                     </nav>
                                 </div>
