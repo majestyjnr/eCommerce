@@ -35,18 +35,29 @@ import Footer from './components/bodycomponents/Footer'
 function App() {
   return (
     <Router>
+      {/* Navbar */}
       <Navbar />
+
+      {/* Store */}
       <Route path= '/' exact component={Index}/>
-      <Route path= '/about-us' exact component={AboutUs}/>
-      <Route path= '/contact-us' exact component={Contact}/>
       <Route path= '/products' exact component={Products}/>
       <Route path= '/product-detail' exact component={Product}/>
       <Route path= '/shopping-cart' exact component={Cart}/>
-      <Route path= '/faq' exact component={Faq}/>
-      <Route path= '/checkout' exact component={Checkout}/>
       <Route path= '/wishlist' exact component={Wishlist}/>
+
+      <Route path= '/about-us' exact component={AboutUs}/>
+      <Route path= '/contact-us' exact component={Contact}/>
+      <Route path= '/faq' exact component={Faq}/>
+
+      {/* Payment */}
+      <Route path= '/checkout' exact component={Checkout}/>
+
+      {/* Account */}
       <Route path= '/account/login' exact component={Login}/>
+     
+      {/* Footer */}
       <Footer />
+
     </Router>
   );
 }
