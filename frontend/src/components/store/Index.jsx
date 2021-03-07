@@ -2,6 +2,12 @@ import React, {useEffect} from 'react'
 import Banner1 from "../../images/banner/1_1.jpg"
 import Banner2 from "../../images/banner/1_2.jpg"
 
+// Static Banner
+import StaticBanner1 from '../../images/banner/1_3.jpg'
+import StaticBanner2 from '../../images/banner/1_4.jpg'
+import StaticBanner3 from '../../images/banner/1_5.jpg'
+
+
 
 const Index = () => {
     useEffect(() => {
@@ -831,21 +837,21 @@ const Index = () => {
                         <div class="col-lg-4 col-md-4 text-center">
                             <div class="single-banner">
                                 <a href="#">
-                                    <img src="images/banner/1_3.jpg" alt="Li's Static Banner"/>
+                                    <img src={StaticBanner1} alt="Li's Static Banner"/>
                                 </a>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 text-center pt-xs-30">
                             <div class="single-banner">
                                 <a href="#">
-                                    <img src="images/banner/1_4.jpg" alt="Li's Static Banner"/>
+                                    <img src={StaticBanner2} alt="Li's Static Banner"/>
                                 </a>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 text-center pt-xs-30">
                             <div class="single-banner">
                                 <a href="#">
-                                    <img src="images/banner/1_5.jpg" alt="Li's Static Banner"/>
+                                    <img src={StaticBanner3} alt="Li's Static Banner"/>
                                 </a>
                             </div>
                         </div>

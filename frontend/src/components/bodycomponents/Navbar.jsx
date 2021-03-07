@@ -174,10 +174,10 @@ const Navbar = () => {
                                     <ul className="hm-menu">
                                         {/* <!-- Begin Header Middle Wishlist Area --> */}
                                         <li className="hm-wishlist">
-                                            <a href="wishlist.html">
+                                            <Link to="/wishlist">
                                                 <span className="cart-item-count wishlist-item-count">0</span>
                                                 <i className="fa fa-heart-o"></i>
-                                            </a>
+                                            </Link>
                                         </li>
                                         {/* <!-- Header Middle Wishlist Area End Here --> */}
                                         {/* <!-- Begin Header Mini Cart Area --> */}
@@ -218,12 +218,12 @@ const Navbar = () => {
                                                 </ul>
                                                 <p className="minicart-total">SUBTOTAL: <span>£80.00</span></p>
                                                 <div className="minicart-button">
-                                                    <a href="shopping-cart.html" className="li-button li-button-fullwidth li-button-dark">
+                                                    <Link to="/shopping-cart" className="li-button li-button-fullwidth li-button-dark">
                                                         <span>View Full Cart</span>
-                                                    </a>
-                                                    <a href="checkout.html" className="li-button li-button-fullwidth">
+                                                    </Link>
+                                                    <Link to="/checkout" className="li-button li-button-fullwidth">
                                                         <span>Checkout</span>
-                                                    </a>
+                                                    </Link>
                                                 </div>
                                             </div>
                                         </li>
@@ -256,7 +256,7 @@ const Navbar = () => {
                                                             <li><li><Link to="/products">Home Theatres/Speakers</Link></li></li>
                                                             <li><Link to="/products">Phones & Accessories</Link></li>
                                                             <li><li><Link to="/products">TV's</Link></li></li>
-                                                            <li><a href="shop-list-left-sidebar.html">Shop List Left Sidebar</a></li>
+                                                            <li><Link to="/products">Other Electronics</Link></li>
                                                         </ul>
                                                     </li>
                                                     <li><a href="#">Clothing & Accessories</a>
@@ -281,7 +281,7 @@ const Navbar = () => {
                                                     </li>
                                                 </ul>
                                             </li>
-                                            <li><Link to="/about-us">About Us</Link></li>
+                                            {/* <li><Link to="/about-us">About Us</Link></li> */}
                                             <li><Link to="/today's-deals">Today's Deals</Link></li>
                                             <li><Link to="/sell">Sell</Link></li>
                                             <li><Link to="/contact-us">Customer Service</Link></li>

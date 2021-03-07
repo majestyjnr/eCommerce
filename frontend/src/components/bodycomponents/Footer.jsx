@@ -1,6 +1,7 @@
 import React from "react";
+import {Link} from 'react-router-dom'
 
-import shippingIcon1 from '../../images/shipping-icon/1.png'
+import shippingIcon1 from '../../images/shipping-icon/delivery.png'
 import shippingIcon2 from '../../images/shipping-icon/2.png'
 import shippingIcon3 from '../../images/shipping-icon/3.png'
 import shippingIcon4 from '../../images/shipping-icon/4.png'
@@ -47,7 +48,7 @@ const Footer = () => {
                   <div className="shipping-text">
                     <h2>Shop with Confidence</h2>
                     <p>
-                      Our Buyer Protection covers your purchasefrom click to
+                      Our Buyer Protection covers your purchase from click to
                       delivery.
                     </p>
                   </div>
@@ -61,7 +62,7 @@ const Footer = () => {
                   </div>
                   <div className="shipping-text">
                     <h2>24/7 Help Center</h2>
-                    <p>Have a question? Call a Specialist or chat online.</p>
+                    <p>Have a question? Contact our customer service representatives now!</p>
                   </div>
                 </div>
               </div>
@@ -77,18 +78,17 @@ const Footer = () => {
                 <div className="footer-logo">
                   <img src={Logo} alt="Footer Logo" />
                   <p className="info">
-                    We are a team of designers and developers that create high
-                    quality HTML Template & Woocommerce, Shopify Theme.
+                    An online mall that caters for all your needs within a matter of seconds.
                   </p>
                 </div>
                 <ul className="des">
                   <li>
                     <span>Address: </span>
-                    6688Princess Road, London, Greater London BAS 23JK, UK
+                    Accra, Ghana.
                   </li>
                   <li>
                     <span>Phone: </span>
-                    <a href="#">(+123) 123 321 345</a>
+                    <a href="#">(+233) 544 174 142</a>
                   </li>
                   <li>
                     <span>Email: </span>
@@ -123,16 +123,19 @@ const Footer = () => {
                   <h3 className="footer-block-title">Our company</h3>
                   <ul>
                     <li>
-                      <a href="#">Delivery</a>
+                    <Link to="/careers">Careers</Link>
                     </li>
                     <li>
-                      <a href="#">Legal Notice</a>
+                    <Link to="/delivery">Delivery</Link>
                     </li>
                     <li>
-                      <a href="#">About us</a>
+                    <Link to="/legal">Legal Notice</Link>
                     </li>
                     <li>
-                      <a href="#">Contact us</a>
+                    <Link to="/about-us">About Us</Link>
+                    </li>
+                    <li>
+                    <Link to="/contact-us">Contact Us</Link>
                     </li>
                   </ul>
                 </div>
@@ -314,7 +317,7 @@ const Footer = () => {
               <div className="copyright text-center pt-25">
                 <span>
                   <a target="_blank" href="https://www.templateshub.net">
-                    Limpupa Store
+                    Limpupa Online Shopping Mall
                   </a>
                 </span>
               </div>

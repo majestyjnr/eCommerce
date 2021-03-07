@@ -1,4 +1,5 @@
 import React, {useEffect} from 'react'
+import {Link} from 'react-router-dom'
 import Banner from "../../images/bg-banner/2.jpg"
 
 const TodaysDeal = () => {
@@ -63,16 +64,17 @@ const TodaysDeal = () => {
                                                 <div class="col-lg-4 col-md-4 col-sm-6 mt-40">
                                                     <div class="single-product-wrap">
                                                         <div class="product-image">
-                                                            <a href="single-product.html">
-                                                                <img src="images/product/large-size/1.jpg" alt="Li's Product Image"/>
-                                                            </a>
+                                                            <Link to = '/product'>
+                                                                <img src="images/product/large-size/1.jpg" 
+                                                               alt="Product Image" />
+                                                            </Link>
                                                             <span class="sticker">New</span>
                                                         </div>
                                                         <div class="product_desc">
                                                             <div class="product_desc_info">
                                                                 <div class="product-review">
                                                                     <h5 class="manufacturer">
-                                                                        <a href="product-details.html">Graphic Corner</a>
+                                                                        <Link to='/product'>Graphic Corner</Link>
                                                                     </h5>
                                                                     <div class="rating-box">
                                                                         <ul class="rating">
@@ -102,16 +104,17 @@ const TodaysDeal = () => {
                                                 <div class="col-lg-4 col-md-4 col-sm-6 mt-40">
                                                     <div class="single-product-wrap">
                                                         <div class="product-image">
-                                                            <a href="single-product.html">
-                                                                <img src="images/product/large-size/2.jpg" alt="Li's Product Image"/>
-                                                            </a>
+                                                            <Link to = '/product'>
+                                                                <img src="images/product/large-size/2.jpg" 
+                                                               alt="Product Image" />
+                                                            </Link>
                                                             <span class="sticker">New</span>
                                                         </div>
                                                         <div class="product_desc">
                                                             <div class="product_desc_info">
                                                                 <div class="product-review">
                                                                     <h5 class="manufacturer">
-                                                                        <a href="product-details.html">Graphic Corner</a>
+                                                                        <Link to='/product'>Graphic Corner</Link>
                                                                     </h5>
                                                                     <div class="rating-box">
                                                                         <ul class="rating">
@@ -141,16 +144,17 @@ const TodaysDeal = () => {
                                                 <div class="col-lg-4 col-md-4 col-sm-6 mt-40">
                                                     <div class="single-product-wrap">
                                                         <div class="product-image">
-                                                            <a href="single-product.html">
-                                                                <img src="images/product/large-size/3.jpg" alt="Li's Product Image"/>
-                                                            </a>
+                                                            <Link to = '/product'>
+                                                                <img src="images/product/large-size/3.jpg" 
+                                                               alt="Product Image" />
+                                                            </Link>
                                                             <span class="sticker">New</span>
                                                         </div>
                                                         <div class="product_desc">
                                                             <div class="product_desc_info">
                                                                 <div class="product-review">
                                                                     <h5 class="manufacturer">
-                                                                        <a href="product-details.html">Graphic Corner</a>
+                                                                        <Link to='/product'>Graphic Corner</Link>
                                                                     </h5>
                                                                     <div class="rating-box">
                                                                         <ul class="rating">
@@ -180,16 +184,17 @@ const TodaysDeal = () => {
                                                 <div class="col-lg-4 col-md-4 col-sm-6 mt-40">
                                                     <div class="single-product-wrap">
                                                         <div class="product-image">
-                                                            <a href="single-product.html">
-                                                                <img src="images/product/large-size/4.jpg" alt="Li's Product Image"/>
-                                                            </a>
+                                                            <Link to = '/product'>
+                                                                <img src="images/product/large-size/4.jpg" 
+                                                               alt="Product Image" />
+                                                            </Link>
                                                             <span class="sticker">New</span>
                                                         </div>
                                                         <div class="product_desc">
                                                             <div class="product_desc_info">
                                                                 <div class="product-review">
                                                                     <h5 class="manufacturer">
-                                                                        <a href="product-details.html">Graphic Corner</a>
+                                                                        <Link to='/product'>Graphic Corner</Link>
                                                                     </h5>
                                                                     <div class="rating-box">
                                                                         <ul class="rating">
@@ -219,16 +224,17 @@ const TodaysDeal = () => {
                                                 <div class="col-lg-4 col-md-4 col-sm-6 mt-40">
                                                     <div class="single-product-wrap">
                                                         <div class="product-image">
-                                                            <a href="single-product.html">
-                                                                <img src="images/product/large-size/5.jpg" alt="Li's Product Image"/>
-                                                            </a>
+                                                            <Link to = '/product'>
+                                                                <img src="images/product/large-size/5.jpg" 
+                                                               alt="Product Image" />
+                                                            </Link>
                                                             <span class="sticker">New</span>
                                                         </div>
                                                         <div class="product_desc">
                                                             <div class="product_desc_info">
                                                                 <div class="product-review">
                                                                     <h5 class="manufacturer">
-                                                                        <a href="product-details.html">Graphic Corner</a>
+                                                                        <Link to='/product'>Graphic Corner</Link>
                                                                     </h5>
                                                                     <div class="rating-box">
                                                                         <ul class="rating">
@@ -258,16 +264,17 @@ const TodaysDeal = () => {
                                                 <div class="col-lg-4 col-md-4 col-sm-6 mt-40">
                                                     <div class="single-product-wrap">
                                                         <div class="product-image">
-                                                            <a href="single-product.html">
-                                                                <img src="images/product/large-size/6.jpg" alt="Li's Product Image"/>
-                                                            </a>
+                                                            <Link to = '/product'>
+                                                                <img src="images/product/large-size/6.jpg" 
+                                                               alt="Product Image" />
+                                                            </Link>
                                                             <span class="sticker">New</span>
                                                         </div>
                                                         <div class="product_desc">
                                                             <div class="product_desc_info">
                                                                 <div class="product-review">
                                                                     <h5 class="manufacturer">
-                                                                        <a href="product-details.html">Graphic Corner</a>
+                                                                        <Link to='/product'>Graphic Corner</Link>
                                                                     </h5>
                                                                     <div class="rating-box">
                                                                         <ul class="rating">
@@ -297,16 +304,17 @@ const TodaysDeal = () => {
                                                 <div class="col-lg-4 col-md-4 col-sm-6 mt-40">
                                                     <div class="single-product-wrap">
                                                         <div class="product-image">
-                                                            <a href="single-product.html">
-                                                                <img src="images/product/large-size/7.jpg" alt="Li's Product Image"/>
-                                                            </a>
+                                                            <Link to = '/product'>
+                                                                <img src="images/product/large-size/7.jpg" 
+                                                               alt="Product Image" />
+                                                            </Link>
                                                             <span class="sticker">New</span>
                                                         </div>
                                                         <div class="product_desc">
                                                             <div class="product_desc_info">
                                                                 <div class="product-review">
                                                                     <h5 class="manufacturer">
-                                                                        <a href="product-details.html">Graphic Corner</a>
+                                                                        <Link to='/product'>Graphic Corner</Link>
                                                                     </h5>
                                                                     <div class="rating-box">
                                                                         <ul class="rating">
@@ -336,16 +344,17 @@ const TodaysDeal = () => {
                                                 <div class="col-lg-4 col-md-4 col-sm-6 mt-40">
                                                     <div class="single-product-wrap">
                                                         <div class="product-image">
-                                                            <a href="single-product.html">
-                                                                <img src="images/product/large-size/8.jpg" alt="Li's Product Image"/>
-                                                            </a>
+                                                            <Link to = '/product'>
+                                                                <img src="images/product/large-size/8.jpg" 
+                                                               alt="Product Image" />
+                                                            </Link>
                                                             <span class="sticker">New</span>
                                                         </div>
                                                         <div class="product_desc">
                                                             <div class="product_desc_info">
                                                                 <div class="product-review">
                                                                     <h5 class="manufacturer">
-                                                                        <a href="product-details.html">Graphic Corner</a>
+                                                                        <Link to='/product'>Graphic Corner</Link>
                                                                     </h5>
                                                                     <div class="rating-box">
                                                                         <ul class="rating">
@@ -375,16 +384,17 @@ const TodaysDeal = () => {
                                                 <div class="col-lg-4 col-md-4 col-sm-6 mt-40">
                                                     <div class="single-product-wrap">
                                                         <div class="product-image">
-                                                            <a href="single-product.html">
-                                                                <img src="images/product/large-size/9.jpg" alt="Li's Product Image"/>
-                                                            </a>
+                                                            <Link to = '/product'>
+                                                                <img src="images/product/large-size/9.jpg" 
+                                                               alt="Product Image" />
+                                                            </Link>
                                                             <span class="sticker">New</span>
                                                         </div>
                                                         <div class="product_desc">
                                                             <div class="product_desc_info">
                                                                 <div class="product-review">
                                                                     <h5 class="manufacturer">
-                                                                        <a href="product-details.html">Graphic Corner</a>
+                                                                        <Link to='/product'>Graphic Corner</Link>
                                                                     </h5>
                                                                     <div class="rating-box">
                                                                         <ul class="rating">
@@ -414,16 +424,17 @@ const TodaysDeal = () => {
                                                 <div class="col-lg-4 col-md-4 col-sm-6 mt-40">
                                                     <div class="single-product-wrap">
                                                         <div class="product-image">
-                                                            <a href="single-product.html">
-                                                                <img src="images/product/large-size/10.jpg" alt="Li's Product Image"/>
-                                                            </a>
+                                                            <Link to = '/product'>
+                                                                <img src="images/product/large-size/10.jpg" 
+                                                               alt="Product Image" />
+                                                            </Link>
                                                             <span class="sticker">New</span>
                                                         </div>
                                                         <div class="product_desc">
                                                             <div class="product_desc_info">
                                                                 <div class="product-review">
                                                                     <h5 class="manufacturer">
-                                                                        <a href="product-details.html">Graphic Corner</a>
+                                                                        <Link to='/product'>Graphic Corner</Link>
                                                                     </h5>
                                                                     <div class="rating-box">
                                                                         <ul class="rating">
@@ -453,16 +464,17 @@ const TodaysDeal = () => {
                                                 <div class="col-lg-4 col-md-4 col-sm-6 mt-40">
                                                     <div class="single-product-wrap">
                                                         <div class="product-image">
-                                                            <a href="single-product.html">
-                                                                <img src="images/product/large-size/11.jpg" alt="Li's Product Image"/>
-                                                            </a>
+                                                            <Link to = '/product'>
+                                                                <img src="images/product/large-size/11.jpg" 
+                                                               alt="Product Image" />
+                                                            </Link>
                                                             <span class="sticker">New</span>
                                                         </div>
                                                         <div class="product_desc">
                                                             <div class="product_desc_info">
                                                                 <div class="product-review">
                                                                     <h5 class="manufacturer">
-                                                                        <a href="product-details.html">Graphic Corner</a>
+                                                                        <Link to='/product'>Graphic Corner</Link>
                                                                     </h5>
                                                                     <div class="rating-box">
                                                                         <ul class="rating">
@@ -492,16 +504,17 @@ const TodaysDeal = () => {
                                                 <div class="col-lg-4 col-md-4 col-sm-6 mt-40">
                                                     <div class="single-product-wrap">
                                                         <div class="product-image">
-                                                            <a href="single-product.html">
-                                                                <img src="images/product/large-size/12.jpg" alt="Li's Product Image"/>
-                                                            </a>
+                                                            <Link to = '/product'>
+                                                                <img src="images/product/large-size/12.jpg" 
+                                                               alt="Product Image" />
+                                                            </Link>
                                                             <span class="sticker">New</span>
                                                         </div>
                                                         <div class="product_desc">
                                                             <div class="product_desc_info">
                                                                 <div class="product-review">
                                                                     <h5 class="manufacturer">
-                                                                        <a href="product-details.html">Graphic Corner</a>
+                                                                        <Link to='/product'>Graphic Corner</Link>
                                                                     </h5>
                                                                     <div class="rating-box">
                                                                         <ul class="rating">
@@ -537,9 +550,10 @@ const TodaysDeal = () => {
                                                 <div class="row product-layout-list">
                                                     <div class="col-lg-3 col-md-5 ">
                                                         <div class="product-image">
-                                                            <a href="single-product.html">
-                                                                <img src="images/product/large-size/12.jpg" alt="Li's Product Image"/>
-                                                            </a>
+                                                            <Link to = '/product'>
+                                                                <img src="images/product/large-size/12.jpg" 
+                                                               alt="Product Image" />
+                                                            </Link>
                                                             <span class="sticker">New</span>
                                                         </div>
                                                     </div>
@@ -548,7 +562,7 @@ const TodaysDeal = () => {
                                                             <div class="product_desc_info">
                                                                 <div class="product-review">
                                                                     <h5 class="manufacturer">
-                                                                        <a href="product-details.html">Graphic Corner</a>
+                                                                        <Link to='/product'>Graphic Corner</Link>
                                                                     </h5>
                                                                     <div class="rating-box">
                                                                         <ul class="rating">
@@ -581,9 +595,10 @@ const TodaysDeal = () => {
                                                 <div class="row product-layout-list">
                                                     <div class="col-lg-3 col-md-5 ">
                                                         <div class="product-image">
-                                                            <a href="single-product.html">
-                                                                <img src="images/product/large-size/11.jpg" alt="Li's Product Image"/>
-                                                            </a>
+                                                            <Link to = '/product'>
+                                                                <img src="images/product/large-size/11.jpg" 
+                                                               alt="Product Image" />
+                                                            </Link>
                                                             <span class="sticker">New</span>
                                                         </div>
                                                     </div>
@@ -592,7 +607,7 @@ const TodaysDeal = () => {
                                                             <div class="product_desc_info">
                                                                 <div class="product-review">
                                                                     <h5 class="manufacturer">
-                                                                        <a href="product-details.html">Graphic Corner</a>
+                                                                        <Link to='/product'>Graphic Corner</Link>
                                                                     </h5>
                                                                     <div class="rating-box">
                                                                         <ul class="rating">
@@ -625,9 +640,10 @@ const TodaysDeal = () => {
                                                 <div class="row product-layout-list">
                                                     <div class="col-lg-3 col-md-5 ">
                                                         <div class="product-image">
-                                                            <a href="single-product.html">
-                                                                <img src="images/product/large-size/10.jpg" alt="Li's Product Image"/>
-                                                            </a>
+                                                            <Link to = '/product'>
+                                                                <img src="images/product/large-size/10.jpg" 
+                                                               alt="Product Image" />
+                                                            </Link>
                                                             <span class="sticker">New</span>
                                                         </div>
                                                     </div>
@@ -636,7 +652,7 @@ const TodaysDeal = () => {
                                                             <div class="product_desc_info">
                                                                 <div class="product-review">
                                                                     <h5 class="manufacturer">
-                                                                        <a href="product-details.html">Graphic Corner</a>
+                                                                        <Link to='/product'>Graphic Corner</Link>
                                                                     </h5>
                                                                     <div class="rating-box">
                                                                         <ul class="rating">
@@ -669,9 +685,10 @@ const TodaysDeal = () => {
                                                 <div class="row product-layout-list">
                                                     <div class="col-lg-3 col-md-5 ">
                                                         <div class="product-image">
-                                                            <a href="single-product.html">
-                                                                <img src="images/product/large-size/9.jpg" alt="Li's Product Image"/>
-                                                            </a>
+                                                            <Link to = '/product'>
+                                                                <img src="images/product/large-size/9.jpg" 
+                                                               alt="Product Image" />
+                                                            </Link>
                                                             <span class="sticker">New</span>
                                                         </div>
                                                     </div>
@@ -680,7 +697,7 @@ const TodaysDeal = () => {
                                                             <div class="product_desc_info">
                                                                 <div class="product-review">
                                                                     <h5 class="manufacturer">
-                                                                        <a href="product-details.html">Graphic Corner</a>
+                                                                        <Link to='/product'>Graphic Corner</Link>
                                                                     </h5>
                                                                     <div class="rating-box">
                                                                         <ul class="rating">
@@ -713,9 +730,10 @@ const TodaysDeal = () => {
                                                 <div class="row product-layout-list">
                                                     <div class="col-lg-3 col-md-5 ">
                                                         <div class="product-image">
-                                                            <a href="single-product.html">
-                                                                <img src="images/product/large-size/8.jpg" alt="Li's Product Image"/>
-                                                            </a>
+                                                            <Link to = '/product'>
+                                                                <img src="images/product/large-size/8.jpg" 
+                                                               alt="Product Image" />
+                                                            </Link>
                                                             <span class="sticker">New</span>
                                                         </div>
                                                     </div>
@@ -724,7 +742,7 @@ const TodaysDeal = () => {
                                                             <div class="product_desc_info">
                                                                 <div class="product-review">
                                                                     <h5 class="manufacturer">
-                                                                        <a href="product-details.html">Graphic Corner</a>
+                                                                        <Link to='/product'>Graphic Corner</Link>
                                                                     </h5>
                                                                     <div class="rating-box">
                                                                         <ul class="rating">
@@ -757,9 +775,10 @@ const TodaysDeal = () => {
                                                 <div class="row product-layout-list">
                                                     <div class="col-lg-3 col-md-5 ">
                                                         <div class="product-image">
-                                                            <a href="single-product.html">
-                                                                <img src="images/product/large-size/7.jpg" alt="Li's Product Image"/>
-                                                            </a>
+                                                            <Link to = '/product'>
+                                                                <img src="images/product/large-size/7.jpg" 
+                                                               alt="Product Image" />
+                                                            </Link>
                                                             <span class="sticker">New</span>
                                                         </div>
                                                     </div>
@@ -768,7 +787,7 @@ const TodaysDeal = () => {
                                                             <div class="product_desc_info">
                                                                 <div class="product-review">
                                                                     <h5 class="manufacturer">
-                                                                        <a href="product-details.html">Graphic Corner</a>
+                                                                        <Link to='/product'>Graphic Corner</Link>
                                                                     </h5>
                                                                     <div class="rating-box">
                                                                         <ul class="rating">
@@ -801,9 +820,10 @@ const TodaysDeal = () => {
                                                 <div class="row product-layout-list">
                                                     <div class="col-lg-3 col-md-5 ">
                                                         <div class="product-image">
-                                                            <a href="single-product.html">
-                                                                <img src="images/product/large-size/6.jpg" alt="Li's Product Image"/>
-                                                            </a>
+                                                            <Link to = '/product'>
+                                                                <img src="images/product/large-size/6.jpg" 
+                                                               alt="Product Image" />
+                                                            </Link>
                                                             <span class="sticker">New</span>
                                                         </div>
                                                     </div>
@@ -812,7 +832,7 @@ const TodaysDeal = () => {
                                                             <div class="product_desc_info">
                                                                 <div class="product-review">
                                                                     <h5 class="manufacturer">
-                                                                        <a href="product-details.html">Graphic Corner</a>
+                                                                        <Link to='/product'>Graphic Corner</Link>
                                                                     </h5>
                                                                     <div class="rating-box">
                                                                         <ul class="rating">
@@ -845,9 +865,10 @@ const TodaysDeal = () => {
                                                 <div class="row product-layout-list">
                                                     <div class="col-lg-3 col-md-5 ">
                                                         <div class="product-image">
-                                                            <a href="single-product.html">
-                                                                <img src="images/product/large-size/5.jpg" alt="Li's Product Image"/>
-                                                            </a>
+                                                            <Link to = '/product'>
+                                                                <img src="images/product/large-size/5.jpg" 
+                                                               alt="Product Image" />
+                                                            </Link>
                                                             <span class="sticker">New</span>
                                                         </div>
                                                     </div>
@@ -856,7 +877,7 @@ const TodaysDeal = () => {
                                                             <div class="product_desc_info">
                                                                 <div class="product-review">
                                                                     <h5 class="manufacturer">
-                                                                        <a href="product-details.html">Graphic Corner</a>
+                                                                        <Link to='/product'>Graphic Corner</Link>
                                                                     </h5>
                                                                     <div class="rating-box">
                                                                         <ul class="rating">
@@ -889,9 +910,10 @@ const TodaysDeal = () => {
                                                 <div class="row product-layout-list">
                                                     <div class="col-lg-3 col-md-5 ">
                                                         <div class="product-image">
-                                                            <a href="single-product.html">
-                                                                <img src="images/product/large-size/4.jpg" alt="Li's Product Image"/>
-                                                            </a>
+                                                            <Link to = '/product'>
+                                                                <img src="images/product/large-size/4.jpg" 
+                                                               alt="Product Image" />
+                                                            </Link>
                                                             <span class="sticker">New</span>
                                                         </div>
                                                     </div>
@@ -900,7 +922,7 @@ const TodaysDeal = () => {
                                                             <div class="product_desc_info">
                                                                 <div class="product-review">
                                                                     <h5 class="manufacturer">
-                                                                        <a href="product-details.html">Graphic Corner</a>
+                                                                        <Link to='/product'>Graphic Corner</Link>
                                                                     </h5>
                                                                     <div class="rating-box">
                                                                         <ul class="rating">
@@ -933,9 +955,10 @@ const TodaysDeal = () => {
                                                 <div class="row product-layout-list">
                                                     <div class="col-lg-3 col-md-5 ">
                                                         <div class="product-image">
-                                                            <a href="single-product.html">
-                                                                <img src="images/product/large-size/3.jpg" alt="Li's Product Image"/>
-                                                            </a>
+                                                            <Link to = '/product'>
+                                                                <img src="images/product/large-size/3.jpg" 
+                                                               alt="Product Image" />
+                                                            </Link>
                                                             <span class="sticker">New</span>
                                                         </div>
                                                     </div>
@@ -944,7 +967,7 @@ const TodaysDeal = () => {
                                                             <div class="product_desc_info">
                                                                 <div class="product-review">
                                                                     <h5 class="manufacturer">
-                                                                        <a href="product-details.html">Graphic Corner</a>
+                                                                        <Link to='/product'>Graphic Corner</Link>
                                                                     </h5>
                                                                     <div class="rating-box">
                                                                         <ul class="rating">
@@ -977,9 +1000,10 @@ const TodaysDeal = () => {
                                                 <div class="row product-layout-list">
                                                     <div class="col-lg-3 col-md-5 ">
                                                         <div class="product-image">
-                                                            <a href="single-product.html">
-                                                                <img src="images/product/large-size/2.jpg" alt="Li's Product Image"/>
-                                                            </a>
+                                                            <Link to = '/product'>
+                                                                <img src="images/product/large-size/2.jpg" 
+                                                               alt="Product Image" />
+                                                            </Link>
                                                             <span class="sticker">New</span>
                                                         </div>
                                                     </div>
@@ -988,7 +1012,7 @@ const TodaysDeal = () => {
                                                             <div class="product_desc_info">
                                                                 <div class="product-review">
                                                                     <h5 class="manufacturer">
-                                                                        <a href="product-details.html">Graphic Corner</a>
+                                                                        <Link to='/product'>Graphic Corner</Link>
                                                                     </h5>
                                                                     <div class="rating-box">
                                                                         <ul class="rating">
@@ -1021,9 +1045,10 @@ const TodaysDeal = () => {
                                                 <div class="row product-layout-list last-child">
                                                     <div class="col-lg-3 col-md-5 ">
                                                         <div class="product-image">
-                                                            <a href="single-product.html">
-                                                                <img src="images/product/large-size/1.jpg" alt="Li's Product Image"/>
-                                                            </a>
+                                                            <Link to = '/product'>
+                                                                <img src="images/product/large-size/1.jpg" 
+                                                               alt="Product Image" />
+                                                            </Link>
                                                             <span class="sticker">New</span>
                                                         </div>
                                                     </div>
@@ -1032,7 +1057,7 @@ const TodaysDeal = () => {
                                                             <div class="product_desc_info">
                                                                 <div class="product-review">
                                                                     <h5 class="manufacturer">
-                                                                        <a href="product-details.html">Graphic Corner</a>
+                                                                        <Link to='/product'>Graphic Corner</Link>
                                                                     </h5>
                                                                     <div class="rating-box">
                                                                         <ul class="rating">
