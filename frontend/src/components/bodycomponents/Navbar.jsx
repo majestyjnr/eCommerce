@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
+
 import Logo from '../../images/menu/logo/1.jpg'
 
 const Navbar = () => {
@@ -11,6 +12,14 @@ const Navbar = () => {
         setIsActive(!isActive);
         
     }
+    useEffect(() => {
+        // $('.ht-setting-trigger, .ht-currency-trigger, .ht-language-trigger, .hm-minicart-trigger, .cw-sub-menu').on('click', function (e) {
+        //     e.preventDefault();
+        //     $(this).toggleClass('is-active');
+        //     $(this).siblings('.ht-setting, .ht-currency, .ht-language, .minicart, .cw-sub-menu li').slideToggle();
+        // });
+        // $('.ht-setting-trigger.is-active').siblings('.catmenu-body').slideDown();
+    }, [])
    
     return (
         <header>
