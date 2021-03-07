@@ -1,9 +1,14 @@
 import React, {useEffect} from 'react'
+import $ from 'jquery'
 
 
 const Faq = () => {
     useEffect(() => {
         document.title = 'FAQ | Shop Online';
+        $('.card-header a').on('click', function() {
+          $('.card').removeClass('actives');
+          $(this).parents('.card').addClass('actives');
+       });
      }, [])
     return (
         <div>

@@ -1,24 +1,18 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-
+import $ from 'jquery'
 
 import Logo from '../../images/menu/logo/1.jpg'
 
 const Navbar = () => {
 
-    const [isActive, setIsActive] = useState('false');
-
-    const ToggleClass = () => {
-        setIsActive(!isActive);
-        
-    }
     useEffect(() => {
-        // $('.ht-setting-trigger, .ht-currency-trigger, .ht-language-trigger, .hm-minicart-trigger, .cw-sub-menu').on('click', function (e) {
-        //     e.preventDefault();
-        //     $(this).toggleClass('is-active');
-        //     $(this).siblings('.ht-setting, .ht-currency, .ht-language, .minicart, .cw-sub-menu li').slideToggle();
-        // });
-        // $('.ht-setting-trigger.is-active').siblings('.catmenu-body').slideDown();
+        $('.ht-setting-trigger, .ht-currency-trigger, .ht-language-trigger, .hm-minicart-trigger, .cw-sub-menu').on('click', function (e) {
+            e.preventDefault();
+            $(this).toggleClass('is-active');
+            $(this).siblings('.ht-setting, .ht-currency, .ht-language, .minicart, .cw-sub-menu li').slideToggle();
+        });
+        $('.ht-setting-trigger.is-active').siblings('.catmenu-body').slideDown();
     }, [])
    
     return (
@@ -188,7 +182,7 @@ const Navbar = () => {
                                         {/* <!-- Header Middle Wishlist Area End Here --> */}
                                         {/* <!-- Begin Header Mini Cart Area --> */}
                                         <li className="hm-minicart">
-                                            <div className={isActive ? 'hm-minicart-trigger is-active' : 'hm-minicart-trigger'} onClick={ToggleClass}>
+                                            <div className='hm-minicart-trigger'>
                                                 <span className="item-icon"></span>
                                                 <span className="item-text">£80.00
                                                     <span className="cart-item-count">2</span>
