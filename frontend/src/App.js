@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { useScript } from "react-use-scripts";
+import {useEffect} from 'react'
 
 // Import Necessary CSS
 import "./style.css";
@@ -37,15 +38,24 @@ import Footer from "./components/bodycomponents/Footer";
 function App() {
   const { ScriptLoader } = useScript();
 
+  var loadScript = function(src){
+    var tag = document.createElement('script');
+    tag.async = false;
+    tag.src = src;
+    tag.type = 'text/javascript'
+    document.body.appendChild(tag);
+  }
+  useEffect(() => {
+    loadScript('./js/vendor/jquery-1.12.4.min.js')
+    loadScript('./js/vendor/popper.min.js')
+    loadScript('./js/slick.min.js')
+    loadScript('./js/owl.carousel.min.js')
+    loadScript('./js/jquery-ui.min.js')
+    loadScript('./js/main.js')
+  }, [])
+
   return (
     <Router>
-      <ScriptLoader
-        id="custom-script"
-        src="./js/main.js"
-        delayMs={0}
-        onCreate={() => console.log("created!")}
-        type="text/javascript"
-      />
 
       {/* Navbar */}
       <Navbar />

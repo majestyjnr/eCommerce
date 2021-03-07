@@ -1,10 +1,17 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 import Logo from '../../images/menu/logo/1.jpg'
 
 const Navbar = () => {
 
+    const [isActive, setIsActive] = useState('false');
+
+    const ToggleClass = () => {
+        setIsActive(!isActive);
+        
+    }
+   
     return (
         <header>
                 <div className="header-top">
@@ -172,7 +179,7 @@ const Navbar = () => {
                                         {/* <!-- Header Middle Wishlist Area End Here --> */}
                                         {/* <!-- Begin Header Mini Cart Area --> */}
                                         <li className="hm-minicart">
-                                            <div className="hm-minicart-trigger">
+                                            <div className={isActive ? 'hm-minicart-trigger is-active' : 'hm-minicart-trigger'} onClick={ToggleClass}>
                                                 <span className="item-icon"></span>
                                                 <span className="item-text">£80.00
                                                     <span className="cart-item-count">2</span>
