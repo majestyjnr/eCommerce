@@ -19,9 +19,9 @@ const Register = () => {
             lastname: lastname,
             email: email,
             phone: phone,
-            address: [],
-            cart: [],
-            wishlist: [],
+            // address: [],
+            // cart: [],
+            // wishlist: [],
             password: password
         }
 
