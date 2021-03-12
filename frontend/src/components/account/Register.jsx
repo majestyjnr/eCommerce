@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
+import axios from 'axios'
 
 const Register = () => {
 
@@ -13,7 +14,19 @@ const Register = () => {
 
     function registerUser(e){
         e.preventDefault();
-        console.log(firstname)
+        const newUser = {
+            firstname: firstname,
+            lastname: lastname,
+            email: email,
+            phone: phone,
+            address: [],
+            cart: [],
+            wishlist: [],
+            password: password
+        }
+
+        console.log(newUser)
+        
     }
 
     useEffect(() => {
