@@ -1,4 +1,5 @@
 import React, {useEffect} from 'react'
+import {Link} from 'react-router-dom'
 
 const Login = () => {
     useEffect(() => {
@@ -11,7 +12,7 @@ const Login = () => {
                     <div className="breadcrumb-content">
                         <ul>
                             <li><a href="index.html">Home</a></li>
-                            <li className="active">Login Register</li>
+                            <li className="active">Login</li>
                         </ul>
                     </div>
                 </div>
@@ -21,7 +22,7 @@ const Login = () => {
                     <div className="row">
                         <div className="col-sm-12 col-md-12 col-xs-12 col-lg-6 mb-30">
                             <form action="#" >
-                                <div className="login-form">
+                                <div className="login-form mt-60">
                                     <h4 className="login-title">Login</h4>
                                     <div className="row">
                                         <div className="col-md-12 col-12 mb-20">
@@ -39,42 +40,13 @@ const Login = () => {
                                             </div>
                                         </div>
                                         <div className="col-md-4 mt-10 mb-20 text-left text-md-right">
-                                            <a href="#"> Forgotten pasward?</a>
+                                            <a href="#"> Forgotten password?</a>
                                         </div>
                                         <div className="col-md-12">
                                             <button className="register-button mt-0">Login</button>
                                         </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <div className="col-sm-12 col-md-12 col-lg-6 col-xs-12">
-                            <form action="#">
-                                <div className="login-form">
-                                    <h4 className="login-title">Register</h4>
-                                    <div className="row">
-                                        <div className="col-md-6 col-12 mb-20">
-                                            <label>First Name</label>
-                                            <input className="mb-0" type="text" placeholder="First Name"/>
-                                        </div>
-                                        <div className="col-md-6 col-12 mb-20">
-                                            <label>Last Name</label>
-                                            <input className="mb-0" type="text" placeholder="Last Name"/>
-                                        </div>
-                                        <div className="col-md-12 mb-20">
-                                            <label>Email Address*</label>
-                                            <input className="mb-0" type="email" placeholder="Email Address"/>
-                                        </div>
-                                        <div className="col-md-6 mb-20">
-                                            <label>Password</label>
-                                            <input className="mb-0" type="password" placeholder="Password"/>
-                                        </div>
-                                        <div className="col-md-6 mb-20">
-                                            <label>Confirm Password</label>
-                                            <input className="mb-0" type="password" placeholder="Confirm Password"/>
-                                        </div>
-                                        <div className="col-12">
-                                            <button className="register-button mt-0">Register</button>
+                                        <div className="col-md-12 mt-20 mb-20 text-center text-md-center">
+                                            Not having an account? <Link to="/account/register"> Sign Up</Link>
                                         </div>
                                     </div>
                                 </div>

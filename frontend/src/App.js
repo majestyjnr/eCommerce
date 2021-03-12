@@ -32,6 +32,7 @@ import Sell from "./components/store/Sell";
 import Cart from "./components/store/Cart";
 import Faq from "./components/store/Faq";
 import Login from "./components/account/Login";
+import Register from "./components/account/Register";
 import Checkout from "./components/payment/Checkout";
 import Wishlist from "./components/store/Wishlist";
 import Footer from "./components/bodycomponents/Footer";
@@ -61,6 +62,7 @@ function App() {
 
       {/* Account */}
       <Route path="/account/login" exact component={Login} />
+      <Route path="/account/register" exact component={Register} />
       <Route path="/shopping-cart" exact component={Cart} />
       <Route path="/wishlist" exact component={Wishlist} />
 

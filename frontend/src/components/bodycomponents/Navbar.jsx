@@ -38,9 +38,9 @@ const Navbar = () => {
                                             <div className="ht-setting-trigger"><span>Setting</span></div>
                                             <div className="setting ht-setting">
                                                 <ul className="ht-setting-list">
-                                                    <li><a href="login-register.html">My Account</a></li>
-                                                    <li><a href="checkout.html">Checkout</a></li>
-                                                    <li><a href="login-register.html">Sign In</a></li>
+                                                    <li><Link to="/account/">My Account</Link></li>
+                                                    <li><Link to="/checkout">Checkout</Link></li>
+                                                    <li><Link to="/account/login">Log In</Link></li>
                                                 </ul>
                                             </div>
                                         </li>
