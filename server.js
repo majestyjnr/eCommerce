@@ -23,17 +23,29 @@ app.post('/api/register-user', function(req, res){
 })
 
 
+app.post('/api/checkout', function(req, res){
+
+})
 
 
 
+// ##################### SELLER REGISTRATION #######################
+app.post('/api/seller_reg', function(req, res){
+
+})
 
 
 
 // ##################### GET PRODUCTS #######################
 
 app.get('/api/products', function(req, res){
-    res.json()
+    Products.find().then((products)=>{res.json(products)})
 })
+
+app.get('/api/todays-deals', function(req, res){
+
+})
+
 
 
 
