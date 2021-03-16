@@ -1,1 +1,7 @@
-import {createStore} from 'redux'
+import {createStore, combineReducers} from 'redux'
+
+const initialState = {}
+const reducer = ({
+    
+})
+const store = createStore(reducer, initialState)
