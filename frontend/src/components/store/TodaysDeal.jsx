@@ -1,50 +1,62 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import {Link} from 'react-router-dom'
+import axios from 'axios'
 import Banner from "../../images/bg-banner/2.jpg"
 
 const TodaysDeal = () => {
+
+    const [products, setProducts] = useState([])
+
     useEffect(() => {
         document.title = "Today's Deals | Limpupa"
+
+        const fetchData = async () =>{
+            const {data} = await axios.get('/api/todays-deals')
+            setProducts(data)
+            console.log(data)
+        }
+        
+        fetchData()
     }, []);
 
     return (
         <div>
-            <div class="breadcrumb-area">
-                <div class="container">
-                    <div class="breadcrumb-content">
+            <div className="breadcrumb-area">
+                <div className="container">
+                    <div className="breadcrumb-content">
                         <ul>
                             <li><a href="index.html">Home</a></li>
-                            <li class="active">Today's Deals</li>
+                            <li className="active">Today's Deals</li>
                         </ul>
                     </div>
                 </div>
             </div>
 
-            <div class="content-wraper pt-60 pb-60">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-9 order-1 order-lg-2">
-                            <div class="single-banner shop-page-banner">
+            <div className="content-wraper pt-60 pb-60">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-9 order-1 order-lg-2">
+                            <div className="single-banner shop-page-banner">
                                 <a href="#">
                                     <img src={Banner} alt="Li's Static Banner"/>
                                 </a>
                             </div>
-                            <div class="shop-top-bar mt-30">
-                                <div class="shop-bar-inner">
-                                    <div class="product-view-mode">
-                                        <ul class="nav shop-item-filter-list" role="tablist">
-                                            <li role="presentation"><a data-toggle="tab" role="tab" aria-controls="grid-view" href="#grid-view"><i class="fa fa-th"></i></a></li>
-                                            <li class="active" role="presentation"><a aria-selected="true" class="active show" data-toggle="tab" role="tab" aria-controls="list-view" href="#list-view"><i class="fa fa-th-list"></i></a></li>
+                            <div className="shop-top-bar mt-30">
+                                <div className="shop-bar-inner">
+                                    <div className="product-view-mode">
+                                        <ul className="nav shop-item-filter-list" role="tablist">
+                                            <li role="presentation"><a data-toggle="tab" role="tab" aria-controls="grid-view" href="#grid-view"><i className="fa fa-th"></i></a></li>
+                                            <li className="active" role="presentation"><a aria-selected="true" className="active show" data-toggle="tab" role="tab" aria-controls="list-view" href="#list-view"><i className="fa fa-th-list"></i></a></li>
                                         </ul>
                                     </div>
-                                    <div class="toolbar-amount">
+                                    <div className="toolbar-amount">
                                         <span>Showing 1 to 9 of 15</span>
                                     </div>
                                 </div>
-                                <div class="product-select-box">
-                                    <div class="product-short">
+                                <div className="product-select-box">
+                                    <div className="product-short">
                                         <p>Sort By:</p>
-                                        <select class="nice-select">
+                                        <select className="nice-select">
                                             <option value="trending">Relevance</option>
                                             <option value="sales">Name (A - Z)</option>
                                             <option value="sales">Name (Z - A)</option>
@@ -56,486 +68,486 @@ const TodaysDeal = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div class="shop-products-wrapper">
-                                <div class="tab-content">
-                                    <div id="grid-view" class="tab-pane fade" role="tabpanel">
-                                        <div class="product-area shop-product-area">
-                                            <div class="row">
-                                                <div class="col-lg-4 col-md-4 col-sm-6 mt-40">
-                                                    <div class="single-product-wrap">
-                                                        <div class="product-image">
+                            <div className="shop-products-wrapper">
+                                <div className="tab-content">
+                                    <div id="grid-view" className="tab-pane fade" role="tabpanel">
+                                        <div className="product-area shop-product-area">
+                                            <div className="row">
+                                                <div className="col-lg-4 col-md-4 col-sm-6 mt-40">
+                                                    <div className="single-product-wrap">
+                                                        <div className="product-image">
                                                             <Link to = '/product'>
                                                                 <img src="images/product/large-size/1.jpg" 
                                                                alt="Product Image" />
                                                             </Link>
-                                                            <span class="sticker">New</span>
+                                                            <span className="sticker">New</span>
                                                         </div>
-                                                        <div class="product_desc">
-                                                            <div class="product_desc_info">
-                                                                <div class="product-review">
-                                                                    <h5 class="manufacturer">
+                                                        <div className="product_desc">
+                                                            <div className="product_desc_info">
+                                                                <div className="product-review">
+                                                                    <h5 className="manufacturer">
                                                                         <Link to='/product'>Graphic Corner</Link>
                                                                     </h5>
-                                                                    <div class="rating-box">
-                                                                        <ul class="rating">
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li class="no-star"><i class="fa fa-star-o"></i></li>
-                                                                            <li class="no-star"><i class="fa fa-star-o"></i></li>
+                                                                    <div className="rating-box">
+                                                                        <ul className="rating">
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li className="no-star"><i className="fa fa-star-o"></i></li>
+                                                                            <li className="no-star"><i className="fa fa-star-o"></i></li>
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <h4><a class="product_name" href="single-product.html">Accusantium dolorem1</a></h4>
-                                                                <div class="price-box">
-                                                                    <span class="new-price">$46.80</span>
+                                                                <h4><a className="product_name" href="single-product.html">Accusantium dolorem1</a></h4>
+                                                                <div className="price-box">
+                                                                    <span className="new-price">$46.80</span>
                                                                 </div>
                                                             </div>
-                                                            <div class="add-actions">
-                                                                <ul class="add-actions-link">
-                                                                    <li class="add-cart active"><a href="shopping-cart.html">Add to cart</a></li>
-                                                                    <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
-                                                                    <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                                                            <div className="add-actions">
+                                                                <ul className="add-actions-link">
+                                                                    <li className="add-cart active"><a href="shopping-cart.html">Add to cart</a></li>
+                                                                    <li><a href="#" title="quick view" className="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i className="fa fa-eye"></i></a></li>
+                                                                    <li><a className="links-details" href="wishlist.html"><i className="fa fa-heart-o"></i></a></li>
                                                                 </ul>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-4 col-md-4 col-sm-6 mt-40">
-                                                    <div class="single-product-wrap">
-                                                        <div class="product-image">
+                                                <div className="col-lg-4 col-md-4 col-sm-6 mt-40">
+                                                    <div className="single-product-wrap">
+                                                        <div className="product-image">
                                                             <Link to = '/product'>
                                                                 <img src="images/product/large-size/2.jpg" 
                                                                alt="Product Image" />
                                                             </Link>
-                                                            <span class="sticker">New</span>
+                                                            <span className="sticker">New</span>
                                                         </div>
-                                                        <div class="product_desc">
-                                                            <div class="product_desc_info">
-                                                                <div class="product-review">
-                                                                    <h5 class="manufacturer">
+                                                        <div className="product_desc">
+                                                            <div className="product_desc_info">
+                                                                <div className="product-review">
+                                                                    <h5 className="manufacturer">
                                                                         <Link to='/product'>Graphic Corner</Link>
                                                                     </h5>
-                                                                    <div class="rating-box">
-                                                                        <ul class="rating">
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li class="no-star"><i class="fa fa-star-o"></i></li>
-                                                                            <li class="no-star"><i class="fa fa-star-o"></i></li>
+                                                                    <div className="rating-box">
+                                                                        <ul className="rating">
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li className="no-star"><i className="fa fa-star-o"></i></li>
+                                                                            <li className="no-star"><i className="fa fa-star-o"></i></li>
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <h4><a class="product_name" href="single-product.html">Accusantium dolorem1</a></h4>
-                                                                <div class="price-box">
-                                                                    <span class="new-price">$46.80</span>
+                                                                <h4><a className="product_name" href="single-product.html">Accusantium dolorem1</a></h4>
+                                                                <div className="price-box">
+                                                                    <span className="new-price">$46.80</span>
                                                                 </div>
                                                             </div>
-                                                            <div class="add-actions">
-                                                                <ul class="add-actions-link">
-                                                                    <li class="add-cart active"><a href="shopping-cart.html">Add to cart</a></li>
-                                                                    <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
-                                                                    <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                                                            <div className="add-actions">
+                                                                <ul className="add-actions-link">
+                                                                    <li className="add-cart active"><a href="shopping-cart.html">Add to cart</a></li>
+                                                                    <li><a href="#" title="quick view" className="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i className="fa fa-eye"></i></a></li>
+                                                                    <li><a className="links-details" href="wishlist.html"><i className="fa fa-heart-o"></i></a></li>
                                                                 </ul>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-4 col-md-4 col-sm-6 mt-40">
-                                                    <div class="single-product-wrap">
-                                                        <div class="product-image">
+                                                <div className="col-lg-4 col-md-4 col-sm-6 mt-40">
+                                                    <div className="single-product-wrap">
+                                                        <div className="product-image">
                                                             <Link to = '/product'>
                                                                 <img src="images/product/large-size/3.jpg" 
                                                                alt="Product Image" />
                                                             </Link>
-                                                            <span class="sticker">New</span>
+                                                            <span className="sticker">New</span>
                                                         </div>
-                                                        <div class="product_desc">
-                                                            <div class="product_desc_info">
-                                                                <div class="product-review">
-                                                                    <h5 class="manufacturer">
+                                                        <div className="product_desc">
+                                                            <div className="product_desc_info">
+                                                                <div className="product-review">
+                                                                    <h5 className="manufacturer">
                                                                         <Link to='/product'>Graphic Corner</Link>
                                                                     </h5>
-                                                                    <div class="rating-box">
-                                                                        <ul class="rating">
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li class="no-star"><i class="fa fa-star-o"></i></li>
-                                                                            <li class="no-star"><i class="fa fa-star-o"></i></li>
+                                                                    <div className="rating-box">
+                                                                        <ul className="rating">
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li className="no-star"><i className="fa fa-star-o"></i></li>
+                                                                            <li className="no-star"><i className="fa fa-star-o"></i></li>
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <h4><a class="product_name" href="single-product.html">Accusantium dolorem1</a></h4>
-                                                                <div class="price-box">
-                                                                    <span class="new-price">$46.80</span>
+                                                                <h4><a className="product_name" href="single-product.html">Accusantium dolorem1</a></h4>
+                                                                <div className="price-box">
+                                                                    <span className="new-price">$46.80</span>
                                                                 </div>
                                                             </div>
-                                                            <div class="add-actions">
-                                                                <ul class="add-actions-link">
-                                                                    <li class="add-cart active"><a href="shopping-cart.html">Add to cart</a></li>
-                                                                    <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
-                                                                    <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                                                            <div className="add-actions">
+                                                                <ul className="add-actions-link">
+                                                                    <li className="add-cart active"><a href="shopping-cart.html">Add to cart</a></li>
+                                                                    <li><a href="#" title="quick view" className="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i className="fa fa-eye"></i></a></li>
+                                                                    <li><a className="links-details" href="wishlist.html"><i className="fa fa-heart-o"></i></a></li>
                                                                 </ul>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-4 col-md-4 col-sm-6 mt-40">
-                                                    <div class="single-product-wrap">
-                                                        <div class="product-image">
+                                                <div className="col-lg-4 col-md-4 col-sm-6 mt-40">
+                                                    <div className="single-product-wrap">
+                                                        <div className="product-image">
                                                             <Link to = '/product'>
                                                                 <img src="images/product/large-size/4.jpg" 
                                                                alt="Product Image" />
                                                             </Link>
-                                                            <span class="sticker">New</span>
+                                                            <span className="sticker">New</span>
                                                         </div>
-                                                        <div class="product_desc">
-                                                            <div class="product_desc_info">
-                                                                <div class="product-review">
-                                                                    <h5 class="manufacturer">
+                                                        <div className="product_desc">
+                                                            <div className="product_desc_info">
+                                                                <div className="product-review">
+                                                                    <h5 className="manufacturer">
                                                                         <Link to='/product'>Graphic Corner</Link>
                                                                     </h5>
-                                                                    <div class="rating-box">
-                                                                        <ul class="rating">
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li class="no-star"><i class="fa fa-star-o"></i></li>
-                                                                            <li class="no-star"><i class="fa fa-star-o"></i></li>
+                                                                    <div className="rating-box">
+                                                                        <ul className="rating">
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li className="no-star"><i className="fa fa-star-o"></i></li>
+                                                                            <li className="no-star"><i className="fa fa-star-o"></i></li>
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <h4><a class="product_name" href="single-product.html">Accusantium dolorem1</a></h4>
-                                                                <div class="price-box">
-                                                                    <span class="new-price">$46.80</span>
+                                                                <h4><a className="product_name" href="single-product.html">Accusantium dolorem1</a></h4>
+                                                                <div className="price-box">
+                                                                    <span className="new-price">$46.80</span>
                                                                 </div>
                                                             </div>
-                                                            <div class="add-actions">
-                                                                <ul class="add-actions-link">
-                                                                    <li class="add-cart active"><a href="shopping-cart.html">Add to cart</a></li>
-                                                                    <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
-                                                                    <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                                                            <div className="add-actions">
+                                                                <ul className="add-actions-link">
+                                                                    <li className="add-cart active"><a href="shopping-cart.html">Add to cart</a></li>
+                                                                    <li><a href="#" title="quick view" className="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i className="fa fa-eye"></i></a></li>
+                                                                    <li><a className="links-details" href="wishlist.html"><i className="fa fa-heart-o"></i></a></li>
                                                                 </ul>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-4 col-md-4 col-sm-6 mt-40">
-                                                    <div class="single-product-wrap">
-                                                        <div class="product-image">
+                                                <div className="col-lg-4 col-md-4 col-sm-6 mt-40">
+                                                    <div className="single-product-wrap">
+                                                        <div className="product-image">
                                                             <Link to = '/product'>
                                                                 <img src="images/product/large-size/5.jpg" 
                                                                alt="Product Image" />
                                                             </Link>
-                                                            <span class="sticker">New</span>
+                                                            <span className="sticker">New</span>
                                                         </div>
-                                                        <div class="product_desc">
-                                                            <div class="product_desc_info">
-                                                                <div class="product-review">
-                                                                    <h5 class="manufacturer">
+                                                        <div className="product_desc">
+                                                            <div className="product_desc_info">
+                                                                <div className="product-review">
+                                                                    <h5 className="manufacturer">
                                                                         <Link to='/product'>Graphic Corner</Link>
                                                                     </h5>
-                                                                    <div class="rating-box">
-                                                                        <ul class="rating">
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li class="no-star"><i class="fa fa-star-o"></i></li>
-                                                                            <li class="no-star"><i class="fa fa-star-o"></i></li>
+                                                                    <div className="rating-box">
+                                                                        <ul className="rating">
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li className="no-star"><i className="fa fa-star-o"></i></li>
+                                                                            <li className="no-star"><i className="fa fa-star-o"></i></li>
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <h4><a class="product_name" href="single-product.html">Accusantium dolorem1</a></h4>
-                                                                <div class="price-box">
-                                                                    <span class="new-price">$46.80</span>
+                                                                <h4><a className="product_name" href="single-product.html">Accusantium dolorem1</a></h4>
+                                                                <div className="price-box">
+                                                                    <span className="new-price">$46.80</span>
                                                                 </div>
                                                             </div>
-                                                            <div class="add-actions">
-                                                                <ul class="add-actions-link">
-                                                                    <li class="add-cart active"><a href="shopping-cart.html">Add to cart</a></li>
-                                                                    <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
-                                                                    <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                                                            <div className="add-actions">
+                                                                <ul className="add-actions-link">
+                                                                    <li className="add-cart active"><a href="shopping-cart.html">Add to cart</a></li>
+                                                                    <li><a href="#" title="quick view" className="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i className="fa fa-eye"></i></a></li>
+                                                                    <li><a className="links-details" href="wishlist.html"><i className="fa fa-heart-o"></i></a></li>
                                                                 </ul>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-4 col-md-4 col-sm-6 mt-40">
-                                                    <div class="single-product-wrap">
-                                                        <div class="product-image">
+                                                <div className="col-lg-4 col-md-4 col-sm-6 mt-40">
+                                                    <div className="single-product-wrap">
+                                                        <div className="product-image">
                                                             <Link to = '/product'>
                                                                 <img src="images/product/large-size/6.jpg" 
                                                                alt="Product Image" />
                                                             </Link>
-                                                            <span class="sticker">New</span>
+                                                            <span className="sticker">New</span>
                                                         </div>
-                                                        <div class="product_desc">
-                                                            <div class="product_desc_info">
-                                                                <div class="product-review">
-                                                                    <h5 class="manufacturer">
+                                                        <div className="product_desc">
+                                                            <div className="product_desc_info">
+                                                                <div className="product-review">
+                                                                    <h5 className="manufacturer">
                                                                         <Link to='/product'>Graphic Corner</Link>
                                                                     </h5>
-                                                                    <div class="rating-box">
-                                                                        <ul class="rating">
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li class="no-star"><i class="fa fa-star-o"></i></li>
-                                                                            <li class="no-star"><i class="fa fa-star-o"></i></li>
+                                                                    <div className="rating-box">
+                                                                        <ul className="rating">
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li className="no-star"><i className="fa fa-star-o"></i></li>
+                                                                            <li className="no-star"><i className="fa fa-star-o"></i></li>
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <h4><a class="product_name" href="single-product.html">Accusantium dolorem1</a></h4>
-                                                                <div class="price-box">
-                                                                    <span class="new-price">$46.80</span>
+                                                                <h4><a className="product_name" href="single-product.html">Accusantium dolorem1</a></h4>
+                                                                <div className="price-box">
+                                                                    <span className="new-price">$46.80</span>
                                                                 </div>
                                                             </div>
-                                                            <div class="add-actions">
-                                                                <ul class="add-actions-link">
-                                                                    <li class="add-cart active"><a href="shopping-cart.html">Add to cart</a></li>
-                                                                    <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
-                                                                    <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                                                            <div className="add-actions">
+                                                                <ul className="add-actions-link">
+                                                                    <li className="add-cart active"><a href="shopping-cart.html">Add to cart</a></li>
+                                                                    <li><a href="#" title="quick view" className="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i className="fa fa-eye"></i></a></li>
+                                                                    <li><a className="links-details" href="wishlist.html"><i className="fa fa-heart-o"></i></a></li>
                                                                 </ul>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-4 col-md-4 col-sm-6 mt-40">
-                                                    <div class="single-product-wrap">
-                                                        <div class="product-image">
+                                                <div className="col-lg-4 col-md-4 col-sm-6 mt-40">
+                                                    <div className="single-product-wrap">
+                                                        <div className="product-image">
                                                             <Link to = '/product'>
                                                                 <img src="images/product/large-size/7.jpg" 
                                                                alt="Product Image" />
                                                             </Link>
-                                                            <span class="sticker">New</span>
+                                                            <span className="sticker">New</span>
                                                         </div>
-                                                        <div class="product_desc">
-                                                            <div class="product_desc_info">
-                                                                <div class="product-review">
-                                                                    <h5 class="manufacturer">
+                                                        <div className="product_desc">
+                                                            <div className="product_desc_info">
+                                                                <div className="product-review">
+                                                                    <h5 className="manufacturer">
                                                                         <Link to='/product'>Graphic Corner</Link>
                                                                     </h5>
-                                                                    <div class="rating-box">
-                                                                        <ul class="rating">
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li class="no-star"><i class="fa fa-star-o"></i></li>
-                                                                            <li class="no-star"><i class="fa fa-star-o"></i></li>
+                                                                    <div className="rating-box">
+                                                                        <ul className="rating">
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li className="no-star"><i className="fa fa-star-o"></i></li>
+                                                                            <li className="no-star"><i className="fa fa-star-o"></i></li>
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <h4><a class="product_name" href="single-product.html">Accusantium dolorem1</a></h4>
-                                                                <div class="price-box">
-                                                                    <span class="new-price">$46.80</span>
+                                                                <h4><a className="product_name" href="single-product.html">Accusantium dolorem1</a></h4>
+                                                                <div className="price-box">
+                                                                    <span className="new-price">$46.80</span>
                                                                 </div>
                                                             </div>
-                                                            <div class="add-actions">
-                                                                <ul class="add-actions-link">
-                                                                    <li class="add-cart active"><a href="shopping-cart.html">Add to cart</a></li>
-                                                                    <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
-                                                                    <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                                                            <div className="add-actions">
+                                                                <ul className="add-actions-link">
+                                                                    <li className="add-cart active"><a href="shopping-cart.html">Add to cart</a></li>
+                                                                    <li><a href="#" title="quick view" className="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i className="fa fa-eye"></i></a></li>
+                                                                    <li><a className="links-details" href="wishlist.html"><i className="fa fa-heart-o"></i></a></li>
                                                                 </ul>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-4 col-md-4 col-sm-6 mt-40">
-                                                    <div class="single-product-wrap">
-                                                        <div class="product-image">
+                                                <div className="col-lg-4 col-md-4 col-sm-6 mt-40">
+                                                    <div className="single-product-wrap">
+                                                        <div className="product-image">
                                                             <Link to = '/product'>
                                                                 <img src="images/product/large-size/8.jpg" 
                                                                alt="Product Image" />
                                                             </Link>
-                                                            <span class="sticker">New</span>
+                                                            <span className="sticker">New</span>
                                                         </div>
-                                                        <div class="product_desc">
-                                                            <div class="product_desc_info">
-                                                                <div class="product-review">
-                                                                    <h5 class="manufacturer">
+                                                        <div className="product_desc">
+                                                            <div className="product_desc_info">
+                                                                <div className="product-review">
+                                                                    <h5 className="manufacturer">
                                                                         <Link to='/product'>Graphic Corner</Link>
                                                                     </h5>
-                                                                    <div class="rating-box">
-                                                                        <ul class="rating">
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li class="no-star"><i class="fa fa-star-o"></i></li>
-                                                                            <li class="no-star"><i class="fa fa-star-o"></i></li>
+                                                                    <div className="rating-box">
+                                                                        <ul className="rating">
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li className="no-star"><i className="fa fa-star-o"></i></li>
+                                                                            <li className="no-star"><i className="fa fa-star-o"></i></li>
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <h4><a class="product_name" href="single-product.html">Accusantium dolorem1</a></h4>
-                                                                <div class="price-box">
-                                                                    <span class="new-price">$46.80</span>
+                                                                <h4><a className="product_name" href="single-product.html">Accusantium dolorem1</a></h4>
+                                                                <div className="price-box">
+                                                                    <span className="new-price">$46.80</span>
                                                                 </div>
                                                             </div>
-                                                            <div class="add-actions">
-                                                                <ul class="add-actions-link">
-                                                                    <li class="add-cart active"><a href="shopping-cart.html">Add to cart</a></li>
-                                                                    <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
-                                                                    <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                                                            <div className="add-actions">
+                                                                <ul className="add-actions-link">
+                                                                    <li className="add-cart active"><a href="shopping-cart.html">Add to cart</a></li>
+                                                                    <li><a href="#" title="quick view" className="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i className="fa fa-eye"></i></a></li>
+                                                                    <li><a className="links-details" href="wishlist.html"><i className="fa fa-heart-o"></i></a></li>
                                                                 </ul>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-4 col-md-4 col-sm-6 mt-40">
-                                                    <div class="single-product-wrap">
-                                                        <div class="product-image">
+                                                <div className="col-lg-4 col-md-4 col-sm-6 mt-40">
+                                                    <div className="single-product-wrap">
+                                                        <div className="product-image">
                                                             <Link to = '/product'>
                                                                 <img src="images/product/large-size/9.jpg" 
                                                                alt="Product Image" />
                                                             </Link>
-                                                            <span class="sticker">New</span>
+                                                            <span className="sticker">New</span>
                                                         </div>
-                                                        <div class="product_desc">
-                                                            <div class="product_desc_info">
-                                                                <div class="product-review">
-                                                                    <h5 class="manufacturer">
+                                                        <div className="product_desc">
+                                                            <div className="product_desc_info">
+                                                                <div className="product-review">
+                                                                    <h5 className="manufacturer">
                                                                         <Link to='/product'>Graphic Corner</Link>
                                                                     </h5>
-                                                                    <div class="rating-box">
-                                                                        <ul class="rating">
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li class="no-star"><i class="fa fa-star-o"></i></li>
-                                                                            <li class="no-star"><i class="fa fa-star-o"></i></li>
+                                                                    <div className="rating-box">
+                                                                        <ul className="rating">
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li className="no-star"><i className="fa fa-star-o"></i></li>
+                                                                            <li className="no-star"><i className="fa fa-star-o"></i></li>
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <h4><a class="product_name" href="single-product.html">Accusantium dolorem1</a></h4>
-                                                                <div class="price-box">
-                                                                    <span class="new-price">$46.80</span>
+                                                                <h4><a className="product_name" href="single-product.html">Accusantium dolorem1</a></h4>
+                                                                <div className="price-box">
+                                                                    <span className="new-price">$46.80</span>
                                                                 </div>
                                                             </div>
-                                                            <div class="add-actions">
-                                                                <ul class="add-actions-link">
-                                                                    <li class="add-cart active"><a href="shopping-cart.html">Add to cart</a></li>
-                                                                    <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
-                                                                    <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                                                            <div className="add-actions">
+                                                                <ul className="add-actions-link">
+                                                                    <li className="add-cart active"><a href="shopping-cart.html">Add to cart</a></li>
+                                                                    <li><a href="#" title="quick view" className="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i className="fa fa-eye"></i></a></li>
+                                                                    <li><a className="links-details" href="wishlist.html"><i className="fa fa-heart-o"></i></a></li>
                                                                 </ul>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-4 col-md-4 col-sm-6 mt-40">
-                                                    <div class="single-product-wrap">
-                                                        <div class="product-image">
+                                                <div className="col-lg-4 col-md-4 col-sm-6 mt-40">
+                                                    <div className="single-product-wrap">
+                                                        <div className="product-image">
                                                             <Link to = '/product'>
                                                                 <img src="images/product/large-size/10.jpg" 
                                                                alt="Product Image" />
                                                             </Link>
-                                                            <span class="sticker">New</span>
+                                                            <span className="sticker">New</span>
                                                         </div>
-                                                        <div class="product_desc">
-                                                            <div class="product_desc_info">
-                                                                <div class="product-review">
-                                                                    <h5 class="manufacturer">
+                                                        <div className="product_desc">
+                                                            <div className="product_desc_info">
+                                                                <div className="product-review">
+                                                                    <h5 className="manufacturer">
                                                                         <Link to='/product'>Graphic Corner</Link>
                                                                     </h5>
-                                                                    <div class="rating-box">
-                                                                        <ul class="rating">
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li class="no-star"><i class="fa fa-star-o"></i></li>
-                                                                            <li class="no-star"><i class="fa fa-star-o"></i></li>
+                                                                    <div className="rating-box">
+                                                                        <ul className="rating">
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li className="no-star"><i className="fa fa-star-o"></i></li>
+                                                                            <li className="no-star"><i className="fa fa-star-o"></i></li>
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <h4><a class="product_name" href="single-product.html">Accusantium dolorem1</a></h4>
-                                                                <div class="price-box">
-                                                                    <span class="new-price">$46.80</span>
+                                                                <h4><a className="product_name" href="single-product.html">Accusantium dolorem1</a></h4>
+                                                                <div className="price-box">
+                                                                    <span className="new-price">$46.80</span>
                                                                 </div>
                                                             </div>
-                                                            <div class="add-actions">
-                                                                <ul class="add-actions-link">
-                                                                    <li class="add-cart active"><a href="shopping-cart.html">Add to cart</a></li>
-                                                                    <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
-                                                                    <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                                                            <div className="add-actions">
+                                                                <ul className="add-actions-link">
+                                                                    <li className="add-cart active"><a href="shopping-cart.html">Add to cart</a></li>
+                                                                    <li><a href="#" title="quick view" className="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i className="fa fa-eye"></i></a></li>
+                                                                    <li><a className="links-details" href="wishlist.html"><i className="fa fa-heart-o"></i></a></li>
                                                                 </ul>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-4 col-md-4 col-sm-6 mt-40">
-                                                    <div class="single-product-wrap">
-                                                        <div class="product-image">
+                                                <div className="col-lg-4 col-md-4 col-sm-6 mt-40">
+                                                    <div className="single-product-wrap">
+                                                        <div className="product-image">
                                                             <Link to = '/product'>
                                                                 <img src="images/product/large-size/11.jpg" 
                                                                alt="Product Image" />
                                                             </Link>
-                                                            <span class="sticker">New</span>
+                                                            <span className="sticker">New</span>
                                                         </div>
-                                                        <div class="product_desc">
-                                                            <div class="product_desc_info">
-                                                                <div class="product-review">
-                                                                    <h5 class="manufacturer">
+                                                        <div className="product_desc">
+                                                            <div className="product_desc_info">
+                                                                <div className="product-review">
+                                                                    <h5 className="manufacturer">
                                                                         <Link to='/product'>Graphic Corner</Link>
                                                                     </h5>
-                                                                    <div class="rating-box">
-                                                                        <ul class="rating">
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li class="no-star"><i class="fa fa-star-o"></i></li>
-                                                                            <li class="no-star"><i class="fa fa-star-o"></i></li>
+                                                                    <div className="rating-box">
+                                                                        <ul className="rating">
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li className="no-star"><i className="fa fa-star-o"></i></li>
+                                                                            <li className="no-star"><i className="fa fa-star-o"></i></li>
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <h4><a class="product_name" href="single-product.html">Accusantium dolorem1</a></h4>
-                                                                <div class="price-box">
-                                                                    <span class="new-price">$46.80</span>
+                                                                <h4><a className="product_name" href="single-product.html">Accusantium dolorem1</a></h4>
+                                                                <div className="price-box">
+                                                                    <span className="new-price">$46.80</span>
                                                                 </div>
                                                             </div>
-                                                            <div class="add-actions">
-                                                                <ul class="add-actions-link">
-                                                                    <li class="add-cart active"><a href="shopping-cart.html">Add to cart</a></li>
-                                                                    <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
-                                                                    <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                                                            <div className="add-actions">
+                                                                <ul className="add-actions-link">
+                                                                    <li className="add-cart active"><a href="shopping-cart.html">Add to cart</a></li>
+                                                                    <li><a href="#" title="quick view" className="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i className="fa fa-eye"></i></a></li>
+                                                                    <li><a className="links-details" href="wishlist.html"><i className="fa fa-heart-o"></i></a></li>
                                                                 </ul>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-4 col-md-4 col-sm-6 mt-40">
-                                                    <div class="single-product-wrap">
-                                                        <div class="product-image">
+                                                <div className="col-lg-4 col-md-4 col-sm-6 mt-40">
+                                                    <div className="single-product-wrap">
+                                                        <div className="product-image">
                                                             <Link to = '/product'>
                                                                 <img src="images/product/large-size/12.jpg" 
                                                                alt="Product Image" />
                                                             </Link>
-                                                            <span class="sticker">New</span>
+                                                            <span className="sticker">New</span>
                                                         </div>
-                                                        <div class="product_desc">
-                                                            <div class="product_desc_info">
-                                                                <div class="product-review">
-                                                                    <h5 class="manufacturer">
+                                                        <div className="product_desc">
+                                                            <div className="product_desc_info">
+                                                                <div className="product-review">
+                                                                    <h5 className="manufacturer">
                                                                         <Link to='/product'>Graphic Corner</Link>
                                                                     </h5>
-                                                                    <div class="rating-box">
-                                                                        <ul class="rating">
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li class="no-star"><i class="fa fa-star-o"></i></li>
-                                                                            <li class="no-star"><i class="fa fa-star-o"></i></li>
+                                                                    <div className="rating-box">
+                                                                        <ul className="rating">
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li className="no-star"><i className="fa fa-star-o"></i></li>
+                                                                            <li className="no-star"><i className="fa fa-star-o"></i></li>
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <h4><a class="product_name" href="single-product.html">Accusantium dolorem1</a></h4>
-                                                                <div class="price-box">
-                                                                    <span class="new-price">$46.80</span>
+                                                                <h4><a className="product_name" href="single-product.html">Accusantium dolorem1</a></h4>
+                                                                <div className="price-box">
+                                                                    <span className="new-price">$46.80</span>
                                                                 </div>
                                                             </div>
-                                                            <div class="add-actions">
-                                                                <ul class="add-actions-link">
-                                                                    <li class="add-cart active"><a href="shopping-cart.html">Add to cart</a></li>
-                                                                    <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
-                                                                    <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                                                            <div className="add-actions">
+                                                                <ul className="add-actions-link">
+                                                                    <li className="add-cart active"><a href="shopping-cart.html">Add to cart</a></li>
+                                                                    <li><a href="#" title="quick view" className="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i className="fa fa-eye"></i></a></li>
+                                                                    <li><a className="links-details" href="wishlist.html"><i className="fa fa-heart-o"></i></a></li>
                                                                 </ul>
                                                             </div>
                                                         </div>
@@ -544,545 +556,545 @@ const TodaysDeal = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div id="list-view" class="tab-pane fade product-list-view active show" role="tabpanel">
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="row product-layout-list">
-                                                    <div class="col-lg-3 col-md-5 ">
-                                                        <div class="product-image">
+                                    <div id="list-view" className="tab-pane fade product-list-view active show" role="tabpanel">
+                                        <div className="row">
+                                            <div className="col">
+                                                <div className="row product-layout-list">
+                                                    <div className="col-lg-3 col-md-5 ">
+                                                        <div className="product-image">
                                                             <Link to = '/product'>
                                                                 <img src="images/product/large-size/12.jpg" 
                                                                alt="Product Image" />
                                                             </Link>
-                                                            <span class="sticker">New</span>
+                                                            <span className="sticker">New</span>
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-5 col-md-7">
-                                                        <div class="product_desc">
-                                                            <div class="product_desc_info">
-                                                                <div class="product-review">
-                                                                    <h5 class="manufacturer">
+                                                    <div className="col-lg-5 col-md-7">
+                                                        <div className="product_desc">
+                                                            <div className="product_desc_info">
+                                                                <div className="product-review">
+                                                                    <h5 className="manufacturer">
                                                                         <Link to='/product'>Graphic Corner</Link>
                                                                     </h5>
-                                                                    <div class="rating-box">
-                                                                        <ul class="rating">
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li class="no-star"><i class="fa fa-star-o"></i></li>
-                                                                            <li class="no-star"><i class="fa fa-star-o"></i></li>
+                                                                    <div className="rating-box">
+                                                                        <ul className="rating">
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li className="no-star"><i className="fa fa-star-o"></i></li>
+                                                                            <li className="no-star"><i className="fa fa-star-o"></i></li>
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <h4><a class="product_name" href="single-product.html">Hummingbird printed t-shirt</a></h4>
-                                                                <div class="price-box">
-                                                                    <span class="new-price">$46.80</span>
+                                                                <h4><a className="product_name" href="single-product.html">Hummingbird printed t-shirt</a></h4>
+                                                                <div className="price-box">
+                                                                    <span className="new-price">$46.80</span>
                                                                 </div>
                                                                 <p>Beach Camera Exclusive Bundle - Includes Two Samsung Radiant 360 R3 Wi-Fi Bluetooth Speakers. Fill The Entire Room With Exquisite Sound via Ring Radiator Technology. Stream And Control R3 Speakers Wirelessly With Your Smartphone. Sophisticated, Modern Desig</p>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-4">
-                                                        <div class="shop-add-action mb-xs-30">
-                                                            <ul class="add-actions-link">
-                                                                <li class="add-cart"><a href="#">Add to cart</a></li>
-                                                                <li class="wishlist"><a href="wishlist.html"><i class="fa fa-heart-o"></i>Add to wishlist</a></li>
-                                                                <li><a class="quick-view" data-toggle="modal" data-target="#exampleModalCenter" href="#"><i class="fa fa-eye"></i>Quick view</a></li>
+                                                    <div className="col-lg-4">
+                                                        <div className="shop-add-action mb-xs-30">
+                                                            <ul className="add-actions-link">
+                                                                <li className="add-cart"><a href="#">Add to cart</a></li>
+                                                                <li className="wishlist"><a href="wishlist.html"><i className="fa fa-heart-o"></i>Add to wishlist</a></li>
+                                                                <li><a className="quick-view" data-toggle="modal" data-target="#exampleModalCenter" href="#"><i className="fa fa-eye"></i>Quick view</a></li>
                                                             </ul>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="row product-layout-list">
-                                                    <div class="col-lg-3 col-md-5 ">
-                                                        <div class="product-image">
+                                                <div className="row product-layout-list">
+                                                    <div className="col-lg-3 col-md-5 ">
+                                                        <div className="product-image">
                                                             <Link to = '/product'>
                                                                 <img src="images/product/large-size/11.jpg" 
                                                                alt="Product Image" />
                                                             </Link>
-                                                            <span class="sticker">New</span>
+                                                            <span className="sticker">New</span>
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-5 col-md-7">
-                                                        <div class="product_desc">
-                                                            <div class="product_desc_info">
-                                                                <div class="product-review">
-                                                                    <h5 class="manufacturer">
+                                                    <div className="col-lg-5 col-md-7">
+                                                        <div className="product_desc">
+                                                            <div className="product_desc_info">
+                                                                <div className="product-review">
+                                                                    <h5 className="manufacturer">
                                                                         <Link to='/product'>Graphic Corner</Link>
                                                                     </h5>
-                                                                    <div class="rating-box">
-                                                                        <ul class="rating">
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li class="no-star"><i class="fa fa-star-o"></i></li>
-                                                                            <li class="no-star"><i class="fa fa-star-o"></i></li>
+                                                                    <div className="rating-box">
+                                                                        <ul className="rating">
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li className="no-star"><i className="fa fa-star-o"></i></li>
+                                                                            <li className="no-star"><i className="fa fa-star-o"></i></li>
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <h4><a class="product_name" href="single-product.html">Hummingbird printed t-shirt</a></h4>
-                                                                <div class="price-box">
-                                                                    <span class="new-price">$46.80</span>
+                                                                <h4><a className="product_name" href="single-product.html">Hummingbird printed t-shirt</a></h4>
+                                                                <div className="price-box">
+                                                                    <span className="new-price">$46.80</span>
                                                                 </div>
                                                                 <p>Beach Camera Exclusive Bundle - Includes Two Samsung Radiant 360 R3 Wi-Fi Bluetooth Speakers. Fill The Entire Room With Exquisite Sound via Ring Radiator Technology. Stream And Control R3 Speakers Wirelessly With Your Smartphone. Sophisticated, Modern Desig</p>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-4">
-                                                        <div class="shop-add-action mb-xs-30">
-                                                            <ul class="add-actions-link">
-                                                                <li class="add-cart"><a href="#">Add to cart</a></li>
-                                                                <li class="wishlist"><a href="wishlist.html"><i class="fa fa-heart-o"></i>Add to wishlist</a></li>
-                                                                <li><a class="quick-view" data-toggle="modal" data-target="#exampleModalCenter" href="#"><i class="fa fa-eye"></i>Quick view</a></li>
+                                                    <div className="col-lg-4">
+                                                        <div className="shop-add-action mb-xs-30">
+                                                            <ul className="add-actions-link">
+                                                                <li className="add-cart"><a href="#">Add to cart</a></li>
+                                                                <li className="wishlist"><a href="wishlist.html"><i className="fa fa-heart-o"></i>Add to wishlist</a></li>
+                                                                <li><a className="quick-view" data-toggle="modal" data-target="#exampleModalCenter" href="#"><i className="fa fa-eye"></i>Quick view</a></li>
                                                             </ul>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="row product-layout-list">
-                                                    <div class="col-lg-3 col-md-5 ">
-                                                        <div class="product-image">
+                                                <div className="row product-layout-list">
+                                                    <div className="col-lg-3 col-md-5 ">
+                                                        <div className="product-image">
                                                             <Link to = '/product'>
                                                                 <img src="images/product/large-size/10.jpg" 
                                                                alt="Product Image" />
                                                             </Link>
-                                                            <span class="sticker">New</span>
+                                                            <span className="sticker">New</span>
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-5 col-md-7">
-                                                        <div class="product_desc">
-                                                            <div class="product_desc_info">
-                                                                <div class="product-review">
-                                                                    <h5 class="manufacturer">
+                                                    <div className="col-lg-5 col-md-7">
+                                                        <div className="product_desc">
+                                                            <div className="product_desc_info">
+                                                                <div className="product-review">
+                                                                    <h5 className="manufacturer">
                                                                         <Link to='/product'>Graphic Corner</Link>
                                                                     </h5>
-                                                                    <div class="rating-box">
-                                                                        <ul class="rating">
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li class="no-star"><i class="fa fa-star-o"></i></li>
-                                                                            <li class="no-star"><i class="fa fa-star-o"></i></li>
+                                                                    <div className="rating-box">
+                                                                        <ul className="rating">
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li className="no-star"><i className="fa fa-star-o"></i></li>
+                                                                            <li className="no-star"><i className="fa fa-star-o"></i></li>
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <h4><a class="product_name" href="single-product.html">Hummingbird printed t-shirt</a></h4>
-                                                                <div class="price-box">
-                                                                    <span class="new-price">$46.80</span>
+                                                                <h4><a className="product_name" href="single-product.html">Hummingbird printed t-shirt</a></h4>
+                                                                <div className="price-box">
+                                                                    <span className="new-price">$46.80</span>
                                                                 </div>
                                                                 <p>Beach Camera Exclusive Bundle - Includes Two Samsung Radiant 360 R3 Wi-Fi Bluetooth Speakers. Fill The Entire Room With Exquisite Sound via Ring Radiator Technology. Stream And Control R3 Speakers Wirelessly With Your Smartphone. Sophisticated, Modern Desig</p>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-4">
-                                                        <div class="shop-add-action mb-xs-30">
-                                                            <ul class="add-actions-link">
-                                                                <li class="add-cart"><a href="#">Add to cart</a></li>
-                                                                <li class="wishlist"><a href="wishlist.html"><i class="fa fa-heart-o"></i>Add to wishlist</a></li>
-                                                                <li><a class="quick-view" data-toggle="modal" data-target="#exampleModalCenter" href="#"><i class="fa fa-eye"></i>Quick view</a></li>
+                                                    <div className="col-lg-4">
+                                                        <div className="shop-add-action mb-xs-30">
+                                                            <ul className="add-actions-link">
+                                                                <li className="add-cart"><a href="#">Add to cart</a></li>
+                                                                <li className="wishlist"><a href="wishlist.html"><i className="fa fa-heart-o"></i>Add to wishlist</a></li>
+                                                                <li><a className="quick-view" data-toggle="modal" data-target="#exampleModalCenter" href="#"><i className="fa fa-eye"></i>Quick view</a></li>
                                                             </ul>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="row product-layout-list">
-                                                    <div class="col-lg-3 col-md-5 ">
-                                                        <div class="product-image">
+                                                <div className="row product-layout-list">
+                                                    <div className="col-lg-3 col-md-5 ">
+                                                        <div className="product-image">
                                                             <Link to = '/product'>
                                                                 <img src="images/product/large-size/9.jpg" 
                                                                alt="Product Image" />
                                                             </Link>
-                                                            <span class="sticker">New</span>
+                                                            <span className="sticker">New</span>
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-5 col-md-7">
-                                                        <div class="product_desc">
-                                                            <div class="product_desc_info">
-                                                                <div class="product-review">
-                                                                    <h5 class="manufacturer">
+                                                    <div className="col-lg-5 col-md-7">
+                                                        <div className="product_desc">
+                                                            <div className="product_desc_info">
+                                                                <div className="product-review">
+                                                                    <h5 className="manufacturer">
                                                                         <Link to='/product'>Graphic Corner</Link>
                                                                     </h5>
-                                                                    <div class="rating-box">
-                                                                        <ul class="rating">
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li class="no-star"><i class="fa fa-star-o"></i></li>
-                                                                            <li class="no-star"><i class="fa fa-star-o"></i></li>
+                                                                    <div className="rating-box">
+                                                                        <ul className="rating">
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li className="no-star"><i className="fa fa-star-o"></i></li>
+                                                                            <li className="no-star"><i className="fa fa-star-o"></i></li>
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <h4><a class="product_name" href="single-product.html">Hummingbird printed t-shirt</a></h4>
-                                                                <div class="price-box">
-                                                                    <span class="new-price">$46.80</span>
+                                                                <h4><a className="product_name" href="single-product.html">Hummingbird printed t-shirt</a></h4>
+                                                                <div className="price-box">
+                                                                    <span className="new-price">$46.80</span>
                                                                 </div>
                                                                 <p>Beach Camera Exclusive Bundle - Includes Two Samsung Radiant 360 R3 Wi-Fi Bluetooth Speakers. Fill The Entire Room With Exquisite Sound via Ring Radiator Technology. Stream And Control R3 Speakers Wirelessly With Your Smartphone. Sophisticated, Modern Desig</p>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-4">
-                                                        <div class="shop-add-action mb-xs-30">
-                                                            <ul class="add-actions-link">
-                                                                <li class="add-cart"><a href="#">Add to cart</a></li>
-                                                                <li class="wishlist"><a href="wishlist.html"><i class="fa fa-heart-o"></i>Add to wishlist</a></li>
-                                                                <li><a class="quick-view" data-toggle="modal" data-target="#exampleModalCenter" href="#"><i class="fa fa-eye"></i>Quick view</a></li>
+                                                    <div className="col-lg-4">
+                                                        <div className="shop-add-action mb-xs-30">
+                                                            <ul className="add-actions-link">
+                                                                <li className="add-cart"><a href="#">Add to cart</a></li>
+                                                                <li className="wishlist"><a href="wishlist.html"><i className="fa fa-heart-o"></i>Add to wishlist</a></li>
+                                                                <li><a className="quick-view" data-toggle="modal" data-target="#exampleModalCenter" href="#"><i className="fa fa-eye"></i>Quick view</a></li>
                                                             </ul>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="row product-layout-list">
-                                                    <div class="col-lg-3 col-md-5 ">
-                                                        <div class="product-image">
+                                                <div className="row product-layout-list">
+                                                    <div className="col-lg-3 col-md-5 ">
+                                                        <div className="product-image">
                                                             <Link to = '/product'>
                                                                 <img src="images/product/large-size/8.jpg" 
                                                                alt="Product Image" />
                                                             </Link>
-                                                            <span class="sticker">New</span>
+                                                            <span className="sticker">New</span>
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-5 col-md-7">
-                                                        <div class="product_desc">
-                                                            <div class="product_desc_info">
-                                                                <div class="product-review">
-                                                                    <h5 class="manufacturer">
+                                                    <div className="col-lg-5 col-md-7">
+                                                        <div className="product_desc">
+                                                            <div className="product_desc_info">
+                                                                <div className="product-review">
+                                                                    <h5 className="manufacturer">
                                                                         <Link to='/product'>Graphic Corner</Link>
                                                                     </h5>
-                                                                    <div class="rating-box">
-                                                                        <ul class="rating">
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li class="no-star"><i class="fa fa-star-o"></i></li>
-                                                                            <li class="no-star"><i class="fa fa-star-o"></i></li>
+                                                                    <div className="rating-box">
+                                                                        <ul className="rating">
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li className="no-star"><i className="fa fa-star-o"></i></li>
+                                                                            <li className="no-star"><i className="fa fa-star-o"></i></li>
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <h4><a class="product_name" href="single-product.html">Hummingbird printed t-shirt</a></h4>
-                                                                <div class="price-box">
-                                                                    <span class="new-price">$46.80</span>
+                                                                <h4><a className="product_name" href="single-product.html">Hummingbird printed t-shirt</a></h4>
+                                                                <div className="price-box">
+                                                                    <span className="new-price">$46.80</span>
                                                                 </div>
                                                                 <p>Beach Camera Exclusive Bundle - Includes Two Samsung Radiant 360 R3 Wi-Fi Bluetooth Speakers. Fill The Entire Room With Exquisite Sound via Ring Radiator Technology. Stream And Control R3 Speakers Wirelessly With Your Smartphone. Sophisticated, Modern Desig</p>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-4">
-                                                        <div class="shop-add-action mb-xs-30">
-                                                            <ul class="add-actions-link">
-                                                                <li class="add-cart"><a href="#">Add to cart</a></li>
-                                                                <li class="wishlist"><a href="wishlist.html"><i class="fa fa-heart-o"></i>Add to wishlist</a></li>
-                                                                <li><a class="quick-view" data-toggle="modal" data-target="#exampleModalCenter" href="#"><i class="fa fa-eye"></i>Quick view</a></li>
+                                                    <div className="col-lg-4">
+                                                        <div className="shop-add-action mb-xs-30">
+                                                            <ul className="add-actions-link">
+                                                                <li className="add-cart"><a href="#">Add to cart</a></li>
+                                                                <li className="wishlist"><a href="wishlist.html"><i className="fa fa-heart-o"></i>Add to wishlist</a></li>
+                                                                <li><a className="quick-view" data-toggle="modal" data-target="#exampleModalCenter" href="#"><i className="fa fa-eye"></i>Quick view</a></li>
                                                             </ul>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="row product-layout-list">
-                                                    <div class="col-lg-3 col-md-5 ">
-                                                        <div class="product-image">
+                                                <div className="row product-layout-list">
+                                                    <div className="col-lg-3 col-md-5 ">
+                                                        <div className="product-image">
                                                             <Link to = '/product'>
                                                                 <img src="images/product/large-size/7.jpg" 
                                                                alt="Product Image" />
                                                             </Link>
-                                                            <span class="sticker">New</span>
+                                                            <span className="sticker">New</span>
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-5 col-md-7">
-                                                        <div class="product_desc">
-                                                            <div class="product_desc_info">
-                                                                <div class="product-review">
-                                                                    <h5 class="manufacturer">
+                                                    <div className="col-lg-5 col-md-7">
+                                                        <div className="product_desc">
+                                                            <div className="product_desc_info">
+                                                                <div className="product-review">
+                                                                    <h5 className="manufacturer">
                                                                         <Link to='/product'>Graphic Corner</Link>
                                                                     </h5>
-                                                                    <div class="rating-box">
-                                                                        <ul class="rating">
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li class="no-star"><i class="fa fa-star-o"></i></li>
-                                                                            <li class="no-star"><i class="fa fa-star-o"></i></li>
+                                                                    <div className="rating-box">
+                                                                        <ul className="rating">
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li className="no-star"><i className="fa fa-star-o"></i></li>
+                                                                            <li className="no-star"><i className="fa fa-star-o"></i></li>
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <h4><a class="product_name" href="single-product.html">Hummingbird printed t-shirt</a></h4>
-                                                                <div class="price-box">
-                                                                    <span class="new-price">$46.80</span>
+                                                                <h4><a className="product_name" href="single-product.html">Hummingbird printed t-shirt</a></h4>
+                                                                <div className="price-box">
+                                                                    <span className="new-price">$46.80</span>
                                                                 </div>
                                                                 <p>Beach Camera Exclusive Bundle - Includes Two Samsung Radiant 360 R3 Wi-Fi Bluetooth Speakers. Fill The Entire Room With Exquisite Sound via Ring Radiator Technology. Stream And Control R3 Speakers Wirelessly With Your Smartphone. Sophisticated, Modern Desig</p>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-4">
-                                                        <div class="shop-add-action mb-xs-30">
-                                                            <ul class="add-actions-link">
-                                                                <li class="add-cart"><a href="#">Add to cart</a></li>
-                                                                <li class="wishlist"><a href="wishlist.html"><i class="fa fa-heart-o"></i>Add to wishlist</a></li>
-                                                                <li><a class="quick-view" data-toggle="modal" data-target="#exampleModalCenter" href="#"><i class="fa fa-eye"></i>Quick view</a></li>
+                                                    <div className="col-lg-4">
+                                                        <div className="shop-add-action mb-xs-30">
+                                                            <ul className="add-actions-link">
+                                                                <li className="add-cart"><a href="#">Add to cart</a></li>
+                                                                <li className="wishlist"><a href="wishlist.html"><i className="fa fa-heart-o"></i>Add to wishlist</a></li>
+                                                                <li><a className="quick-view" data-toggle="modal" data-target="#exampleModalCenter" href="#"><i className="fa fa-eye"></i>Quick view</a></li>
                                                             </ul>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="row product-layout-list">
-                                                    <div class="col-lg-3 col-md-5 ">
-                                                        <div class="product-image">
+                                                <div className="row product-layout-list">
+                                                    <div className="col-lg-3 col-md-5 ">
+                                                        <div className="product-image">
                                                             <Link to = '/product'>
                                                                 <img src="images/product/large-size/6.jpg" 
                                                                alt="Product Image" />
                                                             </Link>
-                                                            <span class="sticker">New</span>
+                                                            <span className="sticker">New</span>
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-5 col-md-7">
-                                                        <div class="product_desc">
-                                                            <div class="product_desc_info">
-                                                                <div class="product-review">
-                                                                    <h5 class="manufacturer">
+                                                    <div className="col-lg-5 col-md-7">
+                                                        <div className="product_desc">
+                                                            <div className="product_desc_info">
+                                                                <div className="product-review">
+                                                                    <h5 className="manufacturer">
                                                                         <Link to='/product'>Graphic Corner</Link>
                                                                     </h5>
-                                                                    <div class="rating-box">
-                                                                        <ul class="rating">
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li class="no-star"><i class="fa fa-star-o"></i></li>
-                                                                            <li class="no-star"><i class="fa fa-star-o"></i></li>
+                                                                    <div className="rating-box">
+                                                                        <ul className="rating">
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li className="no-star"><i className="fa fa-star-o"></i></li>
+                                                                            <li className="no-star"><i className="fa fa-star-o"></i></li>
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <h4><a class="product_name" href="single-product.html">Hummingbird printed t-shirt</a></h4>
-                                                                <div class="price-box">
-                                                                    <span class="new-price">$46.80</span>
+                                                                <h4><a className="product_name" href="single-product.html">Hummingbird printed t-shirt</a></h4>
+                                                                <div className="price-box">
+                                                                    <span className="new-price">$46.80</span>
                                                                 </div>
                                                                 <p>Beach Camera Exclusive Bundle - Includes Two Samsung Radiant 360 R3 Wi-Fi Bluetooth Speakers. Fill The Entire Room With Exquisite Sound via Ring Radiator Technology. Stream And Control R3 Speakers Wirelessly With Your Smartphone. Sophisticated, Modern Desig</p>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-4">
-                                                        <div class="shop-add-action mb-xs-30">
-                                                            <ul class="add-actions-link">
-                                                                <li class="add-cart"><a href="#">Add to cart</a></li>
-                                                                <li class="wishlist"><a href="wishlist.html"><i class="fa fa-heart-o"></i>Add to wishlist</a></li>
-                                                                <li><a class="quick-view" data-toggle="modal" data-target="#exampleModalCenter" href="#"><i class="fa fa-eye"></i>Quick view</a></li>
+                                                    <div className="col-lg-4">
+                                                        <div className="shop-add-action mb-xs-30">
+                                                            <ul className="add-actions-link">
+                                                                <li className="add-cart"><a href="#">Add to cart</a></li>
+                                                                <li className="wishlist"><a href="wishlist.html"><i className="fa fa-heart-o"></i>Add to wishlist</a></li>
+                                                                <li><a className="quick-view" data-toggle="modal" data-target="#exampleModalCenter" href="#"><i className="fa fa-eye"></i>Quick view</a></li>
                                                             </ul>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="row product-layout-list">
-                                                    <div class="col-lg-3 col-md-5 ">
-                                                        <div class="product-image">
+                                                <div className="row product-layout-list">
+                                                    <div className="col-lg-3 col-md-5 ">
+                                                        <div className="product-image">
                                                             <Link to = '/product'>
                                                                 <img src="images/product/large-size/5.jpg" 
                                                                alt="Product Image" />
                                                             </Link>
-                                                            <span class="sticker">New</span>
+                                                            <span className="sticker">New</span>
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-5 col-md-7">
-                                                        <div class="product_desc">
-                                                            <div class="product_desc_info">
-                                                                <div class="product-review">
-                                                                    <h5 class="manufacturer">
+                                                    <div className="col-lg-5 col-md-7">
+                                                        <div className="product_desc">
+                                                            <div className="product_desc_info">
+                                                                <div className="product-review">
+                                                                    <h5 className="manufacturer">
                                                                         <Link to='/product'>Graphic Corner</Link>
                                                                     </h5>
-                                                                    <div class="rating-box">
-                                                                        <ul class="rating">
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li class="no-star"><i class="fa fa-star-o"></i></li>
-                                                                            <li class="no-star"><i class="fa fa-star-o"></i></li>
+                                                                    <div className="rating-box">
+                                                                        <ul className="rating">
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li className="no-star"><i className="fa fa-star-o"></i></li>
+                                                                            <li className="no-star"><i className="fa fa-star-o"></i></li>
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <h4><a class="product_name" href="single-product.html">Hummingbird printed t-shirt</a></h4>
-                                                                <div class="price-box">
-                                                                    <span class="new-price">$46.80</span>
+                                                                <h4><a className="product_name" href="single-product.html">Hummingbird printed t-shirt</a></h4>
+                                                                <div className="price-box">
+                                                                    <span className="new-price">$46.80</span>
                                                                 </div>
                                                                 <p>Beach Camera Exclusive Bundle - Includes Two Samsung Radiant 360 R3 Wi-Fi Bluetooth Speakers. Fill The Entire Room With Exquisite Sound via Ring Radiator Technology. Stream And Control R3 Speakers Wirelessly With Your Smartphone. Sophisticated, Modern Desig</p>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-4">
-                                                        <div class="shop-add-action mb-xs-30">
-                                                            <ul class="add-actions-link">
-                                                                <li class="add-cart"><a href="#">Add to cart</a></li>
-                                                                <li class="wishlist"><a href="wishlist.html"><i class="fa fa-heart-o"></i>Add to wishlist</a></li>
-                                                                <li><a class="quick-view" data-toggle="modal" data-target="#exampleModalCenter" href="#"><i class="fa fa-eye"></i>Quick view</a></li>
+                                                    <div className="col-lg-4">
+                                                        <div className="shop-add-action mb-xs-30">
+                                                            <ul className="add-actions-link">
+                                                                <li className="add-cart"><a href="#">Add to cart</a></li>
+                                                                <li className="wishlist"><a href="wishlist.html"><i className="fa fa-heart-o"></i>Add to wishlist</a></li>
+                                                                <li><a className="quick-view" data-toggle="modal" data-target="#exampleModalCenter" href="#"><i className="fa fa-eye"></i>Quick view</a></li>
                                                             </ul>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="row product-layout-list">
-                                                    <div class="col-lg-3 col-md-5 ">
-                                                        <div class="product-image">
+                                                <div className="row product-layout-list">
+                                                    <div className="col-lg-3 col-md-5 ">
+                                                        <div className="product-image">
                                                             <Link to = '/product'>
                                                                 <img src="images/product/large-size/4.jpg" 
                                                                alt="Product Image" />
                                                             </Link>
-                                                            <span class="sticker">New</span>
+                                                            <span className="sticker">New</span>
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-5 col-md-7">
-                                                        <div class="product_desc">
-                                                            <div class="product_desc_info">
-                                                                <div class="product-review">
-                                                                    <h5 class="manufacturer">
+                                                    <div className="col-lg-5 col-md-7">
+                                                        <div className="product_desc">
+                                                            <div className="product_desc_info">
+                                                                <div className="product-review">
+                                                                    <h5 className="manufacturer">
                                                                         <Link to='/product'>Graphic Corner</Link>
                                                                     </h5>
-                                                                    <div class="rating-box">
-                                                                        <ul class="rating">
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li class="no-star"><i class="fa fa-star-o"></i></li>
-                                                                            <li class="no-star"><i class="fa fa-star-o"></i></li>
+                                                                    <div className="rating-box">
+                                                                        <ul className="rating">
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li className="no-star"><i className="fa fa-star-o"></i></li>
+                                                                            <li className="no-star"><i className="fa fa-star-o"></i></li>
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <h4><a class="product_name" href="single-product.html">Hummingbird printed t-shirt</a></h4>
-                                                                <div class="price-box">
-                                                                    <span class="new-price">$46.80</span>
+                                                                <h4><a className="product_name" href="single-product.html">Hummingbird printed t-shirt</a></h4>
+                                                                <div className="price-box">
+                                                                    <span className="new-price">$46.80</span>
                                                                 </div>
                                                                 <p>Beach Camera Exclusive Bundle - Includes Two Samsung Radiant 360 R3 Wi-Fi Bluetooth Speakers. Fill The Entire Room With Exquisite Sound via Ring Radiator Technology. Stream And Control R3 Speakers Wirelessly With Your Smartphone. Sophisticated, Modern Desig</p>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-4">
-                                                        <div class="shop-add-action mb-xs-30">
-                                                            <ul class="add-actions-link">
-                                                                <li class="add-cart"><a href="#">Add to cart</a></li>
-                                                                <li class="wishlist"><a href="wishlist.html"><i class="fa fa-heart-o"></i>Add to wishlist</a></li>
-                                                                <li><a class="quick-view" data-toggle="modal" data-target="#exampleModalCenter" href="#"><i class="fa fa-eye"></i>Quick view</a></li>
+                                                    <div className="col-lg-4">
+                                                        <div className="shop-add-action mb-xs-30">
+                                                            <ul className="add-actions-link">
+                                                                <li className="add-cart"><a href="#">Add to cart</a></li>
+                                                                <li className="wishlist"><a href="wishlist.html"><i className="fa fa-heart-o"></i>Add to wishlist</a></li>
+                                                                <li><a className="quick-view" data-toggle="modal" data-target="#exampleModalCenter" href="#"><i className="fa fa-eye"></i>Quick view</a></li>
                                                             </ul>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="row product-layout-list">
-                                                    <div class="col-lg-3 col-md-5 ">
-                                                        <div class="product-image">
+                                                <div className="row product-layout-list">
+                                                    <div className="col-lg-3 col-md-5 ">
+                                                        <div className="product-image">
                                                             <Link to = '/product'>
                                                                 <img src="images/product/large-size/3.jpg" 
                                                                alt="Product Image" />
                                                             </Link>
-                                                            <span class="sticker">New</span>
+                                                            <span className="sticker">New</span>
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-5 col-md-7">
-                                                        <div class="product_desc">
-                                                            <div class="product_desc_info">
-                                                                <div class="product-review">
-                                                                    <h5 class="manufacturer">
+                                                    <div className="col-lg-5 col-md-7">
+                                                        <div className="product_desc">
+                                                            <div className="product_desc_info">
+                                                                <div className="product-review">
+                                                                    <h5 className="manufacturer">
                                                                         <Link to='/product'>Graphic Corner</Link>
                                                                     </h5>
-                                                                    <div class="rating-box">
-                                                                        <ul class="rating">
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li class="no-star"><i class="fa fa-star-o"></i></li>
-                                                                            <li class="no-star"><i class="fa fa-star-o"></i></li>
+                                                                    <div className="rating-box">
+                                                                        <ul className="rating">
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li className="no-star"><i className="fa fa-star-o"></i></li>
+                                                                            <li className="no-star"><i className="fa fa-star-o"></i></li>
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <h4><a class="product_name" href="single-product.html">Hummingbird printed t-shirt</a></h4>
-                                                                <div class="price-box">
-                                                                    <span class="new-price">$46.80</span>
+                                                                <h4><a className="product_name" href="single-product.html">Hummingbird printed t-shirt</a></h4>
+                                                                <div className="price-box">
+                                                                    <span className="new-price">$46.80</span>
                                                                 </div>
                                                                 <p>Beach Camera Exclusive Bundle - Includes Two Samsung Radiant 360 R3 Wi-Fi Bluetooth Speakers. Fill The Entire Room With Exquisite Sound via Ring Radiator Technology. Stream And Control R3 Speakers Wirelessly With Your Smartphone. Sophisticated, Modern Desig</p>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-4">
-                                                        <div class="shop-add-action mb-xs-30">
-                                                            <ul class="add-actions-link">
-                                                                <li class="add-cart"><a href="#">Add to cart</a></li>
-                                                                <li class="wishlist"><a href="wishlist.html"><i class="fa fa-heart-o"></i>Add to wishlist</a></li>
-                                                                <li><a class="quick-view" data-toggle="modal" data-target="#exampleModalCenter" href="#"><i class="fa fa-eye"></i>Quick view</a></li>
+                                                    <div className="col-lg-4">
+                                                        <div className="shop-add-action mb-xs-30">
+                                                            <ul className="add-actions-link">
+                                                                <li className="add-cart"><a href="#">Add to cart</a></li>
+                                                                <li className="wishlist"><a href="wishlist.html"><i className="fa fa-heart-o"></i>Add to wishlist</a></li>
+                                                                <li><a className="quick-view" data-toggle="modal" data-target="#exampleModalCenter" href="#"><i className="fa fa-eye"></i>Quick view</a></li>
                                                             </ul>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="row product-layout-list">
-                                                    <div class="col-lg-3 col-md-5 ">
-                                                        <div class="product-image">
+                                                <div className="row product-layout-list">
+                                                    <div className="col-lg-3 col-md-5 ">
+                                                        <div className="product-image">
                                                             <Link to = '/product'>
                                                                 <img src="images/product/large-size/2.jpg" 
                                                                alt="Product Image" />
                                                             </Link>
-                                                            <span class="sticker">New</span>
+                                                            <span className="sticker">New</span>
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-5 col-md-7">
-                                                        <div class="product_desc">
-                                                            <div class="product_desc_info">
-                                                                <div class="product-review">
-                                                                    <h5 class="manufacturer">
+                                                    <div className="col-lg-5 col-md-7">
+                                                        <div className="product_desc">
+                                                            <div className="product_desc_info">
+                                                                <div className="product-review">
+                                                                    <h5 className="manufacturer">
                                                                         <Link to='/product'>Graphic Corner</Link>
                                                                     </h5>
-                                                                    <div class="rating-box">
-                                                                        <ul class="rating">
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li class="no-star"><i class="fa fa-star-o"></i></li>
-                                                                            <li class="no-star"><i class="fa fa-star-o"></i></li>
+                                                                    <div className="rating-box">
+                                                                        <ul className="rating">
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li className="no-star"><i className="fa fa-star-o"></i></li>
+                                                                            <li className="no-star"><i className="fa fa-star-o"></i></li>
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <h4><a class="product_name" href="single-product.html">Hummingbird printed t-shirt</a></h4>
-                                                                <div class="price-box">
-                                                                    <span class="new-price">$46.80</span>
+                                                                <h4><a className="product_name" href="single-product.html">Hummingbird printed t-shirt</a></h4>
+                                                                <div className="price-box">
+                                                                    <span className="new-price">$46.80</span>
                                                                 </div>
                                                                 <p>Beach Camera Exclusive Bundle - Includes Two Samsung Radiant 360 R3 Wi-Fi Bluetooth Speakers. Fill The Entire Room With Exquisite Sound via Ring Radiator Technology. Stream And Control R3 Speakers Wirelessly With Your Smartphone. Sophisticated, Modern Desig</p>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-4">
-                                                        <div class="shop-add-action mb-xs-30">
-                                                            <ul class="add-actions-link">
-                                                                <li class="add-cart"><a href="#">Add to cart</a></li>
-                                                                <li class="wishlist"><a href="wishlist.html"><i class="fa fa-heart-o"></i>Add to wishlist</a></li>
-                                                                <li><a class="quick-view" data-toggle="modal" data-target="#exampleModalCenter" href="#"><i class="fa fa-eye"></i>Quick view</a></li>
+                                                    <div className="col-lg-4">
+                                                        <div className="shop-add-action mb-xs-30">
+                                                            <ul className="add-actions-link">
+                                                                <li className="add-cart"><a href="#">Add to cart</a></li>
+                                                                <li className="wishlist"><a href="wishlist.html"><i className="fa fa-heart-o"></i>Add to wishlist</a></li>
+                                                                <li><a className="quick-view" data-toggle="modal" data-target="#exampleModalCenter" href="#"><i className="fa fa-eye"></i>Quick view</a></li>
                                                             </ul>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="row product-layout-list last-child">
-                                                    <div class="col-lg-3 col-md-5 ">
-                                                        <div class="product-image">
+                                                <div className="row product-layout-list last-child">
+                                                    <div className="col-lg-3 col-md-5 ">
+                                                        <div className="product-image">
                                                             <Link to = '/product'>
                                                                 <img src="images/product/large-size/1.jpg" 
                                                                alt="Product Image" />
                                                             </Link>
-                                                            <span class="sticker">New</span>
+                                                            <span className="sticker">New</span>
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-5 col-md-7">
-                                                        <div class="product_desc">
-                                                            <div class="product_desc_info">
-                                                                <div class="product-review">
-                                                                    <h5 class="manufacturer">
+                                                    <div className="col-lg-5 col-md-7">
+                                                        <div className="product_desc">
+                                                            <div className="product_desc_info">
+                                                                <div className="product-review">
+                                                                    <h5 className="manufacturer">
                                                                         <Link to='/product'>Graphic Corner</Link>
                                                                     </h5>
-                                                                    <div class="rating-box">
-                                                                        <ul class="rating">
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li><i class="fa fa-star-o"></i></li>
-                                                                            <li class="no-star"><i class="fa fa-star-o"></i></li>
-                                                                            <li class="no-star"><i class="fa fa-star-o"></i></li>
+                                                                    <div className="rating-box">
+                                                                        <ul className="rating">
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li><i className="fa fa-star-o"></i></li>
+                                                                            <li className="no-star"><i className="fa fa-star-o"></i></li>
+                                                                            <li className="no-star"><i className="fa fa-star-o"></i></li>
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <h4><a class="product_name" href="single-product.html">Hummingbird printed t-shirt</a></h4>
-                                                                <div class="price-box">
-                                                                    <span class="new-price">$46.80</span>
+                                                                <h4><a className="product_name" href="single-product.html">Hummingbird printed t-shirt</a></h4>
+                                                                <div className="price-box">
+                                                                    <span className="new-price">$46.80</span>
                                                                 </div>
                                                                 <p>Beach Camera Exclusive Bundle - Includes Two Samsung Radiant 360 R3 Wi-Fi Bluetooth Speakers. Fill The Entire Room With Exquisite Sound via Ring Radiator Technology. Stream And Control R3 Speakers Wirelessly With Your Smartphone. Sophisticated, Modern Desig</p>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-4">
-                                                        <div class="shop-add-action">
-                                                            <ul class="add-actions-link">
-                                                                <li class="add-cart"><a href="#">Add to cart</a></li>
-                                                                <li class="wishlist"><a href="wishlist.html"><i class="fa fa-heart-o"></i>Add to wishlist</a></li>
-                                                                <li><a class="quick-view" data-toggle="modal" data-target="#exampleModalCenter" href="#"><i class="fa fa-eye"></i>Quick view</a></li>
+                                                    <div className="col-lg-4">
+                                                        <div className="shop-add-action">
+                                                            <ul className="add-actions-link">
+                                                                <li className="add-cart"><a href="#">Add to cart</a></li>
+                                                                <li className="wishlist"><a href="wishlist.html"><i className="fa fa-heart-o"></i>Add to wishlist</a></li>
+                                                                <li><a className="quick-view" data-toggle="modal" data-target="#exampleModalCenter" href="#"><i className="fa fa-eye"></i>Quick view</a></li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -1090,20 +1102,20 @@ const TodaysDeal = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="paginatoin-area">
-                                        <div class="row">
-                                            <div class="col-lg-6 col-md-6">
+                                    <div className="paginatoin-area">
+                                        <div className="row">
+                                            <div className="col-lg-6 col-md-6">
                                                 <p>Showing 1-12 of 13 item(s)</p>
                                             </div>
-                                            <div class="col-lg-6 col-md-6">
-                                                <ul class="pagination-box">
-                                                    <li><a href="#" class="Previous"><i class="fa fa-chevron-left"></i> Previous</a>
+                                            <div className="col-lg-6 col-md-6">
+                                                <ul className="pagination-box">
+                                                    <li><a href="#" className="Previous"><i className="fa fa-chevron-left"></i> Previous</a>
                                                     </li>
-                                                    <li class="active"><a href="#">1</a></li>
+                                                    <li className="active"><a href="#">1</a></li>
                                                     <li><a href="#">2</a></li>
                                                     <li><a href="#">3</a></li>
                                                     <li>
-                                                      <a href="#" class="Next"> Next <i class="fa fa-chevron-right"></i></a>
+                                                      <a href="#" className="Next"> Next <i className="fa fa-chevron-right"></i></a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -1112,15 +1124,15 @@ const TodaysDeal = () => {
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 order-2 order-lg-1">
-                            <div class="sidebar-categores-box mt-sm-30 mt-xs-30">
-                                <div class="sidebar-title">
+                        <div className="col-lg-3 order-2 order-lg-1">
+                            <div className="sidebar-categores-box mt-sm-30 mt-xs-30">
+                                <div className="sidebar-title">
                                     <h2>Laptop</h2>
                                 </div>
 
-                                <div class="category-sub-menu">
+                                <div className="category-sub-menu">
                                     <ul>
-                                        <li class="has-sub"><a href="# ">Prime Video</a>
+                                        <li className="has-sub"><a href="# ">Prime Video</a>
                                             <ul>
                                                 <li><a href="#">All Videos</a></li>
                                                 <li><a href="#">Blouses</a></li>
@@ -1132,7 +1144,7 @@ const TodaysDeal = () => {
                                                 <li><a href="#">Getting Started</a></li>  
                                             </ul>
                                         </li>
-                                        <li class="has-sub"><a href="#">Computer</a>
+                                        <li className="has-sub"><a href="#">Computer</a>
                                             <ul>
                                                 <li><a href="#">TV & Video</a></li>
                                                 <li><a href="#">Audio & Theater</a></li>
@@ -1143,7 +1155,7 @@ const TodaysDeal = () => {
                                                 <li><a href="#">Wireless Speakers</a></li> 
                                             </ul>
                                         </li>
-                                        <li class="has-sub"><a href="#">Electronics</a>
+                                        <li className="has-sub"><a href="#">Electronics</a>
                                             <ul>
                                                 <li><a href="#">Amazon Home</a></li>
                                                 <li><a href="#">Kitchen & Dining</a></li>
@@ -1154,14 +1166,14 @@ const TodaysDeal = () => {
                                     </ul>
                                 </div>
                             </div>
-                            <div class="sidebar-categores-box">
-                                <div class="sidebar-title">
+                            <div className="sidebar-categores-box">
+                                <div className="sidebar-title">
                                     <h2>Filter By</h2>
                                 </div>
-                                <button class="btn-clear-all mb-sm-30 mb-xs-30">Clear all</button>
-                                <div class="filter-sub-area">
-                                    <h5 class="filter-sub-titel">Brand</h5>
-                                    <div class="categori-checkbox">
+                                <button className="btn-clear-all mb-sm-30 mb-xs-30">Clear all</button>
+                                <div className="filter-sub-area">
+                                    <h5 className="filter-sub-titel">Brand</h5>
+                                    <div className="categori-checkbox">
                                         <form action="#">
                                             <ul>
                                                 <li><input type="checkbox" name="product-categori"/><a href="#">Prime Video (13)</a></li>
@@ -1171,9 +1183,9 @@ const TodaysDeal = () => {
                                         </form>
                                     </div>
                                  </div>
-                                <div class="filter-sub-area pt-sm-10 pt-xs-10">
-                                    <h5 class="filter-sub-titel">Categories</h5>
-                                    <div class="categori-checkbox">
+                                <div className="filter-sub-area pt-sm-10 pt-xs-10">
+                                    <h5 className="filter-sub-titel">Categories</h5>
+                                    <div className="categori-checkbox">
                                         <form action="#">
                                             <ul>
                                                 <li><input type="checkbox" name="product-categori"/><a href="#">Graphic Corner (10)</a></li>
@@ -1182,9 +1194,9 @@ const TodaysDeal = () => {
                                         </form>
                                     </div>
                                  </div>
-                                <div class="filter-sub-area pt-sm-10 pt-xs-10">
-                                    <h5 class="filter-sub-titel">Size</h5>
-                                    <div class="size-checkbox">
+                                <div className="filter-sub-area pt-sm-10 pt-xs-10">
+                                    <h5 className="filter-sub-titel">Size</h5>
+                                    <div className="size-checkbox">
                                         <form action="#">
                                             <ul>
                                                 <li><input type="checkbox" name="product-size"/><a href="#">S (3)</a></li>
@@ -1195,22 +1207,22 @@ const TodaysDeal = () => {
                                         </form>
                                     </div>
                                 </div>
-                                <div class="filter-sub-area pt-sm-10 pt-xs-10">
-                                    <h5 class="filter-sub-titel">Color</h5>
-                                    <div class="color-categoriy">
+                                <div className="filter-sub-area pt-sm-10 pt-xs-10">
+                                    <h5 className="filter-sub-titel">Color</h5>
+                                    <div className="color-categoriy">
                                         <form action="#">
                                             <ul>
-                                                <li><span class="white"></span><a href="#">White (1)</a></li>
-                                                <li><span class="black"></span><a href="#">Black (1)</a></li>
-                                                <li><span class="Orange"></span><a href="#">Orange (3) </a></li>
-                                                <li><span class="Blue"></span><a href="#">Blue  (2) </a></li>
+                                                <li><span className="white"></span><a href="#">White (1)</a></li>
+                                                <li><span className="black"></span><a href="#">Black (1)</a></li>
+                                                <li><span className="Orange"></span><a href="#">Orange (3) </a></li>
+                                                <li><span className="Blue"></span><a href="#">Blue  (2) </a></li>
                                             </ul>
                                         </form>
                                     </div>
                                 </div>
-                                <div class="filter-sub-area pt-sm-10 pb-sm-15 pb-xs-15">
-                                    <h5 class="filter-sub-titel">Dimension</h5>
-                                    <div class="categori-checkbox">
+                                <div className="filter-sub-area pt-sm-10 pb-sm-15 pb-xs-15">
+                                    <h5 className="filter-sub-titel">Dimension</h5>
+                                    <div className="categori-checkbox">
                                         <form action="#">
                                             <ul>
                                                 <li><input type="checkbox" name="product-categori"/><a href="#">40x60cm (6)</a></li>
@@ -1221,11 +1233,11 @@ const TodaysDeal = () => {
                                     </div>
                                  </div>
                             </div>
-                            <div class="sidebar-categores-box mb-sm-0">
-                                <div class="sidebar-title">
+                            <div className="sidebar-categores-box mb-sm-0">
+                                <div className="sidebar-title">
                                     <h2>Laptop</h2>
                                 </div>
-                                <div class="category-tags">
+                                <div className="category-tags">
                                     <ul>
                                         <li><a href="# ">Devita</a></li>
                                         <li><a href="# ">Cameras</a></li>
