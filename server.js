@@ -7,6 +7,7 @@ const db = require('./config/db_config').MongoURI
 // Reguire Models
 const Products = require('./models/Products')
 const Users = require('./models/Users')
+const TodaysDeals = require('./models/TodaysDeals')
 
 mongoose.connect(db, {useNewUrlParser: true, useUnifiedTopology: true}, (error, connected)=>{
     if(connected){
@@ -43,7 +44,7 @@ app.get('/api/products', function(req, res){
 })
 
 app.get('/api/todays-deals', function(req, res){
-
+    TodaysDeals.find().then((products)=>{res.json(products)})
 })
 
 
