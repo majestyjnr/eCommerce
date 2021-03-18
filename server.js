@@ -17,6 +17,7 @@ mongoose.connect(db, {useNewUrlParser: true, useUnifiedTopology: true}, (error, 
     }
 })
 
+
 // ##################### ACCOUNT REGISTRATION #######################
 
 app.post('/api/register-user', function(req, res){
@@ -32,7 +33,7 @@ app.post('/api/checkout', function(req, res){
 
 // ##################### SELLER REGISTRATION #######################
 app.post('/api/seller_reg', function(req, res){
-
+    
 })
 
 
