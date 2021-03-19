@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose')
+const cors = require('cors')
 const app = new express();
 
 const db = require('./config/db_config').MongoURI
@@ -49,7 +50,7 @@ app.get('/api/todays-deals', function(req, res){
 })
 
 
-
+app.use(cors())
 
 const PORT = process.env.PORT || 9000;
 app.listen(PORT, function(){
