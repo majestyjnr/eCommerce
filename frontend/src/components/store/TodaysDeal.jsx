@@ -11,7 +11,7 @@ const TodaysDeal = () => {
         document.title = "Today's Deals | Limpupa"
 
         const fetchData = async () =>{
-            const {data} = await axios.get('/api/todays-deals')
+            const {data} = await axios.get('http://localhost:9000/api/todays-deals')
             setProducts(data)
             console.log(data)
         }
@@ -79,7 +79,7 @@ const TodaysDeal = () => {
                                                             <div className="single-product-wrap">
                                                                 <div className="product-image">
                                                                     <Link to = '/product'>
-                                                                        <img src="images/product/large-size/3.jpg" 
+                                                                        <img src={`http://localhost:2500/todaysdeals/` + product.productImage} 
                                                                     alt="Product Image" />
                                                                     </Link>
                                                                     <span className="sticker">New</span>
@@ -131,7 +131,7 @@ const TodaysDeal = () => {
                                                                 <div className="col-lg-3 col-md-5 ">
                                                                     <div className="product-image">
                                                                         <Link to = '/product'>
-                                                                            <img src={`http://127.0.0.1:9000/todaysdeals/` + product.productImage}
+                                                                            <img src={`/todaysdeals/` + product.productImage}
                                                                         alt="Product Image" />
                                                                         </Link>
                                                                         <span className="sticker">New</span>
