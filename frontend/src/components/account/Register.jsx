@@ -11,27 +11,26 @@ const Register = () => {
     const [password, setPassword] = useState('')
     const [confirmpassword, setConfirmpassword] = useState('')
 
-
-    function registerUser(e){
-        e.preventDefault();
-        const newUser = {
-            firstname: firstname,
-            lastname: lastname,
-            email: email,
-            phone: phone,
-            // address: [],
-            // cart: [],
-            // wishlist: [],
-            password: password
-        }
-
-        console.log(newUser)
-        
-    }
-
     useEffect(() => {
         document.title = 'Register | Limpupa'
     }, []);
+
+
+    function registerUser(e){
+        e.preventDefault();
+            const newUser = {
+                firstname: firstname,
+                lastname: lastname,
+                email: email,
+                phone: phone,
+                password: password
+            }
+
+        axios.post('http://localhost:9000/api/register-user', newUser).then((response) => console.log(response.data));
+        
+        console.log(newUser)
+    }
+
     
     return (
         <div>

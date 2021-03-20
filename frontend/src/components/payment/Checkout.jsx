@@ -1,24 +1,21 @@
 import React, {useEffect} from "react";
-// import "../style.css";
-// import "../css/bootstrap.min.css";
-// import "../css/font-awesome.min.css";
-// import "../css/fontawesome-stars.css";
-// import "../css/helper.css";
-// import "../css/jquery-ui.min.css";
-// import "../css/magnific-popup.css";
-// import "../css/material-design-iconic-font.min.css";
-// import "../css/meanmenu.css";
-// import "../css/nice-select.css";
-// import "../css/owl.carousel.min.css";
-// import "../css/owl.video.play.png";
-// import "../css/responsive.css";
-// import "../css/slick.css";
-// import "../css/venobox.css";
+import $ from 'jquery'
 
 const Checkout = () => {
   useEffect(() => {
     document.title = 'Checkout | Limpupa'
+
+    // showlogin toggle
+		$('#showlogin').on('click', function() {
+				$('#checkout-login').slideToggle(900);
+		});
+	// showlogin toggle
+		$('#showcoupon').on('click', function() {
+				$('#checkout_coupon').slideToggle(900);
+		});
   }, []);
+
+
   
   return (
     <div>
@@ -104,12 +101,12 @@ const Checkout = () => {
                           Country <span className="required">*</span>
                         </label>
                         <select className="nice-select wide">
-                          <option data-display="Bangladesh">Bangladesh</option>
-                          <option value="uk">London</option>
+                          <option value="Ghana">Ghana</option>
+                          {/* <option value="uk">London</option>
                           <option value="rou">Romania</option>
                           <option value="fr">French</option>
                           <option value="de">Germany</option>
-                          <option value="aus">Australia</option>
+                          <option value="aus">Australia</option> */}
                         </select>
                       </div>
                     </div>
@@ -162,7 +159,7 @@ const Checkout = () => {
                     <div className="col-md-6">
                       <div className="checkout-form-list">
                         <label>
-                          State / County <span className="required">*</span>
+                          Region <span className="required">*</span>
                         </label>
                         <input placeholder="" type="text" />
                       </div>

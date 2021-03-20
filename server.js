@@ -5,10 +5,6 @@ const app = new express();
 
 const db = require('./config/db_config').MongoURI
 
-// Reguire Models
-const Products = require('./models/Products')
-const Users = require('./models/Users')
-const TodaysDeals = require('./models/TodaysDeals')
 
 mongoose.connect(db, {useNewUrlParser: true, useUnifiedTopology: true}, (error, connected)=>{
     if(connected){
@@ -18,39 +14,22 @@ mongoose.connect(db, {useNewUrlParser: true, useUnifiedTopology: true}, (error, 
     }
 })
 
+app.use(cors());
 
-// ##################### ACCOUNT REGISTRATION #######################
-
-app.post('/api/register-user', function(req, res){
-    
-})
+app.use(express.json())
 
 
-app.post('/api/checkout', function(req, res){
+// Require Routes
+const index = require('./routes/index')
 
-})
-
-
-
-// ##################### SELLER REGISTRATION #######################
-app.post('/api/seller_reg', function(req, res){
-    
-})
+app.use('/', index)
 
 
-
-// ##################### GET PRODUCTS #######################
-
-app.get('/api/products', function(req, res){
-    Products.find().then((products)=>{res.json(products)})
-})
-
-app.get('/api/todays-deals', function(req, res){
-    TodaysDeals.find().then((products)=>{res.json(products)})
-})
-
-
-app.use(cors())
+// app.use(function(req, res, next) {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//   next();
+// });
 
 const PORT = process.env.PORT || 9000;
 app.listen(PORT, function(){

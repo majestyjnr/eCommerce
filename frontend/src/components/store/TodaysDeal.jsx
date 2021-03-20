@@ -10,13 +10,10 @@ const TodaysDeal = () => {
     useEffect(() => {
         document.title = "Today's Deals | Limpupa"
 
-        const fetchData = async () =>{
-            const {data} = await axios.get('http://localhost:9000/api/todays-deals')
-            setProducts(data)
-            console.log(data)
-        }
-        
-        fetchData()
+        axios.get('http://localhost:9000/api/todays-deals').then((response)=>{
+            setProducts(response.data)
+        })
+    
     }, []);
 
     return (
@@ -75,11 +72,12 @@ const TodaysDeal = () => {
                                             <div className="row">
                                                 {
                                                     products.map(product => {
+                                                        return(
                                                             <div className="col-lg-4 col-md-4 col-sm-6 mt-40">
                                                             <div className="single-product-wrap">
                                                                 <div className="product-image">
                                                                     <Link to = '/product'>
-                                                                        <img src={`http://localhost:2500/todaysdeals/` + product.productImage} 
+                                                                        <img src={`http://localhost:2500/todaysdeals/` + product.productImage}
                                                                     alt="Product Image" />
                                                                     </Link>
                                                                     <span className="sticker">New</span>
@@ -100,9 +98,9 @@ const TodaysDeal = () => {
                                                                                 </ul>
                                                                             </div>
                                                                         </div>
-                                                                        <h4><a className="product_name" href="single-product.html">Accusantium dolorem1</a></h4>
+                                                                        <h4><a className="product_name" href="single-product.html">{product.productName}</a></h4>
                                                                         <div className="price-box">
-                                                                            <span className="new-price">$46.80</span>
+                                                                            <span className="new-price">GHS {product.productPrice}.00</span>
                                                                         </div>
                                                                     </div>
                                                                     <div className="add-actions">
@@ -115,10 +113,10 @@ const TodaysDeal = () => {
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    })
-                                                    
+                                                        )                                                            
+                                                    })                     
                                                 }
-                                       </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div id="list-view" className="tab-pane fade product-list-view active show" role="tabpanel">
@@ -131,7 +129,7 @@ const TodaysDeal = () => {
                                                                 <div className="col-lg-3 col-md-5 ">
                                                                     <div className="product-image">
                                                                         <Link to = '/product'>
-                                                                            <img src={`/todaysdeals/` + product.productImage}
+                                                                            <img src={`http://localhost:2500/todaysdeals/` + product.productImage}
                                                                         alt="Product Image" />
                                                                         </Link>
                                                                         <span className="sticker">New</span>
@@ -156,7 +154,7 @@ const TodaysDeal = () => {
                                                                             </div>
                                                                             <h4><a className="product_name" href="single-product.html">{product.productName}</a></h4>
                                                                             <div className="price-box">
-                                                                                <span className="new-price">$46.80</span>
+                                                                                <span className="new-price">GHS {product.productPrice}.00</span>
                                                                             </div>
                                                                             <p>Beach Camera Exclusive Bundle - Includes Two Samsung Radiant 360 R3 Wi-Fi Bluetooth Speakers. Fill The Entire Room With Exquisite Sound via Ring Radiator Technology. Stream And Control R3 Speakers Wirelessly With Your Smartphone. Sophisticated, Modern Desig</p>
                                                                         </div>
@@ -177,7 +175,7 @@ const TodaysDeal = () => {
                                                 }
                                                 
 
-                                                <div className="row product-layout-list last-child">
+                                                {/* <div className="row product-layout-list last-child">
                                                     <div className="col-lg-3 col-md-5 ">
                                                         <div className="product-image">
                                                             <Link to = '/product'>
@@ -221,7 +219,7 @@ const TodaysDeal = () => {
                                                             </ul>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> */}
                                             </div>
                                         </div>
                                     </div>

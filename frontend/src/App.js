@@ -1,7 +1,4 @@
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { useScript } from "react-use-scripts";
-import {useEffect} from 'react'
-import $ from 'jquery'
 
 // Import Necessary CSS
 import "./style.css";

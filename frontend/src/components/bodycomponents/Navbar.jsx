@@ -58,7 +58,7 @@ const Navbar = () => {
                                         </li>
                                         {/* <!-- Currency Area End Here --> */}
                                         {/* <!-- Begin Language Area --> */}
-                                        <li>
+                                        {/* <li>
                                             <span className="language-selector-wrapper">Language :</span>
                                             <div className="ht-language-trigger"><span>English</span></div>
                                             <div className="language ht-language">
@@ -67,7 +67,7 @@ const Navbar = () => {
                                                     <li><a href="#"><img src="images/menu/flag-icon/2.jpg" alt=""/>Français</a></li>
                                                 </ul>
                                             </div>
-                                        </li>
+                                        </li> */}
                                         {/* <!-- Language Area End Here --> */}
                                     </ul>
                                 </div>
