@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const jwt = require('jsonwebtoken')
+const bcrypt = require('bcryptjs')
 const config = require('config')
 
 // Reguire Models
@@ -23,7 +24,7 @@ router.post('/api/register-user', function(req, res){
         if(user){
             res.status(400).json({msg: 'This user already exists!'})
         }else{
-            const newUser = new User({
+            const newUser = new Users({
                 firstname: req.body.firstname,
                 lastname: req.body.lastname,
                 email: req.body.email,
