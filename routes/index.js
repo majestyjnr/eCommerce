@@ -19,7 +19,7 @@ router.post('/api/register-user', function(req, res){
     //     res.status(400).json({msg: 'Enter required fields'})
     // }
 
-    Users.findOne({email: email}).then((user)=>{
+    Users.findOne({email: req.body.email}).then((user)=>{
         if(user){
             res.status(400).json({msg: 'This user already exists!'})
         }else{
