@@ -26,7 +26,11 @@ const Register = () => {
                 password: password
             }
 
-        axios.post('http://localhost:9000/api/register-user', newUser).then((response) => console.log(response.data));
+        axios.post('http://localhost:9000/api/register-user', newUser).then((response) => {
+            if(response.status == 200 || response.status == 201){
+                window.location = '/account/'
+            }
+        });
         
         console.log(newUser)
     }
