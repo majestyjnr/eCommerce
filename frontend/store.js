@@ -1,7 +1,7 @@
 import {createStore, combineReducers} from 'redux'
 
 const initialState = {}
-const reducer = ({
+const reducer = combineReducers ({
     
 })
 const store = createStore(reducer, initialState)
