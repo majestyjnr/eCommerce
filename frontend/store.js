@@ -8,6 +8,6 @@ const reducer = combineReducers ({
 
 // ***Thunk*** is a middleware for redux that allows us to async updation inside action in the redux
 
-const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
-const store = createStore(reducer, initialState, compose(applyMiddleware(thunk)))
+const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+const store = createStore(reducer, initialState, composeEnhancer(applyMiddleware(thunk)))
 export default store    
