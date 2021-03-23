@@ -15,9 +15,12 @@ const TodaysDeal = () => {
     useEffect(() => {
         document.title = "Today's Deals | Limpupa"
 
-        axios.get('http://localhost:9000/api/todays-deals').then((response)=>{
-            setProducts(response.data)
-        })
+        // Dispatching the listProducts action
+        dispatch(listProducts());
+
+        // axios.get('http://localhost:9000/api/todays-deals').then((response)=>{
+        //     setProducts(response.data)
+        // })
     
     }, []);
 
