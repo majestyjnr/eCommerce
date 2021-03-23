@@ -2,15 +2,16 @@ import React, {useEffect, useState} from 'react'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
 import Banner from "../../images/bg-banner/2.jpg"
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 const TodaysDeal = () => {
 
     const [products, setProducts] = useState([])
 
     const productList = useSelector(state => state.productList)
+    const {products, loading, error} = productList;
     
-
+    const dispatch = useDispatch()
     useEffect(() => {
         document.title = "Today's Deals | Limpupa"
 
