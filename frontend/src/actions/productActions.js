@@ -11,4 +11,12 @@ const listProducts = () => async (dispatch) =>{
     }
 } 
 
-export {listProducts}
+const detailsOfProduct = (productId) => async (dispatch) =>{
+    try {
+        
+    } catch (error) {
+        
+    }
+}
+
+export {listProducts, detailsOfProduct}

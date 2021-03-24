@@ -1,7 +1,13 @@
-import React from 'react'
+import React, {useEffect} from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+
 
 const ProductDetail = () => {
-    
+    const productDetail = useSelector(state => state.productDetail)
+    const dispatch = useDispatch()
+    useEffect(() => {
+        dispatch(detailsOfProduct())
+    }, [])
     return (
         <div>
             <div className="breadcrumb-area">
