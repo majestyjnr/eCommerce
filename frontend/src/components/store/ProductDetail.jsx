@@ -1,9 +1,11 @@
 import React, {useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { detailsOfProduct } from '../../actions/productActions'
 
 
 const ProductDetail = () => {
     const productDetail = useSelector(state => state.productDetail)
+    const {product, loading, error} = productDetail;
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(detailsOfProduct())

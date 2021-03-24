@@ -96,7 +96,7 @@ router.get('/api/products', function(req, res){
 
 // Get Product details
 router.get('/api/product/:id', function(req, res){
-    Products.findById(req.params.id).then((product)=>{res.json(product)})
+    Products.findById(req.params.id).then((product)=>{res.send(product)})
 })
 
 router.get('/api/todays-deals', function(req, res){
