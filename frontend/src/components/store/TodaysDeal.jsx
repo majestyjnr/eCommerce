@@ -10,6 +10,7 @@ const TodaysDeal = () => {
     const {products, loading, error} = productList;
     
     const dispatch = useDispatch()
+    
     useEffect(() => {
         document.title = "Today's Deals | Limpupa"
 
