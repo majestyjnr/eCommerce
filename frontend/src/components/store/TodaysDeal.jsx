@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react'
 import {Link} from 'react-router-dom'
-import axios from 'axios'
 import Banner from "../../images/bg-banner/2.jpg"
 import { useDispatch, useSelector } from 'react-redux'
 import { listProducts } from '../../actions/productActions'
@@ -19,7 +18,44 @@ const TodaysDeal = () => {
     
     }, []);
 
-    return (
+    return loading ? 
+        <div>
+            <div className="breadcrumb-area">
+                <div className="container">
+                    <div className="breadcrumb-content">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li className="active">Today's Deals</li>
+                        </ul>
+                    </div>
+                </div>
+            </div> 
+            <div className="text-center mt-60 mb-60"> 
+                <h2>Loading...</h2>
+            </div>
+        </div>
+    
+        : error ? 
+        
+        <div>
+            <div className="breadcrumb-area">
+                <div className="container">
+                    <div className="breadcrumb-content">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li className="active">Today's Deals</li>
+                        </ul>
+                    </div>
+                </div>
+            </div> 
+            <div className="text-center mt-60 mb-60"> 
+                <h2>{error}</h2>
+            </div>
+        </div>
+
+        : 
+        
+        (
         <div>
             <div className="breadcrumb-area">
                 <div className="container">
