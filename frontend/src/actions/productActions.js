@@ -13,7 +13,8 @@ const listProducts = () => async (dispatch) =>{
 
 const detailsOfProduct = (productId) => async (dispatch) =>{
     try {
-        
+        dispatch({type: PRODUCT_DETAILS_REQUEST, payload: productId})
+        const {data} = await axios.get('http://localhost:9000/api/todays-deals')
     } catch (error) {
         
     }
