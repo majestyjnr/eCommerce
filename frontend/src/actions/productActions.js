@@ -7,7 +7,7 @@ const listProducts = () => async (dispatch) =>{
         const {data} = await axios.get('http://localhost:9000/api/todays-deals')
         dispatch({type: PRODUCTS_LIST_SUCCESS, payload: data})
     } catch (error) {
-        
+        dispatch({type: PRODUCT_LIST_FAIL, payload: error.message})
     }
 } 
 
