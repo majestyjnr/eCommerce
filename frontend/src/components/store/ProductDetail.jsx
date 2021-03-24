@@ -1,6 +1,7 @@
 import React from 'react'
 
 const ProductDetail = () => {
+    
     return (
         <div>
             <div className="breadcrumb-area">
