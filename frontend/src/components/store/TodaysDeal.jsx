@@ -1,12 +1,11 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
 import Banner from "../../images/bg-banner/2.jpg"
 import { useDispatch, useSelector } from 'react-redux'
+import { listProducts } from '../../actions/productActions'
 
 const TodaysDeal = () => {
-
-    const [products, setProducts] = useState([])
 
     const productList = useSelector(state => state.productList)
     const {products, loading, error} = productList;
@@ -17,10 +16,6 @@ const TodaysDeal = () => {
 
         // Dispatching the listProducts action
         dispatch(listProducts());
-
-        // axios.get('http://localhost:9000/api/todays-deals').then((response)=>{
-        //     setProducts(response.data)
-        // })
     
     }, []);
 

@@ -11,3 +11,4 @@ const listProducts = () => async (dispatch) =>{
     }
 } 
 
+export {listProducts}
