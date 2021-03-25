@@ -10,14 +10,51 @@ const ProductDetail = (props) => {
     useEffect(() => {
         dispatch(detailsOfProduct(props.match.params.id))
     }, [])
-    return (
+    return loading ? 
+    <div>
+        <div className="breadcrumb-area">
+            <div className="container">
+                <div className="breadcrumb-content">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li className="active">Product Details</li>
+                    </ul>
+                </div>
+            </div>
+        </div> 
+        <div className="text-center mt-60 mb-60"> 
+            <h2>Loading...</h2>
+        </div>
+    </div>
+
+    : error ? 
+    
+    <div>
+        <div className="breadcrumb-area">
+            <div className="container">
+                <div className="breadcrumb-content">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li className="active">Product Details</li>
+                    </ul>
+                </div>
+            </div>
+        </div> 
+        <div className="text-center mt-60 mb-60"> 
+            <h2>{error}</h2>
+        </div>
+    </div>
+
+    : 
+    
+    (
         <div>
             <div className="breadcrumb-area">
                 <div className="container">
                     <div className="breadcrumb-content">
                         <ul>
                             <li><a href="index.html">Home</a></li>
-                            <li className="active">Single Product</li>
+                            <li className="active">Product Details</li>
                         </ul>
                     </div>
                 </div>
