@@ -6,7 +6,7 @@ import { listProducts } from '../../actions/productActions'
 
 const TodaysDeal = () => {
 
-    const productList = useSelector(state => state.)
+    const productList = useSelector(state => state.productList)
     const {products, loading, error} = productList;
     
     const dispatch = useDispatch()
@@ -138,7 +138,7 @@ const TodaysDeal = () => {
                                                                                 </ul>
                                                                             </div>
                                                                         </div>
-                                                                        <h4><Link className="product_name" to={`/product-detail/` + product._id}>{product.productName}</Link></h4>
+                                                                        <h4><Link className="product_name" to={`/p/` + product._id}>{product.productName}</Link></h4>
                                                                         <div className="price-box">
                                                                             <span className="new-price">GHS {product.productPrice}.00</span>
                                                                         </div>
@@ -192,7 +192,7 @@ const TodaysDeal = () => {
                                                                                     </ul>
                                                                                 </div>
                                                                             </div>
-                                                                            <h4><Link className="product_name" to={`/product-detail/` + product._id}>{product.productName}</Link></h4>
+                                                                            <h4><Link className="product_name" to={`/p/` + product._id}>{product.productName}</Link></h4>
                                                                             <div className="price-box">
                                                                                 <span className="new-price">GHS {product.productPrice}.00</span>
                                                                             </div>

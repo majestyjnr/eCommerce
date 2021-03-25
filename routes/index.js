@@ -110,8 +110,14 @@ router.get('/api/todays-deals', function(req, res){
 })
 
 // GET Today's Deals Product Details
-router.get('/api/p/', function(req, res){
-    TodaysDeals.find().then((products)=>{res.send(products)})
+router.get('/api/p/:id', function(req, res){
+    TodaysDeals.find({ _id: req.params.id }, function(err, product){
+        if(product){
+            res.send(product)
+        }else{
+            res.status(400).json({msg: 'Product not found!'})
+        }
+    })
 })
 
 module.exports = router

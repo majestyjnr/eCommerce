@@ -26,7 +26,7 @@ const detailsOfProduct = (productId) => async (dispatch) =>{
 }
 
 // For Today's Deals (Product Detail)
-const dealDetail = (productId) => async (dispatch) =>{
+const dealProductDetail = (productId) => async (dispatch) =>{
     try {
         dispatch({type: PRODUCT_DETAILS_REQUEST, payload: productId})
         const {data} = await axios.get('http://localhost:9000/api/p/' + productId)
@@ -38,4 +38,4 @@ const dealDetail = (productId) => async (dispatch) =>{
 
 
 
-export {listProducts, detailsOfProduct, dealDetail}
+export {listProducts, detailsOfProduct, dealProductDetail}

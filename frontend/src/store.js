@@ -6,7 +6,7 @@ const initialState = {}
 const reducer = combineReducers ({
     productList: productListReducer,
     productDetail: productDetailReducer,
-    dealDeatail: dealDetailReducer,
+    dealDetail: dealDetailReducer,
 })      
 
 // ***Thunk*** is a middleware for redux that allows us to async updation inside action in the redux

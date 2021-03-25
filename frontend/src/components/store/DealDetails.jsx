@@ -1,15 +1,16 @@
 import React, {useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { detailsOfProduct } from '../../actions/productActions'
+import { dealProductDetail } from '../../actions/productActions';
+
 
 
 const DealDetails = (props) => {
     const dealDetail = useSelector(state => state.dealDetail)
     const {product, loading, error} = dealDetail;
+    console.log(product)
     const dispatch = useDispatch()
     useEffect(() => {
-        console.log(props.match.params.id)
-        dispatch(detailsOfProduct(props.match.params.id))
+        dispatch(dealProductDetail(props.match.params.id))
     }, [])
     return loading ? 
     <div>
@@ -111,8 +112,8 @@ const DealDetails = (props) => {
                         <div className="col-lg-7 col-md-6">
                             <div className="product-details-view-content pt-60">
                                 <div className="product-info">
-                                    <h2>Today is a good day Framed poster</h2>
-                                    <span className="product-details-ref">Reference: demo_15</span>
+                                    <h2>{product.productName}</h2>
+                                    {/* <span className="product-details-ref">Reference: demo_15</span> */}
                                     <div className="rating-box pt-20">
                                         <ul className="rating rating-with-review-item">
                                             <li><i className="fa fa-star-o"></i></li>
@@ -125,7 +126,7 @@ const DealDetails = (props) => {
                                         </ul>
                                     </div>
                                     <div className="price-box pt-20">
-                                        <span className="new-price new-price-2">$57.98</span>
+                                        <span className="new-price new-price-2">{product.productPrice}</span>
                                     </div>
                                     <div className="product-desc">
                                         <p>
@@ -198,6 +199,7 @@ const DealDetails = (props) => {
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
