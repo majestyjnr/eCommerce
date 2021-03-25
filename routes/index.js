@@ -91,16 +91,22 @@ router.post('/api/seller_reg', function(req, res){
 // ##################### GET PRODUCTS #######################
 
 router.get('/api/products', function(req, res){
-    Products.find().then((products)=>{res.json(products)})
+    Products.find().then((products)=>{res.send(products)})
 })
 
 // Get Product details
 router.get('/api/product/:id', function(req, res){
-    Products.findById(req.params.id).then((product)=>{res.send(product)})
+    Products.findById({ _id: req.params.id }, function(err, product){
+        if(product){
+            res.send(product)
+        }else{
+            res.status(400).json({msg: 'Product not found!'})
+        }
+    })
 })
 
 router.get('/api/todays-deals', function(req, res){
-    TodaysDeals.find().then((products)=>{res.json(products)})
+    TodaysDeals.find().then((products)=>{res.send(products)})
 })
 
 module.exports = router

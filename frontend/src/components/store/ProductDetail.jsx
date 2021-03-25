@@ -3,12 +3,12 @@ import { useDispatch, useSelector } from 'react-redux'
 import { detailsOfProduct } from '../../actions/productActions'
 
 
-const ProductDetail = () => {
+const ProductDetail = (props) => {
     const productDetail = useSelector(state => state.productDetail)
     const {product, loading, error} = productDetail;
     const dispatch = useDispatch()
     useEffect(() => {
-        dispatch(detailsOfProduct())
+        dispatch(detailsOfProduct(props.match.params.id))
     }, [])
     return (
         <div>

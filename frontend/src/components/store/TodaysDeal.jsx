@@ -138,7 +138,7 @@ const TodaysDeal = () => {
                                                                                 </ul>
                                                                             </div>
                                                                         </div>
-                                                                        <h4><a className="product_name" href="single-product.html">{product.productName}</a></h4>
+                                                                        <h4><Link className="product_name" to={`/product-detail/` + product._id}>{product.productName}</Link></h4>
                                                                         <div className="price-box">
                                                                             <span className="new-price">GHS {product.productPrice}.00</span>
                                                                         </div>
@@ -192,7 +192,7 @@ const TodaysDeal = () => {
                                                                                     </ul>
                                                                                 </div>
                                                                             </div>
-                                                                            <h4><a className="product_name" href="single-product.html">{product.productName}</a></h4>
+                                                                            <h4><Link className="product_name" to={`/product-detail/` + product._id}>{product.productName}</Link></h4>
                                                                             <div className="price-box">
                                                                                 <span className="new-price">GHS {product.productPrice}.00</span>
                                                                             </div>
@@ -203,7 +203,7 @@ const TodaysDeal = () => {
                                                                 <div className="col-lg-4">
                                                                     <div className="shop-add-action mb-xs-30">
                                                                         <ul className="add-actions-link">
-                                                                            <li className="add-cart"><a href="#">Add to cart</a></li>
+                                                                            <li className="add-cart"><Link to="/">Add to cart</Link></li>
                                                                             <li className="wishlist"><a href="wishlist.html"><i className="fa fa-heart-o"></i>Add to wishlist</a></li>
                                                                             <li><a className="quick-view" data-toggle="modal" data-target="#exampleModalCenter" href="#"><i className="fa fa-eye"></i>Quick view</a></li>
                                                                         </ul>
