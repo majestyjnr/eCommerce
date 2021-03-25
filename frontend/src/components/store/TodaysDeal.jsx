@@ -116,7 +116,7 @@ const TodaysDeal = () => {
                                                             <div className="col-lg-4 col-md-4 col-sm-6 mt-40">
                                                             <div className="single-product-wrap">
                                                                 <div className="product-image">
-                                                                    <Link to = '/product'>
+                                                                    <Link to={`/p/` + product._id}>
                                                                         <img src={`http://localhost:2500/todaysdeals/` + product.productImage}
                                                                     alt="Product Image" />
                                                                     </Link>
@@ -168,7 +168,7 @@ const TodaysDeal = () => {
                                                                 <div className="row product-layout-list">
                                                                 <div className="col-lg-3 col-md-5 ">
                                                                     <div className="product-image">
-                                                                        <Link to = '/product'>
+                                                                        <Link to={`/p/` + product._id}>
                                                                             <img src={`http://localhost:2500/todaysdeals/` + product.productImage}
                                                                         alt="Product Image" />
                                                                         </Link>

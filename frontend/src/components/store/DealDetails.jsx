@@ -71,51 +71,51 @@ const DealDetails = (props) => {
                 {
                             product.map(item => {
                                 return(
-                    <div className="row single-product-area">
-                        <div className="col-lg-5 col-md-6">
-                            <div className="product-details-left">
-                                <div className="product-details-images slider-navigation-1">
-                                    <div className="lg-image">
-                                        <a className="popup-img venobox vbox-item" href="images/product/large-size/1.jpg" data-gall="myGallery">
-                                            <img src={`http://localhost:2500/todaysdeals/` + item.productImage} alt="product image"/>
-                                        </a>
-                                    </div>
-                                    <div className="lg-image">
-                                        <a className="popup-img venobox vbox-item" href="images/product/large-size/2.jpg" data-gall="myGallery">
-                                            <img src="images/product/large-size/2.jpg" alt="product image"/>
-                                        </a>
-                                    </div>
-                                    <div className="lg-image">
-                                        <a className="popup-img venobox vbox-item" href="images/product/large-size/3.jpg" data-gall="myGallery">
-                                            <img src="images/product/large-size/3.jpg" alt="product image"/>
-                                        </a>
-                                    </div>
-                                    <div className="lg-image">
-                                        <a className="popup-img venobox vbox-item" href="images/product/large-size/4.jpg" data-gall="myGallery">
-                                            <img src="images/product/large-size/4.jpg" alt="product image"/>
-                                        </a>
-                                    </div>
-                                    <div className="lg-image">
-                                        <a className="popup-img venobox vbox-item" href="images/product/large-size/5.jpg" data-gall="myGallery">
-                                            <img src="images/product/large-size/5.jpg" alt="product image"/>
-                                        </a>
-                                    </div>
-                                    <div className="lg-image">
-                                        <a className="popup-img venobox vbox-item" href="images/product/large-size/6.jpg" data-gall="myGallery">
-                                            <img src="images/product/large-size/6.jpg" alt="product image"/>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div className="product-details-thumbs slider-thumbs-1">
-                                    <div className="sm-image"><img src="images/product/small-size/1.jpg" alt="product image thumb"/></div>
-                                    <div className="sm-image"><img src="images/product/small-size/2.jpg" alt="product image thumb"/></div>
-                                    <div className="sm-image"><img src="images/product/small-size/3.jpg" alt="product image thumb"/></div>
-                                    <div className="sm-image"><img src="images/product/small-size/4.jpg" alt="product image thumb"/></div>
-                                    <div className="sm-image"><img src="images/product/small-size/5.jpg" alt="product image thumb"/></div>
-                                    <div className="sm-image"><img src="images/product/small-size/6.jpg" alt="product image thumb"/></div>
-                                </div>
-                            </div>
-                        </div>
+                                    <div className="row single-product-area">
+                                        <div className="col-lg-5 col-md-6">
+                                            <div className="product-details-left">
+                                                <div className="product-details-images slider-navigation-1">
+                                                    <div className="lg-image">
+                                                        <a className="popup-img venobox vbox-item" href="images/product/large-size/1.jpg" data-gall="myGallery">
+                                                            <img src={`http://localhost:2500/todaysdeals/` + item.productImage} className="mt-30" alt="product image"/>
+                                                        </a>
+                                                    </div>
+                                                    {/* <div className="lg-image">
+                                                        <a className="popup-img venobox vbox-item" href="images/product/large-size/2.jpg" data-gall="myGallery">
+                                                            <img src="images/product/large-size/2.jpg" alt="product image"/>
+                                                        </a>
+                                                    </div>
+                                                    <div className="lg-image">
+                                                        <a className="popup-img venobox vbox-item" href="images/product/large-size/3.jpg" data-gall="myGallery">
+                                                            <img src="images/product/large-size/3.jpg" alt="product image"/>
+                                                        </a>
+                                                    </div>
+                                                    <div className="lg-image">
+                                                        <a className="popup-img venobox vbox-item" href="images/product/large-size/4.jpg" data-gall="myGallery">
+                                                            <img src="images/product/large-size/4.jpg" alt="product image"/>
+                                                        </a>
+                                                    </div>
+                                                    <div className="lg-image">
+                                                        <a className="popup-img venobox vbox-item" href="images/product/large-size/5.jpg" data-gall="myGallery">
+                                                            <img src="images/product/large-size/5.jpg" alt="product image"/>
+                                                        </a>
+                                                    </div>
+                                                    <div className="lg-image">
+                                                        <a className="popup-img venobox vbox-item" href="images/product/large-size/6.jpg" data-gall="myGallery">
+                                                            <img src="images/product/large-size/6.jpg" alt="product image"/>
+                                                        </a>
+                                                    </div> */}
+                                                </div>
+                                                {/* <div className="product-details-thumbs slider-thumbs-1">
+                                                    <div className="sm-image"><img src="images/product/small-size/1.jpg" alt="product image thumb"/></div>
+                                                    <div className="sm-image"><img src="images/product/small-size/2.jpg" alt="product image thumb"/></div>
+                                                    <div className="sm-image"><img src="images/product/small-size/3.jpg" alt="product image thumb"/></div>
+                                                    <div className="sm-image"><img src="images/product/small-size/4.jpg" alt="product image thumb"/></div>
+                                                    <div className="sm-image"><img src="images/product/small-size/5.jpg" alt="product image thumb"/></div>
+                                                    <div className="sm-image"><img src="images/product/small-size/6.jpg" alt="product image thumb"/></div>
+                                                </div> */}
+                                            </div>
+                                        </div>
                         
                                     <div className="col-lg-7 col-md-6">
                                     <div className="product-details-view-content pt-60">
@@ -217,6 +217,12 @@ const DealDetails = (props) => {
                 }
                 </div>
             </div>
+
+
+        {
+            product.map(item => {
+                return(
+
             <div className="product-area pt-35">
                 <div className="container">
                     <div className="row">
@@ -233,13 +239,13 @@ const DealDetails = (props) => {
                     <div className="tab-content">
                         <div id="description" className="tab-pane active show" role="tabpanel">
                             <div className="product-description">
-                                <span>The best is yet to come! Give your walls a voice with a framed poster. This aesthethic, optimistic poster will look great in your desk or in an open-space office. Painted wooden frame with passe-partout for more depth.</span>
+                                <span>{item.productDescription}</span>
                             </div>
                         </div>
                         <div id="product-details" className="tab-pane" role="tabpanel">
                             <div className="product-details-manufacturer">
                                 <a href="#">
-                                    <img src="images/product-details/1.jpg" alt="Product Manufacturer Image"/>
+                                    <img src={`http://localhost:2500/todaysdeals/` + item.productImage} alt="Product Manufacturer Image"/>
                                 </a>
                                 <p><span>Reference</span> demo_7</p>
                                 <p><span>Reference</span> demo_7</p>
@@ -278,11 +284,11 @@ const DealDetails = (props) => {
                                                     <div className="modal-inner-area row">
                                                         <div className="col-lg-6">
                                                            <div className="li-review-product">
-                                                               <img src="images/product/large-size/3.jpg" alt="Li's Product"/>
+                                                               <img src={`http://localhost:2500/todaysdeals/` + item.productImage} style={{width: '70%'} } alt="Li's Product"/>
                                                                <div className="li-review-product-desc">
-                                                                   <p className="li-product-name">Today is a good day Framed poster</p>
+                                                                   <p className="li-product-name">{ item.productName }</p>
                                                                    <p>
-                                                                       <span>Beach Camera Exclusive Bundle - Includes Two Samsung Radiant 360 R3 Wi-Fi Bluetooth Speakers. Fill The Entire Room With Exquisite Sound via Ring Radiator Technology. Stream And Control R3 Speakers Wirelessly With Your Smartphone. Sophisticated, Modern Design </span>
+                                                                       <span>{ item.productDescription }</span>
                                                                    </p>
                                                                </div>
                                                            </div>
@@ -292,7 +298,7 @@ const DealDetails = (props) => {
                                                 
                                                                 <div className="feedback-area">
                                                                     <div className="feedback">
-                                                                        <h3 className="feedback-title">Our Feedback</h3>
+                                                                        <h3 className="feedback-title">Your Feedback</h3>
                                                                         <form action="#">
                                                                             <p className="your-opinion">
                                                                                 <label>Your Rating</label>
@@ -343,6 +349,9 @@ const DealDetails = (props) => {
                     </div>
                 </div>
             </div>
+                )
+            })
+        }
             <section className="product-area li-laptop-product pt-30 pb-50">
                 <div className="container">
                     <div className="row">

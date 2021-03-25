@@ -40,6 +40,10 @@ const ProductSchema = new mongoose.Schema({
     productReviews:{
         type: Array,
     },
+    countInStock:{
+        type: Number,
+        required: true
+    }
 }, {timestamps: true})
 
 const Product = mongoose.model('todays_deal', ProductSchema)
