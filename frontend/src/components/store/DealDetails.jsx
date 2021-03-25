@@ -1,7 +1,6 @@
 import React, {useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { dealProductDetail } from '../../actions/productActions';
-import $ from 'jquery'
 
 
 
@@ -16,26 +15,6 @@ const DealDetails = (props) => {
 
     useEffect(() => {
         dispatch(dealProductDetail(props.match.params.id))
-
-        /*----------------------------------------*/
-        /* 22. Cart Plus Minus Button
-        /*----------------------------------------*/
-        $(".cart-plus-minus").append('<div class="dec qtybutton"><i class="fa fa-angle-down"></i></div><div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>');
-        $(".qtybutton").on("click", function() {
-            var $button = $(this);
-            var oldValue = $button.parent().find("input").val();
-            if ($button.hasClass('inc')) {
-            var newVal = parseFloat(oldValue) + 1;
-            } else {
-                // Don't allow decrementing below zero
-            if (oldValue > 0) {
-                var newVal = parseFloat(oldValue) - 1;
-                } else {
-                newVal = 0;
-            }
-            }
-            $button.parent().find("input").val(newVal);
-        });
 
     }, [])
     return loading ? 
@@ -159,7 +138,8 @@ const DealDetails = (props) => {
                                             </div>
                                             <div className="product-desc">
                                                 <p>
-                                                    <span>100% cotton double printed dress. Black and white striped top and orange high waisted skater skirt bottom. Lorem ipsum dolor sit amet, consectetur adipisicing elit. quibusdam corporis, earum facilis et nostrum dolorum accusamus similique eveniet quia pariatur.
+                                                    <span>
+                                                        { item.productDescription }
                                                     </span>
                                                 </p>
                                             </div>
@@ -178,12 +158,14 @@ const DealDetails = (props) => {
                                                     <div className="quantity">
                                                         <label>Quantity</label>
                                                         <div className="cart-plus-minus">
-                                                            <input className="cart-plus-minus-box" value="1" type="text"/>
-                                                            <div className="dec qtybutton"><i className="fa fa-angle-down"></i></div>
-                                                            <div className="inc qtybutton"><i className="fa fa-angle-up"></i></div>
+                                                            <select className="nice-select">
+                                                                <option value="1" title="S" selected="selected">40x60cm</option>
+                                                                <option value="2" title="M">60x90cm</option>
+                                                                <option value="3" title="L">80x120cm</option>
+                                                            </select>
                                                         </div>
                                                     </div>
-                                                    <button className="add-to-cart" type="submit">Add to cart</button>
+                                                    <button className="add-to-cart ml-60" type="submit">Add to cart</button>
                                                 </form>
                                             </div>
                                             <div className="product-additional-info pt-25">
