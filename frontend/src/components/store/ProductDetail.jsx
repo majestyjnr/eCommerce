@@ -8,6 +8,7 @@ const ProductDetail = (props) => {
     const {product, loading, error} = productDetail;
     const dispatch = useDispatch()
     useEffect(() => {
+        console.log(props.match.params.id)
         dispatch(detailsOfProduct(props.match.params.id))
     }, [])
     return loading ? 
