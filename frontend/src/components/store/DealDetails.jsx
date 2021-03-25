@@ -68,13 +68,16 @@ const DealDetails = (props) => {
             </div>
             <div className="content-wraper">
                 <div className="container">
+                {
+                            product.map(item => {
+                                return(
                     <div className="row single-product-area">
                         <div className="col-lg-5 col-md-6">
                             <div className="product-details-left">
                                 <div className="product-details-images slider-navigation-1">
                                     <div className="lg-image">
                                         <a className="popup-img venobox vbox-item" href="images/product/large-size/1.jpg" data-gall="myGallery">
-                                            <img src="images/product/large-size/1.jpg" alt="product image"/>
+                                            <img src={`http://localhost:2500/todaysdeals/` + item.productImage} alt="product image"/>
                                         </a>
                                     </div>
                                     <div className="lg-image">
@@ -114,9 +117,6 @@ const DealDetails = (props) => {
                             </div>
                         </div>
                         
-                        {
-                            product.map(item => {
-                                return(
                                     <div className="col-lg-7 col-md-6">
                                     <div className="product-details-view-content pt-60">
                                         <div className="product-info">
@@ -210,12 +210,11 @@ const DealDetails = (props) => {
                                         </div>
                                     </div>
                                 </div>
-                                )
-                            })
-                        }
-
-                        
+                                
                     </div>
+                        )
+                    })
+                }
                 </div>
             </div>
             <div className="product-area pt-35">
