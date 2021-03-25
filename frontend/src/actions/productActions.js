@@ -1,5 +1,5 @@
 import axios from "axios"
-import { PRODUCTS_LIST_REQUEST, PRODUCTS_LIST_SUCCESS, PRODUCT_DEATAILS_SUCCESS, PRODUCT_DETAILS_FAIL, PRODUCT_DETAILS_REQUEST, PRODUCT_LIST_FAIL } from "../constants/productConstants"
+import { PRODUCTS_LIST_REQUEST, PRODUCTS_LIST_SUCCESS, PRODUCT_DETAILS_SUCCESS, PRODUCT_DETAILS_FAIL, PRODUCT_DETAILS_REQUEST, PRODUCT_LIST_FAIL } from "../constants/productConstants"
 
 const listProducts = () => async (dispatch) =>{
     try {
@@ -15,7 +15,7 @@ const detailsOfProduct = (productId) => async (dispatch) =>{
     try {
         dispatch({type: PRODUCT_DETAILS_REQUEST, payload: productId})
         const {data} = await axios.get('http://localhost:9000/api/product/' + productId)
-        dispatch({type: PRODUCT_DEATAILS_SUCCESS, payload: data})
+        dispatch({type: PRODUCT_DETAILS_SUCCESS, payload: data})
     } catch (error) {
         dispatch({type: PRODUCT_DETAILS_FAIL, payload: error.message})
     }
