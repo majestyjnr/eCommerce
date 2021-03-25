@@ -8,6 +8,7 @@ const DealDetails = (props) => {
     const dealDetail = useSelector(state => state.dealDetail)
     const {product, loading, error} = dealDetail;
     console.log(product)
+    console.log(props.match.params.id)
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(dealProductDetail(props.match.params.id))
@@ -49,7 +50,7 @@ const DealDetails = (props) => {
 
     : 
     
-    (
+    ( 
         <div>
             <div className="breadcrumb-area">
                 <div className="container">
@@ -108,12 +109,10 @@ const DealDetails = (props) => {
                                 </div>
                             </div>
                         </div>
-
                         <div className="col-lg-7 col-md-6">
                             <div className="product-details-view-content pt-60">
                                 <div className="product-info">
-                                    <h2>{product.productName}</h2>
-                                    {/* <span className="product-details-ref">Reference: demo_15</span> */}
+                                    <h2>{ product.productName }</h2>
                                     <div className="rating-box pt-20">
                                         <ul className="rating rating-with-review-item">
                                             <li><i className="fa fa-star-o"></i></li>
@@ -126,7 +125,7 @@ const DealDetails = (props) => {
                                         </ul>
                                     </div>
                                     <div className="price-box pt-20">
-                                        <span className="new-price new-price-2">{product.productPrice}</span>
+                                        <span className="new-price new-price-2">{ product.productPrice }</span>
                                     </div>
                                     <div className="product-desc">
                                         <p>
