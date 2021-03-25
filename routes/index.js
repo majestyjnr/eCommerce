@@ -97,6 +97,7 @@ router.get('/api/products', function(req, res){
 // Get Product details
 router.get('/api/product/:id', function(req, res){
     Products.findById({ _id: req.params.id }, function(err, product){
+        console.log(product)
         if(product){
             res.send(product)
         }else{
