@@ -13,7 +13,7 @@ function productListReducer(state= {products:[]}, action){
     }
 }
 
-function productDetailReducer(state= {product:{}}, action){
+function productDetailReducer(state= { product: {} }, action){
     switch(action.type){
         case PRODUCT_DETAILS_REQUEST:
             return {loading: true};
@@ -26,7 +26,7 @@ function productDetailReducer(state= {product:{}}, action){
     }
 }
 
-function dealDetailReducer(state= {product:{}}, action){
+function dealDetailReducer(state= { product: [] }, action){
     switch(action.type){
         case PRODUCT_DETAILS_REQUEST:
             return {loading: true};
