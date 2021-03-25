@@ -6,7 +6,7 @@ import { listProducts } from '../../actions/productActions'
 
 const TodaysDeal = () => {
 
-    const productList = useSelector(state => state.productList)
+    const productList = useSelector(state => state.)
     const {products, loading, error} = productList;
     
     const dispatch = useDispatch()

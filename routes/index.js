@@ -109,4 +109,9 @@ router.get('/api/todays-deals', function(req, res){
     TodaysDeals.find().then((products)=>{res.send(products)})
 })
 
+// GET Today's Deals Product Details
+router.get('/api/p/', function(req, res){
+    TodaysDeals.find().then((products)=>{res.send(products)})
+})
+
 module.exports = router

@@ -25,6 +25,7 @@ import Contact from "./components/store/ContactUs";
 import Products from "./components/store/Products";
 import Product from "./components/store/ProductDetail";
 import TodaysDeals from "./components/store/TodaysDeal";
+import DealDetails from "./components/store/DealDetails";
 import Sell from "./components/store/Sell";
 import Cart from "./components/store/Cart";
 import Faq from "./components/store/Faq";
@@ -46,8 +47,9 @@ function App() {
       {/* Store */}
       <Route path="/" exact component={Index} />
       <Route path="/products" exact component={Products} />
-      <Route path="/product-detail/:id" exact component={Product} />
+      <Route path="/product/:id" exact component={Product} />
       <Route path="/today's-deals" exact component={TodaysDeals} />
+      <Route path="/p/:id" exact component={DealDetails} />
       <Route path="/sell" exact component={Sell} />
 
       {/* About Limpupa */}

@@ -1,11 +1,12 @@
 import {createStore, combineReducers, compose, applyMiddleware} from 'redux'
 import thunk from 'redux-thunk'
-import { productDetailReducer, productListReducer } from './reducers/productReducers'
+import { dealDetailReducer, productDetailReducer, productListReducer } from './reducers/productReducers'
 
 const initialState = {}
 const reducer = combineReducers ({
     productList: productListReducer,
     productDetail: productDetailReducer,
+    dealDeatail: dealDetailReducer,
 })      
 
 // ***Thunk*** is a middleware for redux that allows us to async updation inside action in the redux
