@@ -1,9 +1,18 @@
 import React, {useEffect} from 'react'
+import { useDispatch } from 'react-redux';
 
 
 const Cart = (props) => {
+    const  productID = props.match.params.id;
+    const qty = props.location.search? Number(props.location.search.split("=")[1]) : 1
+
+    const dispatch = useDispatch()
     useEffect(() => {
         document.title = 'Cart | Limpupa';
+
+        if(productID){
+            dispatch(addToCart(productID, qty))
+        }
      }, [])
     return (
         <div>
