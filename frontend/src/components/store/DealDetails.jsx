@@ -1,10 +1,11 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { dealProductDetail } from '../../actions/productActions';
 
 
 
 const DealDetails = (props) => {
+    const [qty, setQty] = useState(1)
     const dealDetail = useSelector(state => state.dealDetail)
     const { product, loading, error } = dealDetail;
 
@@ -15,8 +16,12 @@ const DealDetails = (props) => {
 
     useEffect(() => {
         dispatch(dealProductDetail(props.match.params.id))
-
     }, [])
+
+    const addToCart = () =>{
+        props.history.push("/shopping-cart/" + props.match.params.id + "?qty=" + qty)
+    }
+
     return loading ? 
     <div>
         <div className="breadcrumb-area">
@@ -156,16 +161,16 @@ const DealDetails = (props) => {
                                             <div className="single-add-to-cart">
                                                 <form action="#" className="cart-quantity">
                                                     <div className="quantity">
-                                                        <label>Quantity</label>
+                                                        <label>Quantity:</label>
                                                         <div className="cart-plus-minus">
-                                                            <select className="nice-select">
-                                                                <option value="1" title="S" selected="selected">40x60cm</option>
-                                                                <option value="2" title="M">60x90cm</option>
-                                                                <option value="3" title="L">80x120cm</option>
+                                                            <select className="nice-select" value={qty} onChange={(e)=> {setQty(e.target.value)}}>
+                                                                {[...Array(item.countInStock).keys()].map(x =>
+                                                                    <option value={x + 1} key={x + 1}>{x + 1}</option>
+                                                                )}
                                                             </select>
                                                         </div>
                                                     </div>
-                                                    <button className="add-to-cart ml-60" type="submit">Add to cart</button>
+                                                    <button onClick={addToCart} className="add-to-cart ml-60" type="submit">Add to cart</button>
                                                 </form>
                                             </div>
                                             <div className="product-additional-info pt-25">
@@ -394,7 +399,7 @@ const DealDetails = (props) => {
                                                 </div>
                                                 <div className="add-actions">
                                                     <ul className="add-actions-link">
-                                                        <li className="add-cart active"><a href="#">Add to cart</a></li>
+                                                        <li className="add-cart active"><a href="#" nClick={addToCart}>Add to cart</a></li>
                                                         <li><a href="#" title="quick view" className="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i className="fa fa-eye"></i></a></li>
                                                         <li><a className="links-details" href="wishlist.html"><i className="fa fa-heart-o"></i></a></li>
                                                     </ul>
@@ -474,7 +479,7 @@ const DealDetails = (props) => {
                                                 </div>
                                                 <div className="add-actions">
                                                     <ul className="add-actions-link">
-                                                        <li className="add-cart active"><a href="#">Add to cart</a></li>
+                                                        <li className="add-cart active"><a href="#" nClick={addToCart}>Add to cart</a></li>
                                                         <li><a href="#" title="quick view" className="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i className="fa fa-eye"></i></a></li>
                                                         <li><a className="links-details" href="wishlist.html"><i className="fa fa-heart-o"></i></a></li>
                                                     </ul>
@@ -515,7 +520,7 @@ const DealDetails = (props) => {
                                                 </div>
                                                 <div className="add-actions">
                                                     <ul className="add-actions-link">
-                                                        <li className="add-cart active"><a href="#">Add to cart</a></li>
+                                                        <li className="add-cart active"><a href="#" onClick={addToCart}>Add to cart</a></li>
                                                         <li><a href="#" title="quick view" className="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i className="fa fa-eye"></i></a></li>
                                                         <li><a className="links-details" href="wishlist.html"><i className="fa fa-heart-o"></i></a></li>
                                                     </ul>
