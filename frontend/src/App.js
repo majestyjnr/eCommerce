@@ -64,7 +64,7 @@ function App() {
       <Route path="/account/login" exact component={Login} />
       <Route path="/account/register" exact component={Register} />
       <Route path="/account/" exact component={MyAccount} />
-      <Route path="/shopping-cart" exact component={Cart} />
+      <Route path="/shopping-cart/:id?" exact component={Cart} />
       <Route path="/wishlist" exact component={Wishlist} />
 
       {/* Footer */}

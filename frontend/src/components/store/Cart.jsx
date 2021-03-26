@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 
 
-const Cart = () => {
+const Cart = (props) => {
     useEffect(() => {
         document.title = 'Cart | Limpupa';
      }, [])
