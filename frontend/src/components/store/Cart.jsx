@@ -15,6 +15,7 @@ const Cart = (props) => {
             dispatch(addToCart(productID, qty))
         }
      }, [])
+     
     return (
         <div>
             <div className="breadcrumb-area">
