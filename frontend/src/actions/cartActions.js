@@ -27,4 +27,8 @@ const addToCart = (productID, qty) => async (dispatch) =>{
     }
 }
 
-export { addToCart }
+const removeItemFromCart = (productId) => (dispatch) =>{
+    dispatch({type: CART_REMOVE_ITEM, payload: productId})
+}
+
+export { addToCart, removeItemFromCart }

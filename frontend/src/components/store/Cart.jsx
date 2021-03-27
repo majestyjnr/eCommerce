@@ -9,8 +9,12 @@ const Cart = (props) => {
     const { cartItems } = cart
     const  productID = props.match.params.id;
     const qty = props.location.search? Number(props.location.search.split("=")[1]) : 1
-
     const dispatch = useDispatch()
+
+    const removeFromCart = (productID) =>{
+        dispatch(removeItemFromCart(productID))
+    }
+
     useEffect(() => {
         document.title = 'Cart | Limpupa';
 
@@ -60,8 +64,8 @@ const Cart = (props) => {
                                                 </thead>
                                                 <tbody>
                                                     <tr>
-                                                        <td className="li-product-remove"><a href="#"><i className="fa fa-times"></i></a></td>
-                                                        <td className="li-product-thumbnail"><a href="#"><img src={`http://localhost:2500/todaysdeals/` + item.productImage} alt="Li's Product Image" /></a></td>
+                                                        <td className="li-product-remove"><button type="button" className="btn btn-danger" onClick={()=> removeFromCart(item._id)}><i className="fa fa-times"></i></button></td>
+                                                        <td width='200' align="center" className="li-product-thumbnail"><a href="#"><img src={`http://localhost:2500/todaysdeals/` + item.productImage} style={{display: 'block'}} width="60%" alt="Li's Product Image" /></a></td>
                                                         <td className="li-product-name"><a href="#">{item.productName}</a></td>
                                                         <td className="li-product-price"><span className="amount">GHS {item.productPrice}.00</span></td>
                                                         <td className="quantity">
@@ -83,7 +87,7 @@ const Cart = (props) => {
                                             <div className="col-12">
                                                 <div className="coupon-all">
                                                     <div className="coupon">
-                                                        <input id="coupon_code" className="input-text" name="coupon_code" value="" placeholder="Coupon code" type="text" />
+                                                        <input id="coupon_code" className="input-text" name="coupon_code" placeholder="Coupon code" type="text" />
                                                         <input className="button" name="apply_coupon" value="Apply coupon" type="submit" />
                                                     </div>
                                                     <div className="coupon2">
