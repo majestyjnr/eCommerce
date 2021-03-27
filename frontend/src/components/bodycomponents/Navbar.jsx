@@ -3,10 +3,15 @@ import { Link } from 'react-router-dom'
 import $ from 'jquery'
 
 import Logo from '../../images/menu/logo/1.jpg'
+import { useDispatch, useSelector } from 'react-redux'
 
 const Navbar = () => {
+    const cart = useSelector(state => state.cart);
+    const { cartItems } = cart
 
+    const dispatch = useDispatch()
     useEffect(() => {
+
         $('.ht-setting-trigger, .ht-currency-trigger, .ht-language-trigger, .hm-minicart-trigger, .cw-sub-menu').on('click', function (e) {
             e.preventDefault();
             $(this).toggleClass('is-active');
@@ -185,7 +190,7 @@ const Navbar = () => {
                                             <div className='hm-minicart-trigger'>
                                                 <span className="item-icon"></span>
                                                 <span className="item-text">£80.00
-                                                    <span className="cart-item-count">2</span>
+                                                    <span className="cart-item-count">{cartItems.length}</span>
                                                 </span>
                                             </div>
                                             <span></span>

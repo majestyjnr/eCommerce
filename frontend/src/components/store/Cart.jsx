@@ -1,9 +1,12 @@
 import React, {useEffect} from 'react'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../../actions/cartActions';
 
 
 const Cart = (props) => {
+
+    const cart = useSelector(state => state.cart);
+    const { cartItems } = cart
     const  productID = props.match.params.id;
     const qty = props.location.search? Number(props.location.search.split("=")[1]) : 1
 
@@ -15,7 +18,7 @@ const Cart = (props) => {
             dispatch(addToCart(productID, qty))
         }
      }, [])
-     
+
     return (
         <div>
             <div className="breadcrumb-area">
@@ -28,7 +31,15 @@ const Cart = (props) => {
                     </div>
                 </div>
             </div>
-            <div className="Shopping-cart-area pt-60 pb-60">
+            {
+                cartItems.length == 0  ?
+                <div className="text-center mt-60 mb-60">
+                    <h1> No item found in cart</h1>
+                </div>
+
+                :
+
+                <div className="Shopping-cart-area pt-60 pb-60">
                 <div className="container">
                     <div className="row">
                         <div className="col-12">
@@ -109,6 +120,8 @@ const Cart = (props) => {
                     </div>
                 </div>
             </div>
+            }
+            
         </div>
     )
 }
