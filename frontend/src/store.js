@@ -3,6 +3,7 @@ import thunk from 'redux-thunk'
 import Cookie from 'js-cookie'
 import { dealDetailReducer, productDetailReducer, productListReducer } from './reducers/productReducers'
 import {cartReducer} from './reducers/cartReducer'
+import { userSignInReducer } from './reducers/userReducers'
 
 const cartItems = Cookie.getJSON('cartItems') || []
 
@@ -11,7 +12,8 @@ const reducer = combineReducers ({
     productList: productListReducer,
     productDetail: productDetailReducer,
     dealDetail: dealDetailReducer,
-    cart: cartReducer
+    cart: cartReducer,
+    userSignIn: userSignInReducer
 })      
 
 

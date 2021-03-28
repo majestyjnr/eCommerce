@@ -52,14 +52,14 @@ const Navbar = () => {
                                         {/* <!-- Setting Area End Here --> */}
                                         {/* <!-- Begin Currency Area --> */}
                                         <li>
-                                            <span className="currency-selector-wrapper">Currency :</span>
-                                            <div className="ht-currency-trigger"><span>USD $</span></div>
+                                            <span className="currency-selector-wrapper">Currency : GHS</span>
+                                            {/* <div className="ht-currency-trigger"><span>USD $</span></div>
                                             <div className="currency ht-currency">
                                                 <ul className="ht-setting-list">
                                                     <li><a href="#">EUR €</a></li>
                                                     <li className="active"><a href="#">USD $</a></li>
                                                 </ul>
-                                            </div>
+                                            </div> */}
                                         </li>
                                         {/* <!-- Currency Area End Here --> */}
                                         {/* <!-- Begin Language Area --> */}
