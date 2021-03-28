@@ -11,6 +11,4 @@ const getToken = (user) =>{
     },  config.get("jwtSecret"), { expiresIn: '24h' })
 }
 
-export {
-    getToken
-}
+module.exports = getToken

@@ -11,17 +11,20 @@ const Login = (props) => {
     const {loading, userInfo, error} = userSignIn
     const dispatch = useDispatch()
 
+
+
     useEffect(() => {        
-        dispatch(signIn(email, password))
 
         if(userInfo){
             props.history.push('/')
         }
         document.title = 'Login | Limpupa'
-    }, []);
+    }, [userInfo]);
 
     const submitHandler = (e) =>{
         e.preventDefault();
+
+        dispatch(signIn(email, password))
     }
     return (
         <div>

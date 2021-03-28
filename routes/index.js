@@ -8,6 +8,7 @@ const config = require("config");
 const Products = require("../models/Products");
 const Users = require("../models/Users");
 const TodaysDeals = require("../models/TodaysDeals");
+const getToken = require("../config/auth");
 
 // ##################### ACCOUNT REGISTRATION #######################
 

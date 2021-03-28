@@ -9,6 +9,9 @@ const Navbar = () => {
     const cart = useSelector(state => state.cart);
     const { cartItems } = cart
 
+    const userSignIn = useSelector(state => state.userSignIn)
+    const {userInfo} = userSignIn
+
     const dispatch = useDispatch()
     useEffect(() => {
 
@@ -40,12 +43,16 @@ const Navbar = () => {
                                     <ul className="ht-menu">
                                         {/* <!-- Begin Setting Area --> */}
                                         <li>
-                                            <div className="ht-setting-trigger"><span>Setting</span></div>
+                                            <div className="ht-setting-trigger">{userInfo? <span>{userInfo.email}</span> : <span>Log In</span> }</div>
                                             <div className="setting ht-setting">
                                                 <ul className="ht-setting-list">
-                                                    <li><Link to="/account/">My Account</Link></li>
-                                                    <li><Link to="/checkout">Checkout</Link></li>
-                                                    <li><Link to="/account/login">Log In</Link></li>
+                                                    {
+                                                        userInfo ? <li><Link to="/account/">My Account</Link></li> : null
+                                                    }
+                                                    {
+                                                        userInfo ?  <li><Link to="/account/logout">Log Out</Link></li> : <li><Link to="/account/login">Log In</Link></li>
+                                                    }
+                                                    
                                                 </ul>
                                             </div>
                                         </li>
@@ -53,27 +60,7 @@ const Navbar = () => {
                                         {/* <!-- Begin Currency Area --> */}
                                         <li>
                                             <span className="currency-selector-wrapper">Currency : GHS</span>
-                                            {/* <div className="ht-currency-trigger"><span>USD $</span></div>
-                                            <div className="currency ht-currency">
-                                                <ul className="ht-setting-list">
-                                                    <li><a href="#">EUR €</a></li>
-                                                    <li className="active"><a href="#">USD $</a></li>
-                                                </ul>
-                                            </div> */}
                                         </li>
-                                        {/* <!-- Currency Area End Here --> */}
-                                        {/* <!-- Begin Language Area --> */}
-                                        {/* <li>
-                                            <span className="language-selector-wrapper">Language :</span>
-                                            <div className="ht-language-trigger"><span>English</span></div>
-                                            <div className="language ht-language">
-                                                <ul className="ht-setting-list">
-                                                    <li className="active"><a href="#"><img src="images/menu/flag-icon/1.jpg" alt=""/>English</a></li>
-                                                    <li><a href="#"><img src="images/menu/flag-icon/2.jpg" alt=""/>Français</a></li>
-                                                </ul>
-                                            </div>
-                                        </li> */}
-                                        {/* <!-- Language Area End Here --> */}
                                     </ul>
                                 </div>
                             </div>
