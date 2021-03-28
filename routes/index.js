@@ -12,6 +12,8 @@ const TodaysDeals = require('../models/TodaysDeals')
 
 // ##################### ACCOUNT REGISTRATION #######################
 
+
+// Register User
 router.post('/api/register-user', function(req, res){
 
     // const {firstname, lastname, email, phone, password} = req.body
@@ -72,6 +74,17 @@ router.post('/api/register-user', function(req, res){
             );
         }
     })
+})
+
+// Sigin User
+router.post('/signin', function(resq, res){
+    Users.findOne({email: req.body.email}).then((user) =>{
+        if(!user){
+            res.status(401).send({msg: "The email entered isn't registered"})
+        }else if(user){
+            
+        }
+    }) 
 })
 
 
