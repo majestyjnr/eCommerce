@@ -8,9 +8,11 @@ import { useDispatch, useSelector } from 'react-redux'
 const Navbar = () => {
     const cart = useSelector(state => state.cart);
     const { cartItems } = cart
-
+    var totalPrice = 0
     const userSignIn = useSelector(state => state.userSignIn)
     const {userInfo} = userSignIn
+
+    const [price, setPrice] = useState(0)
 
     const dispatch = useDispatch()
     useEffect(() => {
@@ -57,7 +59,6 @@ const Navbar = () => {
                                             </div>
                                         </li>
                                         {/* <!-- Setting Area End Here --> */}
-                                        {/* <!-- Begin Currency Area --> */}
                                         <li>
                                             <span className="currency-selector-wrapper">Currency : GHS</span>
                                         </li>
@@ -173,10 +174,17 @@ const Navbar = () => {
                                         </li>
                                         {/* <!-- Header Middle Wishlist Area End Here --> */}
                                         {/* <!-- Begin Header Mini Cart Area --> */}
+                                        {
+                                            cartItems.map(item =>{
+                                                return (
+                                                    <div style={{display: 'none'}}>{totalPrice += item.qty * item.productPrice}</div>
+                                                )
+                                            })
+                                        }
                                         <li className="hm-minicart">
                                             <div className='hm-minicart-trigger'>
                                                 <span className="item-icon"></span>
-                                                <span className="item-text">£80.00
+                                                <span className="item-text">GHS {totalPrice}.00
                                                     <span className="cart-item-count">{cartItems.length}</span>
                                                 </span>
                                             </div>
@@ -208,7 +216,7 @@ const Navbar = () => {
                                                         </button>
                                                     </li>
                                                 </ul>
-                                                <p className="minicart-total">SUBTOTAL: <span>£80.00</span></p>
+                                                <p className="minicart-total">SUBTOTAL: <span>GHS {totalPrice}.00</span></p>
                                                 <div className="minicart-button">
                                                     <Link to="/shopping-cart" className="li-button li-button-fullwidth li-button-dark">
                                                         <span>View Full Cart</span>
