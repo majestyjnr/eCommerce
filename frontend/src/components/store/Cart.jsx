@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { addToCart } from '../../actions/cartActions';
+import { addToCart, removeItemFromCart } from '../../actions/cartActions';
 
 
 const Cart = (props) => {
@@ -15,6 +15,10 @@ const Cart = (props) => {
         dispatch(removeItemFromCart(productID))
     }
 
+    const checkOut = () =>{
+        props.history.push('/')
+    }
+    
     useEffect(() => {
         document.title = 'Cart | Limpupa';
 
@@ -71,14 +75,14 @@ const Cart = (props) => {
                                                         <td className="quantity">
                                                             <label>Quantity</label>
                                                             <div className="cart-plus-minus">
-                                                            <select className="nice-select" value={qty}>
+                                                            <select className="nice-select" value={item.qty} onChange={(e) => dispatch(addToCart(item._id, e.target.value))}> 
                                                                 {[...Array(item.countInStock).keys()].map(x =>
                                                                     <option value={x + 1} key={x + 1}>{x + 1}</option>
                                                                 )}
                                                             </select>
                                                         </div>
                                                         </td>
-                                                        <td className="product-subtotal"><span className="amount">GHS {qty * item.productPrice}.00</span></td>
+                                                        <td className="product-subtotal"><span className="amount">GHS {item.qty * item.productPrice}.00</span></td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -104,7 +108,7 @@ const Cart = (props) => {
                                                         <li>Subtotal <span>$130.00</span></li>
                                                         <li>Total <span>$130.00</span></li>
                                                     </ul>
-                                                    <a href="#">Proceed to checkout</a>
+                                                    <input className="button btn-warning" onClick={checkOut} value="Proceed to checkout" type="button" />
                                                 </div>
                                             </div>
                                         </div>
