@@ -8,9 +8,6 @@ const DealDetails = (props) => {
     const [qty, setQty] = useState(1)
     const dealDetail = useSelector(state => state.dealDetail)
     const { product, loading, error } = dealDetail;
-
-
-    console.log(props.match.params.id)
     
     const dispatch = useDispatch()
 
