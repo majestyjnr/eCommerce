@@ -1,9 +1,10 @@
 import axios from 'axios'
 import Cookie from 'js-cookie'
+import { WISHLIST_ADD_ITEM, WISHLIST_REMOVE_ITEM } from '../constants/wishListConstants';
 
 const addToWishList = (productId) => async (dispatch) => {
     try {
-        const {data} = await axios.get('http://localhost:9000/api/p/' + productID);
+        const {data} = await axios.get('http://localhost:9000/api/p/' + productId);
         dispatch({
             type: WISHLIST_ADD_ITEM, payload:{
                 _id: data[0]._id,
