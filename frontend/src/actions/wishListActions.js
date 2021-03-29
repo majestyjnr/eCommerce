@@ -2,7 +2,7 @@ import axios from 'axios'
 import Cookie from 'js-cookie'
 import { WISHLIST_ADD_ITEM, WISHLIST_REMOVE_ITEM } from '../constants/wishListConstants';
 
-const addToWishList = (productId) => async (dispatch) => {
+const addToWishList = (productId) => async (dispatch, getState) => {
     try {
         const {data} = await axios.get('http://localhost:9000/api/p/' + productId);
         dispatch({
@@ -20,15 +20,21 @@ const addToWishList = (productId) => async (dispatch) => {
                 countInStock: data[0].countInStock, 
             }
         })
+
+        const {wishList: {wishListItems}} = getState();
+        Cookie.set('wishListItems', JSON.stringify(wishListItems))
+
     } catch (error) {
         
     }
 }
 
-const removeItemFromWishList = (productId) => async (dispatch) => {
+const removeItemFromWishList = (productId) => async (dispatch, getState) => {
     try {
         dispatch({type: WISHLIST_REMOVE_ITEM, payload: productId})
 
+        const {wishList: {wishListItems}} = getState();
+        Cookie.set('wishListItems', JSON.stringify(wishListItems))
     } catch (error) {
         
     }

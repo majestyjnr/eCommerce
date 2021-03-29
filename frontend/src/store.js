@@ -8,9 +8,10 @@ import { wishListReducer } from './reducers/wishListReducer'
 
 const cartItems = Cookie.getJSON('cartItems') || []
 const userInfo = Cookie.getJSON('userInfo') || null
+const wishListItems = Cookie.getJSON('wishListItems') || []
 
 
-const initialState = {cart: {cartItems}, userSignIn: {userInfo}}
+const initialState = {cart: {cartItems}, userSignIn: {userInfo}, wishList: {wishListItems}}
 const reducer = combineReducers ({
     productList: productListReducer,
     productDetail: productDetailReducer,
