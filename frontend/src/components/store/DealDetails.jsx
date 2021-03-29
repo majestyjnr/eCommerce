@@ -391,7 +391,7 @@ const DealDetails = (props) => {
                                                 </div>
                                                 <div className="add-actions">
                                                     <ul className="add-actions-link">
-                                                        <li className="add-cart active"><a href="#" nClick={addToCart}>Add to cart</a></li>
+                                                        <li className="add-cart active"><a href="#" onClick={addToCart}>Add to cart</a></li>
                                                         <li><a href="#" title="quick view" className="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i className="fa fa-eye"></i></a></li>
                                                         <li><a className="links-details" href="wishlist.html"><i className="fa fa-heart-o"></i></a></li>
                                                     </ul>

@@ -4,7 +4,7 @@ import Banner from "../../images/bg-banner/2.jpg"
 import { useDispatch, useSelector } from 'react-redux'
 import { listProducts } from '../../actions/productActions'
 
-const TodaysDeal = () => {
+const TodaysDeal = (props) => {
     const [qty, setQty] = useState(1)
     const productList = useSelector(state => state.productList)
     const {products, loading, error} = productList;
