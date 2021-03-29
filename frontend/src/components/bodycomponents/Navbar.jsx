@@ -12,9 +12,6 @@ const Navbar = () => {
     const userSignIn = useSelector(state => state.userSignIn)
     const {userInfo} = userSignIn
 
-    const [price, setPrice] = useState(0)
-
-    const dispatch = useDispatch()
     useEffect(() => {
 
         $('.ht-setting-trigger, .ht-currency-trigger, .ht-language-trigger, .hm-minicart-trigger, .cw-sub-menu').on('click', function (e) {
@@ -184,7 +181,7 @@ const Navbar = () => {
                                         <li className="hm-minicart">
                                             <div className='hm-minicart-trigger'>
                                                 <span className="item-icon"></span>
-                                                <span className="item-text">GHS {totalPrice}.00
+                                                <span className="item-text">GHS {totalPrice}
                                                     <span className="cart-item-count">{cartItems.length}</span>
                                                 </span>
                                             </div>

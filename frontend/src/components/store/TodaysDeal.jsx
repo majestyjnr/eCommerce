@@ -1,11 +1,11 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import {Link} from 'react-router-dom'
 import Banner from "../../images/bg-banner/2.jpg"
 import { useDispatch, useSelector } from 'react-redux'
 import { listProducts } from '../../actions/productActions'
 
 const TodaysDeal = () => {
-
+    const [qty, setQty] = useState(1)
     const productList = useSelector(state => state.productList)
     const {products, loading, error} = productList;
     
@@ -18,6 +18,10 @@ const TodaysDeal = () => {
         dispatch(listProducts());
     
     }, []);
+
+    const addToCart = () =>{
+        props.history.push("/shopping-cart/" + props.match.params.id + "?qty=" + qty)
+    }
 
     return loading ? 
         <div>
@@ -203,7 +207,7 @@ const TodaysDeal = () => {
                                                                 <div className="col-lg-4">
                                                                     <div className="shop-add-action mb-xs-30">
                                                                         <ul className="add-actions-link">
-                                                                            <li className="add-cart"><Link to="/">Add to cart</Link></li>
+                                                                            <li className="add-cart"><a href="#" onClick={addToCart}>Add to cart</a></li>
                                                                             <li className="wishlist"><a href="wishlist.html"><i className="fa fa-heart-o"></i>Add to wishlist</a></li>
                                                                             <li><a className="quick-view" data-toggle="modal" data-target="#exampleModalCenter" href="#"><i className="fa fa-eye"></i>Quick view</a></li>
                                                                         </ul>

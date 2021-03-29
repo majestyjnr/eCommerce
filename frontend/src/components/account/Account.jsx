@@ -3,6 +3,7 @@ import axios from 'axios'
 import $ from 'jquery'
 
 import AccountImage from '../../images/account.jpg'
+import { useSelector } from 'react-redux'
 
 const Account = () => {
 
@@ -12,6 +13,9 @@ const Account = () => {
     const [phone, setPhone] = useState('')
     const [password, setPassword] = useState('')
     const [confirmpassword, setConfirmpassword] = useState('')
+
+    const userSignIn = useSelector(state => state.userSignIn)
+    const {userInfo} = userSignIn
 
     useEffect(() => {
         document.title = 'My Account | Limpupa'
@@ -78,19 +82,19 @@ const Account = () => {
                                 <div className="row">
                                     <div className="col-md-6 col-12 mb-20">
                                         <label>First Name</label>
-                                        <input className="mb-0" type="text" value={firstname} onChange={(e) => setFirstname(e.target.value)} placeholder="First Name" required/>
+                                        <input className="mb-0" type="text" value={userInfo.firstname} onChange={(e) => setFirstname(e.target.value)} placeholder="First Name" required/>
                                     </div>
                                     <div className="col-md-6 col-12 mb-20">
                                         <label>Last Name</label>
-                                        <input className="mb-0" type="text" value={lastname} onChange={(e) => setLastname(e.target.value)} placeholder="Last Name" required/>
+                                        <input className="mb-0" type="text" value={userInfo.lastname} onChange={(e) => setLastname(e.target.value)} placeholder="Last Name" required/>
                                     </div>
                                     <div className="col-md-12 mb-20">
                                         <label>Email Address*</label>
-                                        <input className="mb-0" type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email Address" required/>
+                                        <input className="mb-0" type="email" value={userInfo.email} onChange={(e) => setEmail(e.target.value)} placeholder="Email Address" required/>
                                     </div>
                                     <div className="col-md-12 mb-20">
                                         <label>Phone*</label>
-                                        <input className="mb-0" type="number" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Phone Number" required/>
+                                        <input className="mb-0" type="number" value={userInfo.phone} onChange={(e) => setPhone(e.target.value)} placeholder="Phone Number" required/>
                                     </div>
                                     <div className="col-12">
                                         <button className="register-button mt-0 btn-block" type='submit' >Update Details</button>
@@ -140,7 +144,7 @@ const Account = () => {
                           Name
                         </td>
                         <td className="cart-product-total">
-                          <span className="amount">Solomon Aidoo Junior</span>
+                          <span className="amount"><strong><h5>{userInfo.firstname + ' ' + userInfo.lastname}</h5></strong></span>
                         </td>
                       </tr>
                       <tr className="cart_item">
@@ -148,7 +152,7 @@ const Account = () => {
                           Email
                         </td>
                         <td className="cart-product-total">
-                          <span className="amount">aidoojuniorsolomon@gmail.com</span>
+                          <span className="amount"><strong><h5>{userInfo.email}</h5></strong></span>
                         </td>
                       </tr>
                       <tr className="cart_item">
@@ -156,7 +160,7 @@ const Account = () => {
                           Phone
                         </td>
                         <td className="cart-product-total">
-                          <span className="amount">0544174142</span>
+                          <span className="amount"><strong><h5>{ userInfo.phone }</h5></strong></span>
                         </td>
                       </tr>
                     </tbody>
