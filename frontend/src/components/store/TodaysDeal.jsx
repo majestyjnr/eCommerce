@@ -149,7 +149,7 @@ const TodaysDeal = (props) => {
                                                                     </div>
                                                                     <div className="add-actions">
                                                                         <ul className="add-actions-link">
-                                                                            <li className="add-cart active"><a href="shopping-cart.html">Add to cart</a></li>
+                                                                            <li className="add-cart active"><a href={"/shopping-cart/" + product._id + "?qty=" + qty}>Add to cart</a></li>
                                                                             <li><a href="#" title="quick view" className="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i className="fa fa-eye"></i></a></li>
                                                                             <li><a className="links-details" href="wishlist.html"><i className="fa fa-heart-o"></i></a></li>
                                                                         </ul>
@@ -208,7 +208,7 @@ const TodaysDeal = (props) => {
                                                                     <div className="shop-add-action mb-xs-30">
                                                                         <ul className="add-actions-link">
                                                                             <li className="add-cart"><a href={"/shopping-cart/" + product._id + "?qty=" + qty}>Add to cart</a></li>
-                                                                            <li className="wishlist"><a href="wishlist.html"><i className="fa fa-heart-o"></i>Add to wishlist</a></li>
+                                                                            <li className="wishlist"><a href={"/wishlist/" + product._id}><i className="fa fa-heart-o"></i>Add to wishlist</a></li>
                                                                             <li><a className="quick-view" data-toggle="modal" data-target="#exampleModalCenter" href="#"><i className="fa fa-eye"></i>Quick view</a></li>
                                                                         </ul>
                                                                     </div>

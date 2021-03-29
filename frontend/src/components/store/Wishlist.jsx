@@ -1,7 +1,15 @@
 import React, {useEffect} from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import { addToWishList } from '../../actions/wishListActions';
 
-const Wishlist = () => {
+const Wishlist = (props) => {
+
+    const wishList =  useSelector(state => state.wishList)
+    const {wishListItems} = wishList
+
+    const dispatch = useDispatch()
     useEffect(() => {
+        dispatch(addToWishList(props.match.params.id))
         document.title = 'Wishlist | Limpupa'
     }, []);
     
@@ -35,30 +43,27 @@ const Wishlist = () => {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td className="li-product-remove"><a href="#"><i className="fa fa-times"></i></a></td>
-                                                <td className="li-product-thumbnail"><a href="#"><img src="images/wishlist-thumb/1.jpg" alt="" /></a></td>
-                                                <td className="li-product-name"><a href="#">Giro Civilia</a></td>
-                                                <td className="li-product-price"><span className="amount">$23.39</span></td>
-                                                <td className="li-product-stock-status"><span className="in-stock">in stock</span></td>
-                                                <td className="li-product-add-cart"><a href="#">add to cart</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td className="li-product-remove"><a href="#"><i className="fa fa-times"></i></a></td>
-                                                <td className="li-product-thumbnail"><a href="#"><img src="images/wishlist-thumb/2.jpg" alt="" /></a></td>
-                                                <td className="li-product-name"><a href="#">Pro Bike Shoes</a></td>
-                                                <td className="li-product-price"><span className="amount">$30.50</span></td>
-                                                <td className="li-product-stock-status"><span className="in-stock">in stock</span></td>
-                                                <td className="li-product-add-cart"><a href="#">add to cart</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td className="li-product-remove"><a href="#"><i className="fa fa-times"></i></a></td>
-                                                <td className="li-product-thumbnail"><a href="#"><img src="images/wishlist-thumb/3.jpg" alt=""/></a></td>
-                                                <td className="li-product-name"><a href="#">Nero Urban Shoes</a></td>
-                                                <td className="li-product-price"><span className="amount">$40.19</span></td>
-                                                <td className="li-product-stock-status"><span className="out-stock">out stock</span></td>
-                                                <td className="li-product-add-cart"><a href="#">add to cart</a></td>
-                                            </tr>
+                                            {
+                                                wishListItems.length == 0  ?
+                                                <div className="text-center mt-60 mb-60">
+                                                    <h1> No item added to wishlist</h1>
+                                                </div>
+
+                                                :
+
+                                                wishListItems.map(item => {
+                                                    return(
+                                                        <tr>
+                                                            <td className="li-product-remove"><a href="#"><i className="fa fa-times"></i></a></td>
+                                                            <td width='200' align="center" className="li-product-thumbnail"><a href="#"><img src={`http://localhost:2500/todaysdeals/` + item.productImage} style={{display: 'block'}} width="60%" alt="" /></a></td>
+                                                            <td className="li-product-name"><a href="#">{item.productName}</a></td>
+                                                            <td className="li-product-price"><span className="amount">GHS {item.productPrice}.00</span></td>
+                                                            <td className="li-product-stock-status">{item.countInStock >= 1 ? <span className="in-stock">In Stock</span> : <span className="out-stock">Out of Stock</span>}</td>
+                                                            <td className="li-product-add-cart"><a href="#">add to cart</a></td>
+                                                        </tr>
+                                                    )
+                                                })
+                                            }
                                         </tbody>
                                     </table>
                                 </div>

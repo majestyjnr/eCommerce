@@ -9,6 +9,10 @@ import { removeItemFromCart } from '../../actions/cartActions'
 const Navbar = () => {
     const cart = useSelector(state => state.cart);
     const { cartItems } = cart
+    
+    const wishList =  useSelector(state => state.wishList)
+    const {wishListItems} = wishList
+
     var totalPrice = 0
     const userSignIn = useSelector(state => state.userSignIn)
     const {userInfo} = userSignIn
@@ -172,7 +176,7 @@ const Navbar = () => {
                                         {/* <!-- Begin Header Middle Wishlist Area --> */}
                                         <li className="hm-wishlist">
                                             <Link to="/wishlist">
-                                                <span className="cart-item-count wishlist-item-count">0</span>
+                                                <span className="cart-item-count wishlist-item-count">{wishListItems.length}</span>
                                                 <i className="fa fa-heart-o"></i>
                                             </Link>
                                         </li>
@@ -199,11 +203,11 @@ const Navbar = () => {
                                                         return(
                                                             <ul className="minicart-product-list">
                                                                 <li>
-                                                                    <a href="single-product.html" className="minicart-product-image">
+                                                                    <a href={`/p/` + item._id} className="minicart-product-image">
                                                                         <img src={`http://localhost:2500/todaysdeals/` + item.productImage} alt="cart products" />
                                                                     </a>
                                                                     <div className="minicart-product-details">
-                                                                        <h6><a href="single-product.html">{item.productName}</a></h6>
+                                                                        <h6><a  href={`/p/` + item._id}>{item.productName}</a></h6>
                                                                         <span>GHS {item.productPrice}.00 x {item.qty}</span>
                                                                     </div>
                                                                     <button className="close" onClick={()=> removeFromCart(item._id)} title="Remove from cart">
