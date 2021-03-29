@@ -55,7 +55,7 @@ const Wishlist = (props) => {
                                                     return(
                                                         <tr>
                                                             <td className="li-product-remove"><a href="#"><i className="fa fa-times"></i></a></td>
-                                                            <td width='200' align="center" className="li-product-thumbnail"><a href="#"><img src={`http://localhost:2500/todaysdeals/` + item.productImage} style={{display: 'block'}} width="60%" alt="" /></a></td>
+                                                            <td width='200' align="center" className="li-product-thumbnail"><a href=""><img src={`http://localhost:2500/todaysdeals/` + item.productImage} style={{display: 'block'}} width="60%" alt="" /></a></td>
                                                             <td className="li-product-name"><a href="#">{item.productName}</a></td>
                                                             <td className="li-product-price"><span className="amount">GHS {item.productPrice}.00</span></td>
                                                             <td className="li-product-stock-status">{item.countInStock >= 1 ? <span className="in-stock">In Stock</span> : <span className="out-stock">Out of Stock</span>}</td>
