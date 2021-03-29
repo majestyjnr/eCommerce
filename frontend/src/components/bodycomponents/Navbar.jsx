@@ -4,6 +4,7 @@ import $ from 'jquery'
 
 import Logo from '../../images/menu/logo/1.jpg'
 import { useDispatch, useSelector } from 'react-redux'
+import { removeItemFromCart } from '../../actions/cartActions'
 
 const Navbar = () => {
     const cart = useSelector(state => state.cart);
@@ -11,6 +12,12 @@ const Navbar = () => {
     var totalPrice = 0
     const userSignIn = useSelector(state => state.userSignIn)
     const {userInfo} = userSignIn
+
+    const dispatch = useDispatch()
+
+    const removeFromCart = (productID) =>{
+        dispatch(removeItemFromCart(productID))
+    }
 
     useEffect(() => {
 
@@ -187,32 +194,26 @@ const Navbar = () => {
                                             </div>
                                             <span></span>
                                             <div className="minicart">
-                                                <ul className="minicart-product-list">
-                                                    <li>
-                                                        <a href="single-product.html" className="minicart-product-image">
-                                                            <img src="images/product/small-size/5.jpg" alt="cart products" />
-                                                        </a>
-                                                        <div className="minicart-product-details">
-                                                            <h6><a href="single-product.html">Aenean eu tristique</a></h6>
-                                                            <span>£40 x 1</span>
-                                                        </div>
-                                                        <button className="close" title="Remove">
-                                                            <i className="fa fa-close"></i>
-                                                        </button>
-                                                    </li>
-                                                    <li>
-                                                        <a href="single-product.html" className="minicart-product-image">
-                                                            <img src="images/product/small-size/6.jpg" alt="cart products" />
-                                                        </a>
-                                                        <div className="minicart-product-details">
-                                                            <h6><a href="single-product.html">Aenean eu tristique</a></h6>
-                                                            <span>£40 x 1</span>
-                                                        </div>
-                                                        <button className="close" title="Remove">
-                                                            <i className="fa fa-close"></i>
-                                                        </button>
-                                                    </li>
-                                                </ul>
+                                                {
+                                                    cartItems.map(item => {
+                                                        return(
+                                                            <ul className="minicart-product-list">
+                                                                <li>
+                                                                    <a href="single-product.html" className="minicart-product-image">
+                                                                        <img src={`http://localhost:2500/todaysdeals/` + item.productImage} alt="cart products" />
+                                                                    </a>
+                                                                    <div className="minicart-product-details">
+                                                                        <h6><a href="single-product.html">{item.productName}</a></h6>
+                                                                        <span>GHS {item.productPrice}.00 x {item.qty}</span>
+                                                                    </div>
+                                                                    <button className="close" onClick={()=> removeFromCart(item._id)} title="Remove from cart">
+                                                                        <i className="fa fa-close"></i>
+                                                                    </button>
+                                                                </li>
+                                                            </ul>
+                                                        )
+                                                    })
+                                                }
                                                 <p className="minicart-total">SUBTOTAL: <span>GHS {totalPrice}.00</span></p>
                                                 <div className="minicart-button">
                                                     <Link to="/shopping-cart" className="li-button li-button-fullwidth li-button-dark">
