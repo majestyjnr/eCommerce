@@ -4,6 +4,7 @@ import Cookie from 'js-cookie'
 import { dealDetailReducer, productDetailReducer, productListReducer } from './reducers/productReducers'
 import {cartReducer} from './reducers/cartReducer'
 import { userSignInReducer } from './reducers/userReducers'
+import { wishListReducer } from './reducers/wishListReducer'
 
 const cartItems = Cookie.getJSON('cartItems') || []
 const userInfo = Cookie.getJSON('userInfo') || null
@@ -15,7 +16,8 @@ const reducer = combineReducers ({
     productDetail: productDetailReducer,
     dealDetail: dealDetailReducer,
     cart: cartReducer,
-    userSignIn: userSignInReducer
+    wishList: wishListReducer,
+    userSignIn: userSignInReducer,
 })      
 
 
