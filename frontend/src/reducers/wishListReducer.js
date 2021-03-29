@@ -1,3 +1,4 @@
+import { WISHLIST_ADD_ITEM, WISHLIST_REMOVE_ITEM } from '../constants/wishListConstants';
 
 function wishListReducer(state = {wishListItems:[]}, action){
     switch(action.type){
