@@ -277,7 +277,7 @@ const Navbar = () => {
                                                             <li><a href="single-product-sale.html">Books</a></li>
                                                             <li><a href="single-product.html">Foods and Drinks</a></li>
                                                             <li><a href="single-product-group.html">Machines</a></li>
-                                                        </ul>
+                                                            <li><a href="single-product-group.html">Other Items</a></li>                                                        </ul>
                                                     </li>
                                                 </ul>
                                             </li>
