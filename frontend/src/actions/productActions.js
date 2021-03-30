@@ -56,6 +56,17 @@ const listTVProducts = () => async (dispatch) =>{
     }
 } 
 
+// Get All TV Products
+const listAudioProducts = () => async (dispatch) =>{
+    try {
+        dispatch({type: PRODUCTS_LIST_REQUEST})
+        const {data} = await axios.get('http://localhost:9000/api/audios')
+        dispatch({type: PRODUCTS_LIST_SUCCESS, payload: data})
+    } catch (error) {
+        dispatch({type: PRODUCT_LIST_FAIL, payload: error.message})
+    }s
+} 
+
 // Get All Trending Products
 const listTrendingProducts = () => async (dispatch) =>{
     try {
