@@ -272,13 +272,11 @@ const Navbar = () => {
                                                         <li><li><Link to="/products">Jewelry</Link></li></li>
                                                         </ul>
                                                     </li>
-                                                    <li><a href="#">Accessories</a>
+                                                    <li><a href="#">Other Categories</a>
                                                         <ul>
-                                                            <li><a href="single-product.html">Single Product</a></li>
-                                                            <li><a href="single-product-sale.html">Single Product Sale</a></li>
-                                                            <li><a href="single-product-group.html">Single Product Group</a></li>
-                                                            <li><a href="single-product-normal.html">Single Product Normal</a></li>
-                                                            <li><a href="single-product-affiliate.html">Single Product Affiliate</a></li>
+                                                            <li><a href="single-product-sale.html">Books</a></li>
+                                                            <li><a href="single-product.html">Foods and Drinks</a></li>
+                                                            <li><a href="single-product-group.html">Machines</a></li>
                                                         </ul>
                                                     </li>
                                                 </ul>
