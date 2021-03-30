@@ -172,6 +172,7 @@ router.get("/api/products/tvs", function (req, res) {
 // GET Trending Products 
 router.get("/api/products/trending", function (req, res) {
   Products.find().then((products) => {
+    products = products.reverse();
     res.send(products);
   });
 });
