@@ -2,7 +2,7 @@ import axios from "axios"
 import { PRODUCTS_LIST_REQUEST, PRODUCTS_LIST_SUCCESS, PRODUCT_DETAILS_SUCCESS, PRODUCT_DETAILS_FAIL, PRODUCT_DETAILS_REQUEST, PRODUCT_LIST_FAIL } from "../constants/productConstants"
 
 // Get Today's Deals
-const listProducts = () => async (dispatch) =>{
+const listTodaysDealsProducts = () => async (dispatch) =>{
     try {
         dispatch({type: PRODUCTS_LIST_REQUEST})
         const {data} = await axios.get('http://localhost:9000/api/td')
@@ -64,7 +64,7 @@ const listAudioProducts = () => async (dispatch) =>{
         dispatch({type: PRODUCTS_LIST_SUCCESS, payload: data})
     } catch (error) {
         dispatch({type: PRODUCT_LIST_FAIL, payload: error.message})
-    }s
+    }
 } 
 
 // Get All Trending Products
@@ -91,4 +91,9 @@ const detailsOfProduct = (productId) => async (dispatch) =>{
 
 
 
-export {listProducts, detailsOfProduct, dealProductDetail}
+export {
+    listTodaysDealsProducts, 
+    detailsOfProduct, 
+    dealProductDetail,
+
+}

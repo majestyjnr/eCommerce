@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import {Link} from 'react-router-dom'
 import Banner from "../../images/bg-banner/2.jpg"
 import { useDispatch, useSelector } from 'react-redux'
-import { listProducts } from '../../actions/productActions'
+import {listTodaysDealsProducts } from '../../actions/productActions'
 
 const TodaysDeal = (props) => {
     const [qty, setQty] = useState(1)
@@ -15,7 +15,7 @@ const TodaysDeal = (props) => {
         document.title = "Today's Deals | Limpupa"
 
         // Dispatching the listProducts action
-        dispatch(listProducts());
+        dispatch(listTodaysDealsProducts());
     
     }, []);
 
@@ -207,7 +207,7 @@ const TodaysDeal = (props) => {
                                                                 <div className="col-lg-4">
                                                                     <div className="shop-add-action mb-xs-30">
                                                                         <ul className="add-actions-link">
-                                                                            <li className="add-cart"><a href={"/shopping-cart/" + product._id + "?qty=" + qty}>Add to cart</a></li>
+                                                                            <li className="add-cart"><Link to={"/shopping-cart/" + product._id + "?qty=" + qty}>Add to cart</Link></li>
                                                                             <li className="wishlist"><Link to={"/wishlist/" + product._id}><i className="fa fa-heart-o"></i>Add to wishlist</Link></li>
                                                                             <li><a className="quick-view" data-toggle="modal" data-target="#exampleModalCenter" href="#"><i className="fa fa-eye"></i>Quick view</a></li>
                                                                         </ul>
