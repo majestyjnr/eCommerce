@@ -208,7 +208,7 @@ const TodaysDeal = (props) => {
                                                                     <div className="shop-add-action mb-xs-30">
                                                                         <ul className="add-actions-link">
                                                                             <li className="add-cart"><a href={"/shopping-cart/" + product._id + "?qty=" + qty}>Add to cart</a></li>
-                                                                            <li className="wishlist"><a href={"/wishlist/" + product._id}><i className="fa fa-heart-o"></i>Add to wishlist</a></li>
+                                                                            <li className="wishlist"><Link to={"/wishlist/" + product._id}><i className="fa fa-heart-o"></i>Add to wishlist</Link></li>
                                                                             <li><a className="quick-view" data-toggle="modal" data-target="#exampleModalCenter" href="#"><i className="fa fa-eye"></i>Quick view</a></li>
                                                                         </ul>
                                                                     </div>
