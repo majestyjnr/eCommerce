@@ -1,7 +1,7 @@
 import {createStore, combineReducers, compose, applyMiddleware} from 'redux'
 import thunk from 'redux-thunk'
 import Cookie from 'js-cookie'
-import { dealDetailReducer, productDetailReducer, productListReducer } from './reducers/productReducers'
+import { audioProductsReducer, computerProductsReducer, televisionProductsReducer, productDetailReducer, productListReducer } from './reducers/productReducers'
 import {cartReducer} from './reducers/cartReducer'
 import { userSignInReducer } from './reducers/userReducers'
 import { wishListReducer } from './reducers/wishListReducer'
@@ -15,7 +15,9 @@ const initialState = {cart: {cartItems}, userSignIn: {userInfo}, wishList: {wish
 const reducer = combineReducers ({
     productList: productListReducer,
     productDetail: productDetailReducer,
-    dealDetail: dealDetailReducer,
+    audioProductsList: audioProductsReducer,
+    computerProductsList: computerProductsReducer,
+    televisionProductsList: televisionProductsReducer,
     cart: cartReducer,
     wishList: wishListReducer,
     userSignIn: userSignInReducer,

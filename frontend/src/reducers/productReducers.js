@@ -26,17 +26,45 @@ function productDetailReducer(state= { product: [] }, action){
     }
 }
 
-function dealDetailReducer(state= { product: [] }, action){
+function audioProductsReducer(state= {products:[]}, action){
     switch(action.type){
-        case PRODUCT_DETAILS_REQUEST:
+        case PRODUCTS_LIST_REQUEST:
             return {loading: true};
-        case PRODUCT_DETAILS_SUCCESS:
-            return {loading: false, product: action.payload};
-        case PRODUCT_DETAILS_FAIL:
+        case PRODUCTS_LIST_SUCCESS:
+            return {loading: false, products: action.payload};
+        case PRODUCT_LIST_FAIL:
             return {loading: false, error: action.payload};
         default:
             return state;
     }
 }
 
-export { productListReducer, productDetailReducer, dealDetailReducer }
+
+function computerProductsReducer(state= {products:[]}, action){
+    switch(action.type){
+        case PRODUCTS_LIST_REQUEST:
+            return {loading: true};
+        case PRODUCTS_LIST_SUCCESS:
+            return {loading: false, products: action.payload};
+        case PRODUCT_LIST_FAIL:
+            return {loading: false, error: action.payload};
+        default:
+            return state;
+    }
+}
+
+function televisionProductsReducer(state= {products:[]}, action){
+    switch(action.type){
+        case PRODUCTS_LIST_REQUEST:
+            return {loading: true};
+        case PRODUCTS_LIST_SUCCESS:
+            return {loading: false, products: action.payload};
+        case PRODUCT_LIST_FAIL:
+            return {loading: false, error: action.payload};
+        default:
+            return state;
+    }
+}
+
+
+export { productListReducer,  productDetailReducer, audioProductsReducer, computerProductsReducer, televisionProductsReducer }

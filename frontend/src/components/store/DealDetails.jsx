@@ -6,8 +6,8 @@ import { dealProductDetail } from '../../actions/productActions';
 
 const DealDetails = (props) => {
     const [qty, setQty] = useState(1)
-    const dealDetail = useSelector(state => state.dealDetail)
-    const { product, loading, error } = dealDetail;
+    const productDetail = useSelector(state => state.productDetail)
+    const { product, loading, error } = productDetail;
     
     const dispatch = useDispatch()
 

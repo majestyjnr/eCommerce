@@ -34,17 +34,6 @@ const listMajorProducts = () => async (dispatch) =>{
     }
 } 
 
-// Get All TV Products
-const listTVProducts = () => async (dispatch) =>{
-    try {
-        dispatch({type: PRODUCTS_LIST_REQUEST})
-        const {data} = await axios.get('http://localhost:9000/api/products/tvs')
-        dispatch({type: PRODUCTS_LIST_SUCCESS, payload: data})
-    } catch (error) {
-        dispatch({type: PRODUCT_LIST_FAIL, payload: error.message})
-    }
-} 
-
 // Get All Audio Products
 const listAudioProducts = () => async (dispatch) =>{
     try {
@@ -61,6 +50,17 @@ const listComputerProducts = () => async (dispatch) =>{
     try {
         dispatch({type: PRODUCTS_LIST_REQUEST})
         const {data} = await axios.get('http://localhost:9000/api/products/computers')
+        dispatch({type: PRODUCTS_LIST_SUCCESS, payload: data})
+    } catch (error) {
+        dispatch({type: PRODUCT_LIST_FAIL, payload: error.message})
+    }
+} 
+
+// Get All TV Products
+const listTVProducts = () => async (dispatch) =>{
+    try {
+        dispatch({type: PRODUCTS_LIST_REQUEST})
+        const {data} = await axios.get('http://localhost:9000/api/products/tvs')
         dispatch({type: PRODUCTS_LIST_SUCCESS, payload: data})
     } catch (error) {
         dispatch({type: PRODUCT_LIST_FAIL, payload: error.message})
@@ -93,11 +93,11 @@ const detailsOfProduct = (productId) => async (dispatch) =>{
 
 export {
     listTodaysDealsProducts, 
-    detailsOfProduct, 
     dealProductDetail,
     listMajorProducts,
+    listAudioProducts,
+    listComputerProducts,
     listTVProducts,
     listTrendingProducts,
-    listAudioProducts,
-    listComputerProducts
+    detailsOfProduct
 }
