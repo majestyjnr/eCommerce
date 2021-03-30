@@ -70,7 +70,7 @@ const Wishlist = (props) => {
                                                             <td className="li-product-name"><Link to={"/p/" + item._id}>{item.productName}</Link></td>
                                                             <td className="li-product-price"><span className="amount">GHS {item.productPrice}.00</span></td>
                                                             <td className="li-product-stock-status">{item.countInStock >= 1 ? <span className="in-stock">In Stock</span> : <span className="out-stock">Out of Stock</span>}</td>
-                                                            <td className="li-product-add-cart"><button onClick={addToCart} className="add-to-cart ml-60" type="submit">Add to cart</button></td>
+                                                            <td className="li-product-add-cart"><a onClick={addToCart} className="add-to-cart" style={{cursor: 'pointer'}}>Add to cart</a></td>
                                                         </tr>
                                                     )
                                                 })
