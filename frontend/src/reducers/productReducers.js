@@ -66,5 +66,18 @@ function televisionProductsReducer(state= {products:[]}, action){
     }
 }
 
+function trendingProductsReducer(state= {products:[]}, action){
+    switch(action.type){
+        case PRODUCTS_LIST_REQUEST:
+            return {loading: true};
+        case PRODUCTS_LIST_SUCCESS:
+            return {loading: false, products: action.payload};
+        case PRODUCT_LIST_FAIL:
+            return {loading: false, error: action.payload};
+        default:
+            return state;
+    }
+}
 
-export { productListReducer,  productDetailReducer, audioProductsReducer, computerProductsReducer, televisionProductsReducer }
+
+export { productListReducer,  productDetailReducer, audioProductsReducer, computerProductsReducer, televisionProductsReducer, trendingProductsReducer }
