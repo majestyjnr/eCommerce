@@ -5,7 +5,7 @@ import { PRODUCTS_LIST_REQUEST, PRODUCTS_LIST_SUCCESS, PRODUCT_DETAILS_SUCCESS, 
 const listTodaysDealsProducts = () => async (dispatch) =>{
     try {
         dispatch({type: PRODUCTS_LIST_REQUEST})
-        const {data} = await axios.get('http://localhost:9000/api/td')
+        const {data} = await axios.get('http://localhost:9000/api/products/td')
         dispatch({type: PRODUCTS_LIST_SUCCESS, payload: data})
     } catch (error) {
         dispatch({type: PRODUCT_LIST_FAIL, payload: error.message})
@@ -16,7 +16,7 @@ const listTodaysDealsProducts = () => async (dispatch) =>{
 const dealProductDetail = (productId) => async (dispatch) =>{
     try {
         dispatch({type: PRODUCT_DETAILS_REQUEST, payload: productId})
-        const {data} = await axios.get('http://localhost:9000/api/p/td/' + productId)
+        const {data} = await axios.get('http://localhost:9000/api/products/td/' + productId)
         dispatch({type: PRODUCT_DETAILS_SUCCESS, payload: data})
     } catch (error) {
         dispatch({type: PRODUCT_DETAILS_FAIL, payload: error.message})
