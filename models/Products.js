@@ -1,6 +1,10 @@
 const mongoose = require('mongoose')
 
 const ProductSchema = new mongoose.Schema({
+    postedBy:{
+        type: String,
+        required: true
+    },
     productName:{
         type: String,
         required: true
@@ -38,6 +42,10 @@ const ProductSchema = new mongoose.Schema({
     },
     countInStock:{
         type: Number,
+        required: true
+    },
+    isTodaysDeal:{
+        type: Boolean,
         required: true
     }
 }, {timestamps: true})
