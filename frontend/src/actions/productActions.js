@@ -16,7 +16,7 @@ const listProducts = () => async (dispatch) =>{
 const dealProductDetail = (productId) => async (dispatch) =>{
     try {
         dispatch({type: PRODUCT_DETAILS_REQUEST, payload: productId})
-        const {data} = await axios.get('http://localhost:9000/api/p/' + productId)
+        const {data} = await axios.get('http://localhost:9000/api/td/' + productId)
         dispatch({type: PRODUCT_DETAILS_SUCCESS, payload: data})
     } catch (error) {
         dispatch({type: PRODUCT_DETAILS_FAIL, payload: error.message})
@@ -34,6 +34,39 @@ const listMajorProducts = () => async (dispatch) =>{
     }
 } 
 
+// Get All BestSellers Products
+const listBestSellerProducts = () => async (dispatch) =>{
+    try {
+        dispatch({type: PRODUCTS_LIST_REQUEST})
+        const {data} = await axios.get('http://localhost:9000/api/bestsellerproducts')
+        dispatch({type: PRODUCTS_LIST_SUCCESS, payload: data})
+    } catch (error) {
+        dispatch({type: PRODUCT_LIST_FAIL, payload: error.message})
+    }
+} 
+
+// Get All TV Products
+const listTVProducts = () => async (dispatch) =>{
+    try {
+        dispatch({type: PRODUCTS_LIST_REQUEST})
+        const {data} = await axios.get('http://localhost:9000/api/tvs')
+        dispatch({type: PRODUCTS_LIST_SUCCESS, payload: data})
+    } catch (error) {
+        dispatch({type: PRODUCT_LIST_FAIL, payload: error.message})
+    }
+} 
+
+// Get All Trending Products
+const listTrendingProducts = () => async (dispatch) =>{
+    try {
+        dispatch({type: PRODUCTS_LIST_REQUEST})
+        const {data} = await axios.get('http://localhost:9000/api/trending')
+        dispatch({type: PRODUCTS_LIST_SUCCESS, payload: data})
+    } catch (error) {
+        dispatch({type: PRODUCT_LIST_FAIL, payload: error.message})
+    }
+} 
+
 // For Main Products (Product Details)
 const detailsOfProduct = (productId) => async (dispatch) =>{
     try {
@@ -44,8 +77,6 @@ const detailsOfProduct = (productId) => async (dispatch) =>{
         dispatch({type: PRODUCT_DETAILS_FAIL, payload: error.message})
     }
 }
-
-
 
 
 

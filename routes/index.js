@@ -135,8 +135,8 @@ router.get("/api/td", function (req, res) {
 });
 
 // GET Today's Deals Product Details
-router.get("/api/p/:id", function (req, res) {
-  TodaysDeals.find({ _id: req.params.id }, function (err, product) {
+router.get("/api/td/:id", function (req, res) {
+  Products.find({ _id: req.params.id }, function (err, product) {
     if (product) {
       res.send(product);
     } else {
