@@ -23,22 +23,11 @@ const dealProductDetail = (productId) => async (dispatch) =>{
     }
 }
 
-// Get All Products
+// Get All Products {This is also Known as the Best Sellers}
 const listMajorProducts = () => async (dispatch) =>{
     try {
         dispatch({type: PRODUCTS_LIST_REQUEST})
         const {data} = await axios.get('http://localhost:9000/api/products')
-        dispatch({type: PRODUCTS_LIST_SUCCESS, payload: data})
-    } catch (error) {
-        dispatch({type: PRODUCT_LIST_FAIL, payload: error.message})
-    }
-} 
-
-// Get All BestSellers Products
-const listBestSellerProducts = () => async (dispatch) =>{
-    try {
-        dispatch({type: PRODUCTS_LIST_REQUEST})
-        const {data} = await axios.get('http://localhost:9000/api/products/bestsellerproducts')
         dispatch({type: PRODUCTS_LIST_SUCCESS, payload: data})
     } catch (error) {
         dispatch({type: PRODUCT_LIST_FAIL, payload: error.message})

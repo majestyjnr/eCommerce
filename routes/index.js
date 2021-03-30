@@ -109,7 +109,7 @@ router.post("/api/seller_reg", function (req, res) {});
 
 // ##################### GET PRODUCTS #######################
 
-// GET Products
+// GET Products {This is also Known as the Best Sellers}
 router.get("/api/products", function (req, res) {
   Products.find().then((products) => {
     res.send(products);
