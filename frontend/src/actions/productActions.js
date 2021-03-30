@@ -45,7 +45,7 @@ const listTVProducts = () => async (dispatch) =>{
     }
 } 
 
-// Get All TV Products
+// Get All Audio Products
 const listAudioProducts = () => async (dispatch) =>{
     try {
         dispatch({type: PRODUCTS_LIST_REQUEST})
@@ -78,7 +78,7 @@ const listTrendingProducts = () => async (dispatch) =>{
     }
 } 
 
-// For Main Products (Product Details)
+// For All Products (Product Details)
 const detailsOfProduct = (productId) => async (dispatch) =>{
     try {
         dispatch({type: PRODUCT_DETAILS_REQUEST, payload: productId})
@@ -98,7 +98,6 @@ export {
     listMajorProducts,
     listTVProducts,
     listTrendingProducts,
-    listBestSellerProducts,
     listAudioProducts,
     listComputerProducts
 }
