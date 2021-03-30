@@ -9,6 +9,7 @@ const Products = require("../models/Products");
 const Users = require("../models/Users");
 const TodaysDeals = require("../models/TodaysDeals");
 const getToken = require("../config/auth");
+const Product = require("../models/Products");
 
 // ##################### ACCOUNT REGISTRATION #######################
 
@@ -105,8 +106,10 @@ router.post("/api/checkout", function (req, res) {});
 // ##################### SELLER REGISTRATION #######################
 router.post("/api/seller_reg", function (req, res) {});
 
+
 // ##################### GET PRODUCTS #######################
 
+// GET Products
 router.get("/api/products", function (req, res) {
   Products.find().then((products) => {
     res.send(products);
@@ -124,8 +127,9 @@ router.get("/api/product/:id", function (req, res) {
   });
 });
 
-router.get("/api/todays-deals", function (req, res) {
-  TodaysDeals.find().then((products) => {
+// GET Today's Deals 
+router.get("/api/td", function (req, res) {
+  Products.find({isTodaysDeal: true}).then((products) => {
     res.send(products);
   });
 });
