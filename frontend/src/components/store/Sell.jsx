@@ -10,9 +10,9 @@ const Sell = () => {
         <div>
             <div className="container">  
                     <center><img src={SellerImg} alt="" style={{width: "70%"}}/></center>
-                    <span style={{fontSize: "100px"}}>Sell on <span style={{color: "#fed700"}}><b>Limpupa</b></span></span>
+                    <span style={{fontSize: "100px"}}>Sell on <span style={{color: "#fed700"}}><b>Limupa</b></span></span>
                     <br/>
-                    <a href="/sign_up" className="btn btn-warning" style={{marginBottom: '100px'}}>Sign Up</a>
+                    <a href="http://localhost:2500" target='_blank' className="btn btn-warning" style={{marginBottom: '100px'}}>Sign Up</a>
             </div>
         </div>
     )
