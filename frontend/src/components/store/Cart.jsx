@@ -74,7 +74,7 @@ const Cart = (props) => {
                                                                     return(
                                                                             <tr key={item._id}>
                                                                                 <td className="li-product-remove"><button type="button" className="btn btn-danger" onClick={()=> removeFromCart(item._id)}><i className="fa fa-times"></i></button></td>
-                                                                                <td width='200' align="center" className="li-product-thumbnail"><a href="#"><img src={`http://localhost:2500/todaysdeals/` + item.productImage} style={{display: 'block'}} width="60%" alt="Li's Product Image" /></a></td>
+                                                                                <td width='200' align="center" className="li-product-thumbnail"><a href="#"><img src={`http://localhost:2500/productimages/` + item.productImage} style={{display: 'block'}} width="60%" alt="Li's Product Image" /></a></td>
                                                                                 <td className="li-product-name"><a href="#">{item.productName}</a></td>
                                                                                 <td className="li-product-price"><span className="amount">GHS {item.productPrice}.00</span></td>
                                                                                 <td className="quantity">

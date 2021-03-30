@@ -121,7 +121,7 @@ const TodaysDeal = (props) => {
                                                             <div className="single-product-wrap">
                                                                 <div className="product-image">
                                                                     <Link to={`/p/` + product._id}>
-                                                                        <img src={`http://localhost:2500/todaysdeals/` + product.productImage}
+                                                                        <img src={`http://localhost:2500/productimages/` + product.productImage}
                                                                     alt="Product Image" />
                                                                     </Link>
                                                                     <span className="sticker">New</span>
@@ -173,7 +173,7 @@ const TodaysDeal = (props) => {
                                                                 <div className="col-lg-3 col-md-5 ">
                                                                     <div className="product-image">
                                                                         <Link to={`/p/` + product._id}>
-                                                                            <img src={`http://localhost:2500/todaysdeals/` + product.productImage}
+                                                                            <img src={`http://localhost:2500/productimages/` + product.productImage}
                                                                         alt="Product Image" />
                                                                         </Link>
                                                                         <span className="sticker">New</span>

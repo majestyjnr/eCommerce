@@ -204,7 +204,7 @@ const Navbar = () => {
                                                             <ul className="minicart-product-list">
                                                                 <li>
                                                                     <a href={`/p/` + item._id} className="minicart-product-image">
-                                                                        <img src={`http://localhost:2500/todaysdeals/` + item.productImage} alt="cart products" />
+                                                                        <img src={`http://localhost:2500/productimages/` + item.productImage} alt="cart products" />
                                                                     </a>
                                                                     <div className="minicart-product-details">
                                                                         <h6><a  href={`/p/` + item._id}>{item.productName}</a></h6>
