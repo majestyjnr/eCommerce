@@ -26,7 +26,7 @@ function productDetailReducer(state= { product: [] }, action){
     }
 }
 
-function audioProductsReducer(state= {products:[]}, action){
+function audioProductsReducer(state= {audioProducts:[]}, action){
     switch(action.type){
         case PRODUCTS_LIST_REQUEST:
             return {loading: true};
@@ -40,7 +40,7 @@ function audioProductsReducer(state= {products:[]}, action){
 }
 
 
-function computerProductsReducer(state= {products:[]}, action){
+function computerProductsReducer(state= {computerProducts:[]}, action){
     switch(action.type){
         case PRODUCTS_LIST_REQUEST:
             return {loading: true};
@@ -53,7 +53,7 @@ function computerProductsReducer(state= {products:[]}, action){
     }
 }
 
-function televisionProductsReducer(state= {products:[]}, action){
+function televisionProductsReducer(state= {televisionProducts:[]}, action){
     switch(action.type){
         case PRODUCTS_LIST_REQUEST:
             return {loading: true};
@@ -66,7 +66,7 @@ function televisionProductsReducer(state= {products:[]}, action){
     }
 }
 
-function trendingProductsReducer(state= {products:[]}, action){
+function trendingProductsReducer(state= {trendingProducts:[]}, action){
     switch(action.type){
         case PRODUCTS_LIST_REQUEST:
             return {loading: true};
