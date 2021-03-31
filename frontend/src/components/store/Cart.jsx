@@ -23,7 +23,6 @@ const Cart = (props) => {
     useEffect(() => {
         document.title = 'Cart | Limpupa';
 
-        console.log(cartItems)
         if(productID){
             dispatch(addToCart(productID, qty))
         }

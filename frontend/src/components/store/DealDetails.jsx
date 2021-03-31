@@ -79,7 +79,7 @@ const DealDetails = (props) => {
                                                 <div className="product-details-images slider-navigation-1">
                                                     <div className="lg-image">
                                                         <a className="popup-img venobox vbox-item" href="images/product/large-size/1.jpg" data-gall="myGallery">
-                                                            <img src={`http://localhost:2500/todaysdeals/` + item.productImage} className="mt-30" alt="product image"/>
+                                                            <img src={`http://localhost:2500/productimages/` + item.productImage} className="mt-30" alt="product image"/>
                                                         </a>
                                                     </div>
                                                     {/* <div className="lg-image">

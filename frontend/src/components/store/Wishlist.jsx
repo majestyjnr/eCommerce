@@ -20,6 +20,8 @@ const Wishlist = (props) => {
     }
 
     useEffect(() => {
+        console.log(props.match.params.id)
+        
         dispatch(addToWishList(props.match.params.id))
         document.title = 'Wishlist | Limpupa'
     }, []);
