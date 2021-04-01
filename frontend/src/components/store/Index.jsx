@@ -770,16 +770,16 @@ const Index = (props) => {
                                                                 <div className="col-lg-12" >
                                                                     <div className="single-product-wrap"key={item._id}>
                                                                         <div className="product-image">
-                                                                            <a href="single-product.html">
+                                                                            <Link to={`/p/` + item._id}>
                                                                                 <img src={`http://localhost:2500/productimages/` + item.productImage} alt="Li's Product Image"/>
-                                                                            </a>
+                                                                            </Link>
                                                                             <span className="sticker">New</span>
                                                                         </div>
                                                                         <div className="product_desc">
                                                                             <div className="product_desc_info">
                                                                                 <div className="product-review">
                                                                                     <h5 className="manufacturer">
-                                                                                        <a href="shop-left-sidebar.html">Studio Design</a>
+                                                                                        <a href="shop-left-sidebar.html">{item.productBrand}</a>
                                                                                     </h5>
                                                                                     <div className="rating-box">
                                                                                         <ul className="rating">
@@ -791,9 +791,9 @@ const Index = (props) => {
                                                                                         </ul>
                                                                                     </div>
                                                                                 </div>
-                                                                                <h4><a className="product_name" href="single-product.html">{item.productName}</a></h4>
+                                                                                <h4><Link to={`/p/` + item._id} className="product_name">{item.productName}</Link></h4>
                                                                                 <div className="price-box">
-                                                                                    <span className="new-price new-price-2">$71.80</span>
+                                                                                    <span className="new-price new-price-2">GHS {item.productPrice}.00</span>
                                                                                     <span className="old-price">$77.22</span>
                                                                                     <span className="discount-percentage">-7%</span>
                                                                                 </div>
