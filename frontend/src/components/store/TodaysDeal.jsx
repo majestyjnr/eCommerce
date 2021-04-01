@@ -76,12 +76,14 @@ const TodaysDeal = (props) => {
             <div className="content-wraper pt-60 pb-60">
                 <div className="container">
                     <div className="row">
-                        <div className="col-lg-9 order-1 order-lg-2">
+                        <div className="col-lg-12 order-1 order-lg-2">
+
                             <div className="single-banner shop-page-banner">
                                 <a href="#">
                                     <img src={Banner} alt="Li's Static Banner"/>
                                 </a>
                             </div>
+                            
                             <div className="shop-top-bar mt-30">
                                 <div className="shop-bar-inner">
                                     <div className="product-view-mode">
@@ -242,7 +244,7 @@ const TodaysDeal = (props) => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-lg-3 order-2 order-lg-1">
+                        {/* <div className="col-lg-3 order-2 order-lg-1">
                             <div className="sidebar-categores-box mt-sm-30 mt-xs-30">
                                 <div className="sidebar-title">
                                     <h2>Laptop</h2>
@@ -366,7 +368,7 @@ const TodaysDeal = (props) => {
                                     </ul>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>
