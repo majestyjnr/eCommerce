@@ -2204,6 +2204,22 @@ textarea:focus {
 	text-transform: uppercase;
 	font-size: 11px;
 }
+
+.product-image > span.sticker_orange {
+	background: orange;
+	border-radius: 100%;
+	color: #fff;
+	right: 15px;
+	position: absolute;
+	top: 20px;
+	z-index: 99;
+	height: 40px;
+	width: 40px;
+	line-height: 40px;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 11px;
+}
 .product-review {
 	border-bottom: 1px solid #ebebeb;
 }

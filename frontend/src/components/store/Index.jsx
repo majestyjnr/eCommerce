@@ -1029,12 +1029,12 @@ const Index = (props) => {
                                                         return (
                                                            
                                                                 <div className="col-lg-12" >
-                                                                    <div className="single-product-wrap" key={tvItem._id}>
+                                                                    <div className="single-product-wrap" key={trendingItem._id}>
                                                                         <div className="product-image">
                                                                             <a href="single-product.html">
                                                                                 <img src={`http://localhost:2500/productimages/` + trendingItem.productImage} alt="Li's Product Image"/>
                                                                             </a>
-                                                                            <span className="sticker">Hot</span>
+                                                                            <span className="sticker_orange">Hot</span>
                                                                         </div>
                                                                         <div className="product_desc">
                                                                             <div className="product_desc_info">
