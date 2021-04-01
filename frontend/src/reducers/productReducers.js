@@ -1,4 +1,4 @@
-import { PRODUCTS_LIST_REQUEST, PRODUCTS_LIST_SUCCESS, PRODUCT_DETAILS_SUCCESS, PRODUCT_DETAILS_FAIL, PRODUCT_DETAILS_REQUEST, PRODUCT_LIST_FAIL } from "../constants/productConstants";
+import { PRODUCTS_LIST_REQUEST, PRODUCTS_LIST_SUCCESS, PRODUCT_DETAILS_SUCCESS, PRODUCT_DETAILS_FAIL, PRODUCT_DETAILS_REQUEST, PRODUCT_LIST_FAIL, AUDIO_PRODUCTS_LIST_REQUEST, AUDIO_PRODUCTS_LIST_SUCCESS, AUDIO_PRODUCT_LIST_FAIL, COMPUTER_PRODUCTS_LIST_REQUEST, COMPUTER_PRODUCTS_LIST_SUCCESS, COMPUTER_PRODUCT_LIST_FAIL, TV_PRODUCTS_LIST_REQUEST, TV_PRODUCTS_LIST_SUCCESS, TV_PRODUCT_LIST_FAIL, TRENDING_PRODUCT_LIST_FAIL, TRENDING_PRODUCTS_LIST_SUCCESS, TRENDING_PRODUCTS_LIST_REQUEST } from "../constants/productConstants";
 
 function productListReducer(state= {products:[]}, action){
     switch(action.type){
@@ -41,11 +41,11 @@ function productDetailReducer(state= { product: [] }, action){
 
 function audioProductsReducer(state= {audioProducts:[]}, action){
     switch(action.type){
-        case PRODUCTS_LIST_REQUEST:
+        case AUDIO_PRODUCTS_LIST_REQUEST:
             return {audioProductsloading: true};
-        case PRODUCTS_LIST_SUCCESS:
+        case AUDIO_PRODUCTS_LIST_SUCCESS:
             return {audioProductsloading: false, audioProducts: action.payload};
-        case PRODUCT_LIST_FAIL:
+        case AUDIO_PRODUCT_LIST_FAIL:
             return {audioProductsloading: false, audioProductserror: action.payload};
         default:
             return state;
@@ -55,11 +55,11 @@ function audioProductsReducer(state= {audioProducts:[]}, action){
 
 function computerProductsReducer(state= {computerProducts:[]}, action){
     switch(action.type){
-        case PRODUCTS_LIST_REQUEST:
+        case COMPUTER_PRODUCTS_LIST_REQUEST:
             return {computerProductsloading: true};
-        case PRODUCTS_LIST_SUCCESS:
+        case COMPUTER_PRODUCTS_LIST_SUCCESS:
             return {computerProductsloading: false, computerProducts: action.payload};
-        case PRODUCT_LIST_FAIL:
+        case COMPUTER_PRODUCT_LIST_FAIL:
             return {loading: false, computerProductserror: action.payload};
         default:
             return state;
@@ -68,11 +68,11 @@ function computerProductsReducer(state= {computerProducts:[]}, action){
 
 function televisionProductsReducer(state= {televisionProducts:[]}, action){
     switch(action.type){
-        case PRODUCTS_LIST_REQUEST:
+        case TV_PRODUCTS_LIST_REQUEST:
             return {televisionProductsloading: true};
-        case PRODUCTS_LIST_SUCCESS:
+        case TV_PRODUCTS_LIST_SUCCESS:
             return {televisionProductsloading: false, televisionProducts: action.payload};
-        case PRODUCT_LIST_FAIL:
+        case TV_PRODUCT_LIST_FAIL:
             return {televisionProductsloading: false, televisionProductserror: action.payload};
         default:
             return state;
@@ -81,11 +81,11 @@ function televisionProductsReducer(state= {televisionProducts:[]}, action){
 
 function trendingProductsReducer(state= {trendingProducts:[]}, action){
     switch(action.type){
-        case PRODUCTS_LIST_REQUEST:
+        case TRENDING_PRODUCTS_LIST_REQUEST:
             return {trendingProductsloading: true};
-        case PRODUCTS_LIST_SUCCESS:
+        case TRENDING_PRODUCTS_LIST_SUCCESS:
             return {trendingProductsloading: false, trendingProducts: action.payload};
-        case PRODUCT_LIST_FAIL:
+        case TRENDING_PRODUCT_LIST_FAIL:
             return {trendingProductsloading: false, trendingProductserror: action.payload};
         default:
             return state;
