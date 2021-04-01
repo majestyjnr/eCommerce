@@ -83,7 +83,7 @@ const TodaysDeal = (props) => {
                                     <img src={Banner} alt="Li's Static Banner"/>
                                 </a>
                             </div>
-                            
+
                             <div className="shop-top-bar mt-30">
                                 <div className="shop-bar-inner">
                                     <div className="product-view-mode">
@@ -151,7 +151,7 @@ const TodaysDeal = (props) => {
                                                                     </div>
                                                                     <div className="add-actions">
                                                                         <ul className="add-actions-link">
-                                                                            <li className="add-cart active"><a href={"/shopping-cart/" + product._id + "?qty=" + qty}>Add to cart</a></li>
+                                                                            <li className="add-cart active"><Link to={"/shopping-cart/" + product._id + "?qty=" + qty}>Add to cart</Link></li>
                                                                             <li><a href="#" title="quick view" className="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i className="fa fa-eye"></i></a></li>
                                                                             <li><a className="links-details" href="wishlist.html"><i className="fa fa-heart-o"></i></a></li>
                                                                         </ul>
@@ -202,7 +202,7 @@ const TodaysDeal = (props) => {
                                                                             <div className="price-box">
                                                                                 <span className="new-price">GHS {product.productPrice}.00</span>
                                                                             </div>
-                                                                            <p>Beach Camera Exclusive Bundle - Includes Two Samsung Radiant 360 R3 Wi-Fi Bluetooth Speakers. Fill The Entire Room With Exquisite Sound via Ring Radiator Technology. Stream And Control R3 Speakers Wirelessly With Your Smartphone. Sophisticated, Modern Desig</p>
+                                                                            <p>{product.productDescription}</p>
                                                                         </div>
                                                                     </div>
                                                                 </div>

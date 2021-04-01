@@ -185,7 +185,7 @@ const Index = (props) => {
                                                                             </div>
                                                                             <div className="add-actions">
                                                                                 <ul className="add-actions-link">
-                                                                                    <li className="add-cart active"><a href="#">Add to cart</a></li>
+                                                                                    <li className="add-cart active"><Link to={"/shopping-cart/" + item._id + "?qty=" + qty}>Add to cart</Link></li>
                                                                                     <li><a className="links-details" href="wishlist.html"><i className="fa fa-heart-o"></i></a></li>
                                                                                     <li><a href="#" title="quick view" className="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i className="fa fa-eye"></i></a></li>
                                                                                 </ul>
@@ -253,7 +253,7 @@ const Index = (props) => {
                                                                             </div>
                                                                             <div className="add-actions">
                                                                                 <ul className="add-actions-link">
-                                                                                    <li className="add-cart active"><a href="#">Add to cart</a></li>
+                                                                                    <li className="add-cart active"><Link to={"/shopping-cart/" + item._id + "?qty=" + qty}>Add to cart</Link></li>
                                                                                     <li><a className="links-details" href="wishlist.html"><i className="fa fa-heart-o"></i></a></li>
                                                                                     <li><a href="#" title="quick view" className="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i className="fa fa-eye"></i></a></li>
                                                                                 </ul>
@@ -322,7 +322,7 @@ const Index = (props) => {
                                                                             </div>
                                                                             <div className="add-actions">
                                                                                 <ul className="add-actions-link">
-                                                                                    <li className="add-cart active"><a href="#">Add to cart</a></li>
+                                                                                    <li className="add-cart active"><Link to={"/shopping-cart/" + item._id + "?qty=" + qty}>Add to cart</Link></li>
                                                                                     <li><a className="links-details" href="wishlist.html"><i className="fa fa-heart-o"></i></a></li>
                                                                                     <li><a href="#" title="quick view" className="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i className="fa fa-eye"></i></a></li>
                                                                                 </ul>
@@ -435,7 +435,7 @@ const Index = (props) => {
                                                                             </div>
                                                                             <div className="add-actions">
                                                                                 <ul className="add-actions-link">
-                                                                                    <li className="add-cart active"><a href="#">Add to cart</a></li>
+                                                                                    <li className="add-cart active"><Link to={"/shopping-cart/" + computerItem._id + "?qty=" + qty}>Add to cart</Link></li>
                                                                                     <li><a className="links-details" href="wishlist.html"><i className="fa fa-heart-o"></i></a></li>
                                                                                     <li><a href="#" title="quick view" className="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i className="fa fa-eye"></i></a></li>
                                                                                 </ul>
@@ -522,7 +522,7 @@ const Index = (props) => {
                                                                             </div>
                                                                             <div className="add-actions">
                                                                                 <ul className="add-actions-link">
-                                                                                    <li className="add-cart active"><a href="#">Add to cart</a></li>
+                                                                                    <li className="add-cart active"><Link to={"/shopping-cart/" + audioItem._id + "?qty=" + qty}>Add to cart</Link></li>
                                                                                     <li><a className="links-details" href="wishlist.html"><i className="fa fa-heart-o"></i></a></li>
                                                                                     <li><a href="#" title="quick view" className="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i className="fa fa-eye"></i></a></li>
                                                                                 </ul>
@@ -608,7 +608,7 @@ const Index = (props) => {
                                                                             </div>
                                                                             <div className="add-actions">
                                                                                 <ul className="add-actions-link">
-                                                                                    <li className="add-cart active"><a href="#">Add to cart</a></li>
+                                                                                    <li className="add-cart active"><Link to={"/shopping-cart/" + tvItem._id + "?qty=" + qty}>Add to cart</Link></li>
                                                                                     <li><a className="links-details" href="wishlist.html"><i className="fa fa-heart-o"></i></a></li>
                                                                                     <li><a href="#" title="quick view" className="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i className="fa fa-eye"></i></a></li>
                                                                                 </ul>
@@ -717,7 +717,7 @@ const Index = (props) => {
                                                                             </div>
                                                                             <div className="add-actions">
                                                                                 <ul className="add-actions-link">
-                                                                                    <li className="add-cart active"><a href="#">Add to cart</a></li>
+                                                                                    <li className="add-cart active"><Link to={"/shopping-cart/" + trendingItem._id + "?qty=" + qty}>Add to cart</Link></li>
                                                                                     <li><a className="links-details" href="wishlist.html"><i className="fa fa-heart-o"></i></a></li>
                                                                                     <li><a href="#" title="quick view" className="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i className="fa fa-eye"></i></a></li>
                                                                                 </ul>
@@ -800,7 +800,7 @@ const Index = (props) => {
                                                                             </div>
                                                                             <div className="add-actions">
                                                                                 <ul className="add-actions-link">
-                                                                                    <li className="add-cart active"><a href="#">Add to cart</a></li>
+                                                                                    <li className="add-cart active"><Link to={"/shopping-cart/" + item._id + "?qty=" + qty}>Add to cart</Link></li>
                                                                                     <li><a className="links-details" href="wishlist.html"><i className="fa fa-heart-o"></i></a></li>
                                                                                     <li><a href="#" title="quick view" className="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i className="fa fa-eye"></i></a></li>
                                                                                 </ul>
