@@ -7,9 +7,10 @@ const config = require("config");
 // Reguire Models
 const Products = require("../models/Products");
 const Users = require("../models/Users");
-const TodaysDeals = require("../models/TodaysDeals");
 const getToken = require("../config/auth");
 const Product = require("../models/Products");
+const Coupon = require("../models/Coupon");
+
 
 // ##################### ACCOUNT REGISTRATION #######################
 
@@ -131,7 +132,7 @@ router.get("/api/product/:id", function (req, res) {
 router.get("/api/products/td", function (req, res) {
   Products.find({isTodaysDeal: true}).then((products) => {
     res.send(products);
-  });
+  })
 });
 
 // GET Today's Deals Product Details
@@ -174,6 +175,36 @@ router.get("/api/products/trending", function (req, res) {
   Products.find().then((products) => {
     products = products.reverse();
     res.send(products);
+  });
+});
+
+// GET Coupon Details 
+router.get("/api/coupon/:coupon", function (req, res) {
+  Coupon.findOne({couponCode: req.params.coupon, isUsed: false}).then((coupon) => {
+    if(coupon){
+      res.send(coupon);
+    }else{
+      res.status(404).send({message: "No valid coupon found"});
+    }
+  });
+});
+
+// Deactivate Coupon 
+router.post("/api/deactivate-coupon/:coupon", function (req, res) {
+  Coupon.findOne({couponCode: req.params.coupon, isUsed: false}).then((coupon) => {
+    if(coupon){
+      const deactivate = {
+        $set:{
+          isUsed: true
+        }
+      }
+      Coupon.updateOne({couponCode: req.params.coupon}, deactivate, function(err, deactivated){
+        res.send('Coupon deactivated successfully');
+      })
+      
+    }else{
+      res.status(404).send({message: "No Active coupon found"});
+    }
   });
 });
 

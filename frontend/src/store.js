@@ -5,13 +5,15 @@ import { audioProductsReducer, computerProductsReducer, televisionProductsReduce
 import {cartReducer} from './reducers/cartReducer'
 import { userSignInReducer } from './reducers/userReducers'
 import { wishListReducer } from './reducers/wishListReducer'
+import { couponRuducer } from './reducers/couponRuducer'
 
 const cartItems = Cookie.getJSON('cartItems') || []
 const userInfo = Cookie.getJSON('userInfo') || null
 const wishListItems = Cookie.getJSON('wishListItems') || []
+const couponDetails = Cookie.getJSON('couponDetails') || []
 
 
-const initialState = {cart: {cartItems}, userSignIn: {userInfo}, wishList: {wishListItems}}
+const initialState = {cart: {cartItems}, userSignIn: {userInfo}, wishList: {wishListItems}, coupon: {couponDetails} }
 const reducer = combineReducers ({
     productList: productListReducer,
     majorProductsList: majorProductListReducer,
@@ -23,6 +25,7 @@ const reducer = combineReducers ({
     cart: cartReducer,
     wishList: wishListReducer,
     userSignIn: userSignInReducer,
+    coupon: couponRuducer
 })      
 
 

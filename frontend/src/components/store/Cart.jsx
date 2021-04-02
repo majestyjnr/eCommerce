@@ -1,6 +1,7 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart, removeItemFromCart } from '../../actions/cartActions';
+import {applyCoupon} from '../../actions/couponAction'
 
 
 const Cart = (props) => {
@@ -8,9 +9,12 @@ const Cart = (props) => {
 
     const cart = useSelector(state => state.cart);
     const { cartItems } = cart
+    const coupon = useSelector(state => state.coupon);
+    const { couponDetails, couponLoading, error } = coupon
     const  productID = props.match.params.id;
     const qty = props.location.search? Number(props.location.search.split("=")[1]) : 1
     const dispatch = useDispatch()
+    const [code, setCode] = useState('')
 
     const removeFromCart = (productID) =>{
         dispatch(removeItemFromCart(productID))
@@ -19,8 +23,14 @@ const Cart = (props) => {
     const checkOut = () =>{
         props.history.push('/')
     }
+
+    const applyTheCoupon = () =>{
+        console.log(code)
+        dispatch(applyCoupon(code))
+    }
     
     useEffect(() => {
+        console.log(code)
         document.title = 'Cart | Limpupa';
 
         if(productID){
@@ -96,27 +106,55 @@ const Cart = (props) => {
                                                         </table>
                                         </div>
                                         <div className="row">
-                                            <div className="col-12">
-                                                <div className="coupon-all">
-                                                    <div className="coupon">
-                                                        <input id="coupon_code" className="input-text" name="coupon_code" placeholder="Coupon code" type="text" />
-                                                        <input className="button" value="Apply coupon" type="button"/>
+                                            <form onSubmit={applyTheCoupon}>
+                                                <div className="col-12">                                               
+                                                    <div className="coupon-all">
+                                                        <div className="coupon">
+                                                            <input className="input-text" value={code} onChange={(e) => setCode(e.target.value)}  placeholder="Coupon code" type="text" />
+                                                            <input className="button" value="Apply coupon" onClick={applyTheCoupon} type="button"/>
+                                                        </div>
+                                                    </div>                                                            
+                                                </div>
+                                            </form> 
+                                        </div>
+                                        <br/>
+                                        {
+                                            couponLoading ? <h3 className='text-info'>Checking coupon validity...</h3> : error ? <h3 className='text-danger'>Coupon is either used or Invalid.</h3> : <h3 className='text-success'>Valid Coupon.</h3>
+                                        }
+                                            
+                                        {
+                                            couponDetails ? (
+                                                <div className="row">
+                                                    <div className="col-md-5 ml-auto">
+                                                        <div className="cart-page-total">
+                                                            <h2>Cart totals</h2>
+                                                            <ul>
+                                                                <li>Subtotal <span>GHS {totalPrice - couponDetails.couponValue}.00</span></li>
+                                                                <li>Total <span>GHS {totalPrice - couponDetails.couponValue}.00</span></li>
+                                                            </ul>
+                                                            <input className="button btn-warning" onClick={checkOut} value="Proceed to checkout" type="button" />
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div className="row">
-                                            <div className="col-md-5 ml-auto">
-                                                <div className="cart-page-total">
-                                                    <h2>Cart totals</h2>
-                                                    <ul>
-                                                        <li>Subtotal <span>GHS {totalPrice}.00</span></li>
-                                                        <li>Total <span>GHS {totalPrice}.00</span></li>
-                                                    </ul>
-                                                    <input className="button btn-warning" onClick={checkOut} value="Proceed to checkout" type="button" />
+                                            )
+
+                                            :
+
+                                            (
+                                                <div className="row">
+                                                    <div className="col-md-5 ml-auto">
+                                                        <div className="cart-page-total">
+                                                            <h2>Cart totals</h2>
+                                                            <ul>
+                                                                <li>Subtotal <span>GHS {totalPrice}.00</span></li>
+                                                                <li>Total <span>GHS {totalPrice}.00</span></li>
+                                                            </ul>
+                                                            <input className="button btn-warning" onClick={checkOut} value="Proceed to checkout" type="button" />
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </div>
+                                            )
+                                        }
                                     </form>
                                 </div>
                             </div>
