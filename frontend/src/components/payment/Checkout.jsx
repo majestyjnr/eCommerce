@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { usePaystackPayment } from 'react-paystack'
 import $ from "jquery";
 import { useSelector } from "react-redux";
 
@@ -13,6 +14,24 @@ const Checkout = () => {
 
   const cart = useSelector(state => state.cart);
   const { cartItems } = cart
+
+  const pConfig = {
+    reference: 'money',
+    email: `${userInfo.email}`,
+    amount: 5000,
+    currency: 'GHS',
+    publicKey: 'pk_test_b04312da97a2903ed61414f221d55aca27304c22'
+  }
+
+  const onSuccess = (reference) =>{
+    console.log(reference)
+  }
+
+  const onClosed = () =>{
+    console.log('closed')
+  }
+
+  const initializePayment = usePaystackPayment(pConfig)
 
   useEffect(() => {
     document.title = "Checkout | Limpupa";
@@ -96,6 +115,9 @@ const Checkout = () => {
                     </form>
                   </div>
                 </div>
+                <button onClick={()=>{
+                  initializePayment(onSuccess, onClosed)
+                }}>Make Payment</button>
               </div>
             </div>
           </div>
