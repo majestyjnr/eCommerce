@@ -20,7 +20,7 @@ const Checkout = () => {
     email: `${userInfo.email}`,
     amount: 5000,
     currency: 'GHS',
-    publicKey: 'pk_test_b04312da97a2903ed61414f221d55aca27304c22'
+    publicKey: 'SOMETHING_SECRET'
   }
 
   const onSuccess = (reference) =>{
