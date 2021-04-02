@@ -123,7 +123,7 @@ const Cart = (props) => {
                                         }
                                             
                                         {
-                                            couponDetails ? (
+                                            (couponDetails.length != 0) ? (
                                                 <div className="row">
                                                     <div className="col-md-5 ml-auto">
                                                         <div className="cart-page-total">

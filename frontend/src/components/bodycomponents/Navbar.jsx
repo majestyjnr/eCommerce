@@ -17,6 +17,9 @@ const Navbar = () => {
     const userSignIn = useSelector(state => state.userSignIn)
     const {userInfo} = userSignIn
 
+    const coupon = useSelector(state => state.coupon);
+    const { couponDetails, couponLoading, error } = coupon
+
     const dispatch = useDispatch()
 
     const removeFromCart = (productID) =>{
@@ -192,9 +195,21 @@ const Navbar = () => {
                                         <li className="hm-minicart">
                                             <div className='hm-minicart-trigger'>
                                                 <span className="item-icon"></span>
-                                                <span className="item-text">GHS {totalPrice}
-                                                    <span className="cart-item-count">{cartItems.length}</span>
-                                                </span>
+                                                {
+                                                   
+                                                   ( couponDetails.length != 0) ? (
+                                                    <span className="item-text">GHS {totalPrice - couponDetails.couponValue}
+                                                        <span className="cart-item-count">{cartItems.length}</span>
+                                                    </span>
+                                                    )
+
+                                                    : 
+
+                                                    <span className="item-text">GHS {totalPrice}
+                                                        <span className="cart-item-count">{cartItems.length}</span>
+                                                    </span>
+                                                }
+                                                
                                             </div>
                                             <span></span>
                                             <div className="minicart">
@@ -218,7 +233,11 @@ const Navbar = () => {
                                                         )
                                                     })
                                                 }
-                                                <p className="minicart-total">SUBTOTAL: <span>GHS {totalPrice}.00</span></p>
+                                                {
+                                                    (couponDetails.length != 0) ?  <p className="minicart-total">SUBTOTAL: <span>GHS {totalPrice - couponDetails.couponValue}.00</span></p> : <p className="minicart-total">SUBTOTAL: <span>GHS {totalPrice}.00</span></p>
+                                                }
+                                               
+
                                                 <div className="minicart-button">
                                                     <Link to="/shopping-cart" className="li-button li-button-fullwidth li-button-dark">
                                                         <span>View Full Cart</span>

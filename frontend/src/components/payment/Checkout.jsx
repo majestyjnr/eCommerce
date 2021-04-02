@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { usePaystackPayment } from 'react-paystack'
+import Cookie from 'js-cookie'
 import $ from "jquery";
 import { useSelector } from "react-redux";
 
@@ -30,6 +31,8 @@ const Checkout = () => {
     if(reference.status == 'success'){
       console.log('Payed')
     }
+    Cookie.remove('cartItems')
+    Cookie.remove('couponDetails')
     console.log(reference)
   }
 
@@ -70,58 +73,78 @@ const Checkout = () => {
         <div className="container">
           <div className="row">
             <div className="col-12">
-              <div className="coupon-accordion">
-                <h3>
-                  Returning customer?{" "}
-                  <span id="showlogin">Click here to login</span>
-                </h3>
-                <div id="checkout-login" className="coupon-content">
-                  <div className="coupon-info">
-                    <p className="coupon-text">
-                      Quisque gravida turpis sit amet nulla posuere lacinia.
-                      Cras sed est sit amet ipsum luctus.
-                    </p>
-                    <form action="#">
-                      <p className="form-row-first">
-                        <label>
-                          Username or email <span className="required">*</span>
-                        </label>
-                        <input type="text" />
-                      </p>
-                      <p className="form-row-last">
-                        <label>
-                          Password <span className="required">*</span>
-                        </label>
-                        <input type="text" />
-                      </p>
-                      <p className="form-row">
-                        <input value="Login" type="submit" />
-                        <label>
-                          <input type="checkbox" />
-                          Remember me
-                        </label>
-                      </p>
-                      <p className="lost-password">
-                        <a href="#">Lost your password?</a>
-                      </p>
-                    </form>
+              {
+                userInfo ? (
+                  ''
+                )
+                :
+                (
+                  <div className="coupon-accordion">
+                    <h3>
+                        Returning customer?{" "}
+                        <span id="showlogin">Click here to login</span>
+                      </h3>
+                      <div id="checkout-login" className="coupon-content">
+                        <div className="coupon-info">
+                          <p className="coupon-text">
+                            Quisque gravida turpis sit amet nulla posuere lacinia.
+                            Cras sed est sit amet ipsum luctus.
+                          </p>
+                          <form action="#">
+                            <p className="form-row-first">
+                              <label>
+                                Username or email <span className="required">*</span>
+                              </label>
+                              <input type="text" />
+                            </p>
+                            <p className="form-row-last">
+                              <label>
+                                Password <span className="required">*</span>
+                              </label>
+                              <input type="text" />
+                            </p>
+                            <p className="form-row">
+                              <input value="Login" type="submit" />
+                              <label>
+                                <input type="checkbox" />
+                                Remember me
+                              </label>
+                            </p>
+                            <p className="lost-password">
+                              <a href="#">Lost your password?</a>
+                            </p>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                )
+              }
+
+              {
+                (couponDetails.length !=0 ) ? (
+                  ''
+                )
+                : 
+                (
+                  <div className="coupon-accordion">
+                    <h3>
+                      Have a coupon?{" "}
+                      <span id="showcoupon">Click here to enter your code</span>
+                    </h3>
+                    <div id="checkout_coupon" className="coupon-checkout-content">
+                      <div className="coupon-info">
+                        <form action="#">
+                          <p className="checkout-coupon">
+                            <input placeholder="Coupon code" type="text" />
+                            <input value="Apply Coupon" type="submit" />
+                          </p>
+                        </form>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <h3>
-                  Have a coupon?{" "}
-                  <span id="showcoupon">Click here to enter your code</span>
-                </h3>
-                <div id="checkout_coupon" className="coupon-checkout-content">
-                  <div className="coupon-info">
-                    <form action="#">
-                      <p className="checkout-coupon">
-                        <input placeholder="Coupon code" type="text" />
-                        <input value="Apply Coupon" type="submit" />
-                      </p>
-                    </form>
-                  </div>
-                </div>
-              </div>
+                )
+              }
+  
             </div>
           </div>
           <div className="row">
@@ -149,7 +172,7 @@ const Checkout = () => {
                     <div className="col-md-12">
                       <div className="checkout-form-list">
                         <label>
-                          GPS Address: <span className="required">*</span>
+                          GPS Address: <span className="required">(Optional)</span>
                         </label>
                         <input
                           placeholder="eg: GS-233-223"
@@ -203,25 +226,68 @@ const Checkout = () => {
                         })
                       }
                     </tbody>
-                    <tfoot>
-                      <tr className="cart-subtotal">
-                        <th>Cart Subtotal</th>
-                        <td>
-                          <span className="amount">GHS {totalPrice}.00</span>
-                        </td>
-                      </tr>
-                      <tr className="order-total">
-                        <th>Order Total</th>
-                        <td>
-                          <strong>
-                            <span className="amount">GHS {totalPrice}.00</span>
-                          </strong>
-                        </td>
-                      </tr>
-                    </tfoot>
+                    {
+                      (couponDetails.length != 0) ? (
+                        <tfoot>
+                          <tr className="cart-subtotal">
+                            <th>Cart Subtotal</th>
+                            <td>
+                              <span className="amount">GHS {totalPrice}.00</span>
+                            </td>
+                          </tr>
+                          <tr className="cart-subtotal">
+                            <th>Coupon Value</th>
+                            <td>
+                              <strong>
+                                <span className="amount">- GHS {couponDetails.couponValue}.00</span>
+                              </strong>
+                            </td>
+                          </tr>
+                          <tr className="order-total">
+                            <th>Order Total</th>
+                            <td>
+                              <strong>
+                                <span className="amount">GHS {totalPrice - couponDetails.couponValue}.00</span>
+                              </strong>
+                            </td>
+                          </tr>
+                        </tfoot>
+                      )
+
+                      :
+
+                      (
+                        <tfoot>
+                          <tr className="cart-subtotal">
+                            <th>Cart Subtotal</th>
+                            <td>
+                              <span className="amount">GHS {totalPrice}.00</span>
+                            </td>
+                          </tr>
+                          <tr className="order-total">
+                            <th>Order Total</th>
+                            <td>
+                              <strong>
+                                <span className="amount">GHS {totalPrice}.00</span>
+                              </strong>
+                            </td>
+                          </tr>
+                        </tfoot>
+                      )
+                    }
                   </table>
                 </div>
-                Payment Method: <span style={{color: 'red'}}>(Tick to confirm payment with Paystack)</span>  <br/><br/> <input type="checkbox" onChange={e => setAmount(totalPrice)} value={amount} id='checktopay'/>
+                Payment Method: <span style={{color: 'red'}}>(Tick to confirm payment with Paystack)</span>  
+                <br/><br/> 
+                {
+                  (couponDetails.length == 0) ? (
+                    <input type="checkbox" onChange={e => setAmount(totalPrice)} value={amount} id='checktopay'/>
+                  )
+                  :
+                  (
+                    <input type="checkbox" onChange={e => setAmount(totalPrice - couponDetails.couponValue)} value={amount} id='checktopay'/>
+                  )
+                }
                 <div className="payment-method">
                   <div className="payment-accordion">
                     <div id="accordion">
