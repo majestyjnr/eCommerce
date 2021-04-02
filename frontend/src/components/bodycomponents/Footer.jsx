@@ -317,7 +317,7 @@ const Footer = () => {
               <div className="copyright text-center pt-25">
                 <span>
                   <a target="_blank" href="https://www.templateshub.net">
-                    Limpupa Online Shopping Mall
+                    Limpupa Digital Store
                   </a>
                 </span>
               </div>

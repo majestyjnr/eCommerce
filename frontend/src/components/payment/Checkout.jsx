@@ -8,22 +8,28 @@ const Checkout = () => {
   const [address, setAddress] = useState('')
   const [gps, setGps] = useState('')
   const [town, setTown] = useState('')
+  const [amount, setAmount] = useState(0)
 
   const userSignIn = useSelector(state => state.userSignIn)
   const {userInfo} = userSignIn
+
+  const coupon = useSelector(state => state.coupon);
+  const { couponDetails, couponLoading, error } = coupon
 
   const cart = useSelector(state => state.cart);
   const { cartItems } = cart
 
   const pConfig = {
-    reference: 'money',
     email: `${userInfo.email}`,
-    amount: 5000,
+    amount: amount * 100,
     currency: 'GHS',
     publicKey: 'SOMETHING_SECRET'
   }
 
   const onSuccess = (reference) =>{
+    if(reference.status == 'success'){
+      console.log('Payed')
+    }
     console.log(reference)
   }
 
@@ -115,9 +121,6 @@ const Checkout = () => {
                     </form>
                   </div>
                 </div>
-                <button onClick={()=>{
-                  initializePayment(onSuccess, onClosed)
-                }}>Make Payment</button>
               </div>
             </div>
           </div>
@@ -132,7 +135,7 @@ const Checkout = () => {
                         <label>
                           Town / City <span className="required">*</span>
                         </label>
-                        <input type="text" placeholder='Cantonments' onChange={(e) => setTown(e.target.value)} value={town} />
+                        <input type="text" placeholder='Cantonments' onChange={(e) => {setTown(e.target.value)}} value={town} />
                       </div>
                     </div>
                     <div className="col-md-12">
@@ -211,13 +214,14 @@ const Checkout = () => {
                         <th>Order Total</th>
                         <td>
                           <strong>
-                            <span className="amount">£215.00</span>
+                            <span className="amount">GHS {totalPrice}.00</span>
                           </strong>
                         </td>
                       </tr>
                     </tfoot>
                   </table>
                 </div>
+                Payment Method: <span style={{color: 'red'}}>(Tick to confirm payment with Paystack)</span>  <br/><br/> <input type="checkbox" onChange={e => setAmount(totalPrice)} value={amount} id='checktopay'/>
                 <div className="payment-method">
                   <div className="payment-accordion">
                     <div id="accordion">
@@ -231,7 +235,7 @@ const Checkout = () => {
                               aria-expanded="true"
                               aria-controls="collapseOne"
                             >
-                              Direct Bank Transfer.
+                             <b> Paystack</b>
                             </a>
                           </h5>
                         </div>
@@ -242,75 +246,28 @@ const Checkout = () => {
                         >
                           <div className="card-body">
                             <p>
-                              Make your payment directly into our bank account.
-                              Please use your Order ID as the payment reference.
-                              Your order won’t be shipped until the funds have
-                              cleared in our account.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="card">
-                        <div className="card-header" id="#payment-2">
-                          <h5 className="panel-title">
-                            <a
-                              className="collapsed"
-                              data-toggle="collapse"
-                              data-target="#collapseTwo"
-                              aria-expanded="false"
-                              aria-controls="collapseTwo"
-                            >
-                              Cheque Payment
-                            </a>
-                          </h5>
-                        </div>
-                        <div
-                          id="collapseTwo"
-                          className="collapse"
-                          data-parent="#accordion"
-                        >
-                          <div className="card-body">
-                            <p>
-                              Make your payment directly into our bank account.
-                              Please use your Order ID as the payment reference.
-                              Your order won’t be shipped until the funds have
-                              cleared in our account.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="card">
-                        <div className="card-header" id="#payment-3">
-                          <h5 className="panel-title">
-                            <a
-                              className="collapsed"
-                              data-toggle="collapse"
-                              data-target="#collapseThree"
-                              aria-expanded="false"
-                              aria-controls="collapseThree"
-                            >
-                              PayStack
-                            </a>
-                          </h5>
-                        </div>
-                        <div
-                          id="collapseThree"
-                          className="collapse"
-                          data-parent="#accordion"
-                        >
-                          <div className="card-body">
-                            <p>
-                              Make your payment directly into our bank account.
-                              Please use your Order ID as the payment reference.
-                              Your order won’t be shipped until the funds have
-                              cleared in our account.
+                              Make your payment directly into our bank account with Paystack. You can make payment with your card or Mobile Money.
                             </p>
                           </div>
                         </div>
                       </div>
                     </div>
+
                     <div className="order-button-payment">
-                      <input value="Place order" type="submit" />
+                      <input value="Place order" type="button" onClick={()=>{
+                        if(document.getElementById('checktopay').checked){
+
+                          if(town != '' && address != ''){
+                            initializePayment(onSuccess, onClosed)
+                          }else{
+                            alert('Enter your address details to proceed')
+                          }
+                          
+                        }else{
+                          alert('Check the payment method in order to initialize payment')
+                        }
+                        
+                      }}/>
                     </div>
                   </div>
                 </div>
