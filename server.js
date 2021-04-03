@@ -5,7 +5,6 @@ const app = new express();
 
 const db = require('./config/db_config').MongoURI
 
-
 mongoose.connect(db, {useNewUrlParser: true, useUnifiedTopology: true}, (error, connected)=>{
     if(connected){
         console.log('MongoDb connected...')
@@ -15,21 +14,18 @@ mongoose.connect(db, {useNewUrlParser: true, useUnifiedTopology: true}, (error, 
 })
 
 app.use(cors());
-
 app.use(express.json())
 
-
 // Require Routes
-const index = require('./routes/index')
+const coupon = require('./routes/couponRoutes')
+const products = require('./routes/productsRoute')
+const order = require('./routes/orderRoutes')
+const user = require('./routes/userRoutes')
 
-app.use('/', index)
-
-
-// app.use(function(req, res, next) {
-//   res.header("Access-Control-Allow-Origin", "*");
-//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-//   next();
-// });
+app.use('/', coupon)
+app.use('/', products)
+app.use('/', order)
+app.use('/', user)
 
 const PORT = process.env.PORT || 9000;
 app.listen(PORT, function(){
