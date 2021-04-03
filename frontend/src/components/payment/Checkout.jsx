@@ -24,7 +24,7 @@ const Checkout = () => {
     email: `${userInfo.email}`,
     amount: amount * 100,
     currency: 'GHS',
-    publicKey: 'SOMETHING_SECRET'
+    publicKey: 'SOMETHING_SECRET' 
   }
 
   const onSuccess = (reference) =>{

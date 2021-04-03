@@ -20,6 +20,10 @@ const OrderSchema = new mongoose.Schema({
     deliveryAddress :{
         type: String,
         required: true
+    },
+    isDelivered:{
+        type: Boolean,
+        required: true
     }
 }, {timestamps: true}) 
 

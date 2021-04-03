@@ -5,13 +5,14 @@ const bcrypt = require("bcryptjs");
 const config = require("config");
 
 // Reguire Models
-const getToken = require("../config/auth");
 const Coupon = require("../models/Coupon");
 
 
 // ##################### COUPON API #######################
 
-// GET Coupon Details 
+// @description     Get coupon details
+// @route           GET /api/coupon/:coupon
+// @access          Public
 router.get("/api/coupon/:coupon", function (req, res) {
   Coupon.findOne({couponCode: req.params.coupon, isUsed: false}).then((coupon) => {
     if(coupon){
@@ -22,7 +23,9 @@ router.get("/api/coupon/:coupon", function (req, res) {
   });
 });
 
-// Deactivate Coupon 
+// @description     Deactivate coupon
+// @route           POST /api/deactivate-coupon/:coupon
+// @access          Public
 router.post("/api/deactivate-coupon/:coupon", function (req, res) {
   Coupon.findOne({couponCode: req.params.coupon, isUsed: false}).then((coupon) => {
     if(coupon){

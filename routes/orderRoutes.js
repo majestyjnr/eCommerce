@@ -5,21 +5,31 @@ const bcrypt = require("bcryptjs");
 const config = require("config");
 
 // Reguire Models
-const Products = require("../models/Products");
-const Users = require("../models/Users");
-const getToken = require("../config/auth");
-const Product = require("../models/Products");
-const Coupon = require("../models/Coupon");
+const Orders = require("../models/Order");
+
+
 
 
 // ##################### ORDER API #######################
 
-// Create Order
+// @description     Create Order
+// @route           POST /api/order
+// @access          Private
 router.post("/api/order", function (req, res) {
-
+    const {
+        customerId,
+        customerPhone,
+        products,
+        isPaid,
+        deliveryAddress,
+        isDelivered
+    } = req.body
 });
 
-// Get Order
+
+// @description     Get Order by id
+// @route           GET /api/order/:id
+// @access          Private
 router.get("/api/order/:id", function (req, res) {
 
 });

@@ -10,14 +10,10 @@ const getToken = require("../config/auth");
 
 // ##################### USER API #######################
 
-// Register User
+// @description     Register User
+// @route           POST /api/register-user
+// @access          Public
 router.post("/api/register-user", function (req, res) {
-  // const {firstname, lastname, email, phone, password} = req.body
-
-  // if(!firstname || !lastname || !email || !phone || !password){
-  //     res.status(400).json({msg: 'Enter required fields'})
-  // }
-
   Users.findOne({ email: req.body.email }).then((user) => {
     if (user) {
       res.status(400).json({ msg: "This user already exists!" });
@@ -73,7 +69,9 @@ router.post("/api/register-user", function (req, res) {
   });
 });
 
-// Sigin User
+// @description     Signin User
+// @route           POST /api/user/signin
+// @access          Public
 router.post("/api/user/signin", function (req, res) {
   Users.findOne({ email: req.body.email }).then((user) => {
     if (!user) {

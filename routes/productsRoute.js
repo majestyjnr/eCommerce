@@ -11,14 +11,19 @@ const getToken = require("../config/auth");
 
 // ##################### PRODUCTS API #######################
 
-// GET Products {This is also Known as the Best Sellers}
+// @description     GET Products {This is also Known as the Best Sellers}
+// @route           GET /api/products
+// @access          Public
 router.get("/api/products", function (req, res) {
   Products.find().then((products) => {
     res.send(products);
   });
 });
 
-// Get Product details
+
+// @description     Get Product details by id
+// @route           GET /api/product/:id
+// @access          Public
 router.get("/api/product/:id", function (req, res) {
   Products.findById({ _id: req.params.id }, function (err, product) {
     if (product) {
@@ -29,14 +34,19 @@ router.get("/api/product/:id", function (req, res) {
   });
 });
 
-// GET Today's Deals 
+
+// @description     GET Today's Deals 
+// @route           GET /api/products/td
+// @access          Public
 router.get("/api/products/td", function (req, res) {
   Products.find({isTodaysDeal: true}).then((products) => {
     res.send(products);
   })
 });
 
-// GET Today's Deals Product Details
+// @description     GET Today's Deals Product Details by id
+// @route           GET /api/products/td/:id
+// @access          Public
 router.get("/api/products/td/:id", function (req, res) {
   Products.find({ _id: req.params.id }, function (err, product) {
     if (product) {
@@ -48,7 +58,9 @@ router.get("/api/products/td/:id", function (req, res) {
 });
 
 
-// GET Audio Products 
+// @description     GET Audio Products 
+// @route           GET /api/products/audios
+// @access          Public
 router.get("/api/products/audios", function (req, res) {
   Products.find({productCategory: 'Home Theatres/Speakers'}).then((products) => {
     res.send(products);
@@ -56,7 +68,9 @@ router.get("/api/products/audios", function (req, res) {
 });
 
 
-// GET Computer Products 
+// @description     GET Computer Products 
+// @route           GET /api/products/computers
+// @access          Public
 router.get("/api/products/computers", function (req, res) {
   Products.find({productCategory: 'Computers and Accessories'}).then((products) => {
     res.send(products);
@@ -64,14 +78,19 @@ router.get("/api/products/computers", function (req, res) {
 });
 
 
-// GET Computer Products 
+// @description     GET Computer Products 
+// @route           GET /api/products/tvs
+// @access          Public
 router.get("/api/products/tvs", function (req, res) {
   Products.find({productCategory: 'Televisions'}).then((products) => {
     res.send(products);
   });
 });
 
-// GET Trending Products 
+
+// @description     GET Trending Products  
+// @route           GET /api/products/trending
+// @access          Public
 router.get("/api/products/trending", function (req, res) {
   Products.find().then((products) => {
     products = products.reverse();
