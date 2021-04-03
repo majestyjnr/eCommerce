@@ -21,10 +21,27 @@ router.post("/api/order", function (req, res) {
         customerPhone,
         products,
         isPaid,
+        amountPaid,
+        paymentMethod,
         deliveryAddress,
         isDelivered
     } = req.body
+    
+    const newOrder = new Orders({
+        customerId: customerId,
+        customerPhone: customerPhone,
+        products: products,
+        isPaid: true,
+        amountPaid: amountPaid,
+        paymentMethod: paymentMethod,
+        deliveryAddress: deliveryAddress,
+        isDelivered: false
+    })
+    newOrder.save().then(order=>{
+
+    })
 });
+
 
 
 // @description     Get Order by id
