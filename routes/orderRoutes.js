@@ -31,11 +31,11 @@ router.post("/api/order", function (req, res) {
         customerId: customerId,
         customerPhone: customerPhone,
         products: products,
-        isPaid: true,
+        isPaid: isPaid,
         amountPaid: amountPaid,
         paymentMethod: paymentMethod,
         deliveryAddress: deliveryAddress,
-        isDelivered: false
+        isDelivered: isDelivered
     })
     newOrder.save().then(order=>{
         res.send(order)

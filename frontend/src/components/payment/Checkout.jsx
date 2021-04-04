@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { usePaystackPayment } from 'react-paystack'
 import Cookie from 'js-cookie'
 import $ from "jquery";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { createUserOrder } from "../../actions/orderActions";
 
 const Checkout = () => {
   var totalPrice = 0;
@@ -20,19 +21,31 @@ const Checkout = () => {
   const cart = useSelector(state => state.cart);
   const { cartItems } = cart
 
+  const dispatch = useDispatch()
+
   const pConfig = {
     email: `${userInfo.email}`,
     amount: amount * 100,
     currency: 'GHS',
     publicKey: 'SOMETHING_SECRET' 
   }
+  pk_test_b04312da97a2903ed61414f221d55aca27304c22
+  const createOrder = useSelector(state => state.createOrder)
+  const {order, success, orderError} = createOrder
 
   const onSuccess = (reference) =>{
-    if(reference.status == 'success'){
-      console.log('Payed')
-    }
-    Cookie.remove('cartItems')
-    Cookie.remove('couponDetails')
+    dispatch(createUserOrder({
+      customerId: userInfo._id,
+      customerPhone: userInfo.phone,
+      products: cartItems,
+      isPaid: true,
+      amountPaid: amount,
+      paymentMethod: 'Paystack',
+      deliveryAddress: `Town: ${town} \n\n Address: ${address}`,
+      isDelivered: false
+    }))
+    // Cookie.remove('cartItems')
+    // Cookie.remove('couponDetails')
     console.log(reference)
   }
 
@@ -45,6 +58,10 @@ const Checkout = () => {
   useEffect(() => {
     document.title = "Checkout | Limpupa";
 
+    if(success){
+      window.location = `/order/${order._id}`
+    }
+
     // showlogin toggle
     $("#showlogin").on("click", function () {
       $("#checkout-login").slideToggle(900);
@@ -53,7 +70,7 @@ const Checkout = () => {
     $("#showcoupon").on("click", function () {
       $("#checkout_coupon").slideToggle(900);
     });
-  }, []);
+  }, [success]);
 
   return (
     <div>

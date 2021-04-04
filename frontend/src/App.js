@@ -35,6 +35,7 @@ import MyAccount from './components/account/Account'
 import Checkout from "./components/payment/Checkout";
 import Wishlist from "./components/store/Wishlist";
 import Footer from "./components/bodycomponents/Footer";
+import SingleOrder from "./components/payment/SingleOrder";
 
 function App() {
  
@@ -57,8 +58,10 @@ function App() {
       <Route path="/contact-us" exact component={Contact} />
       <Route path="/faq" exact component={Faq} />
 
-      {/* Payment */}
+      {/* Payment and Single Order */}
       <Route path="/checkout" exact component={Checkout} />
+      <Route path="/order/:id" exact component={SingleOrder} />
+
 
       {/* Account */}
       <Route path="/account/login" exact component={Login} />
