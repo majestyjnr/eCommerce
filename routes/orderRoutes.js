@@ -38,7 +38,7 @@ router.post("/api/order", function (req, res) {
         isDelivered: false
     })
     newOrder.save().then(order=>{
-
+        res.send(order)
     })
 });
 
@@ -48,7 +48,13 @@ router.post("/api/order", function (req, res) {
 // @route           GET /api/order/:id
 // @access          Private
 router.get("/api/order/:id", function (req, res) {
-
+    Orders.findById(req.params.id).then(order=>{
+        if(order){
+            res.send(order)
+        }else{
+            res.status(400).json({msg: 'Order not found'})
+        }
+    })
 });
 
 
