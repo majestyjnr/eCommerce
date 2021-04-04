@@ -12,6 +12,9 @@ const Checkout = (props) => {
   const [town, setTown] = useState('')
   const [amount, setAmount] = useState(0)
 
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+
   const userSignIn = useSelector(state => state.userSignIn)
   const {userInfo} = userSignIn
 
@@ -58,8 +61,18 @@ const Checkout = (props) => {
 
   const initializePayment = usePaystackPayment(pConfig)
 
+  const submitHandler = (e) =>{
+    e.preventDefault();
+
+    dispatch(signIn(email, password))
+  }
+
   useEffect(() => {
     document.title = "Checkout | Limpupa";
+
+    if(!userInfo){
+      alert('Please log in to in order to checkout')
+    }
 
     if(success){
       window.location = `/order/${order._id}`
@@ -74,7 +87,7 @@ const Checkout = (props) => {
     $("#showcoupon").on("click", function () {
       $("#checkout_coupon").slideToggle(900);
     });
-  }, [success]);
+  }, [success, userInfo]);
 
   return (
     <div>
@@ -108,32 +121,31 @@ const Checkout = (props) => {
                       <div id="checkout-login" className="coupon-content">
                         <div className="coupon-info">
                           <p className="coupon-text">
-                            Quisque gravida turpis sit amet nulla posuere lacinia.
-                            Cras sed est sit amet ipsum luctus.
+                            Log in in order to be able to proceed with your order placement
                           </p>
-                          <form action="#">
+                          <form onSubmit={submitHandler}>
                             <p className="form-row-first">
                               <label>
-                                Username or email <span className="required">*</span>
+                                Email <span className="required">*</span>
                               </label>
-                              <input type="text" />
+                              <input type="text"  value={email} onChange={(e)=> {setEmail(e.target.value)}} />
                             </p>
                             <p className="form-row-last">
                               <label>
                                 Password <span className="required">*</span>
                               </label>
-                              <input type="text" />
+                              <input type="password" value={password} onChange={(e)=> {setPassword(e.target.value)}}/>
                             </p>
                             <p className="form-row">
                               <input value="Login" type="submit" />
-                              <label>
+                              {/* <label>
                                 <input type="checkbox" />
                                 Remember me
-                              </label>
+                              </label> */}
                             </p>
-                            <p className="lost-password">
+                            {/* <p className="lost-password">
                               <a href="#">Lost your password?</a>
-                            </p>
+                            </p> */}
                           </form>
                         </div>
                       </div>
@@ -209,9 +221,9 @@ const Checkout = (props) => {
             <div className="col-lg-6 col-12">
               <div className="your-order">
                 <h3>Your order Summary</h3>
-                <h5>Customer Name: <span style={{float: 'right', color: 'blue'}}>{userInfo.firstname + ' ' + userInfo.lastname}</span></h5> 
+                <h5>Customer Name: {userInfo && <span style={{float: 'right', color: 'blue'}}>{userInfo.firstname + ' ' + userInfo.lastname}</span>}</h5> 
                 <hr/>
-                <h5>Phone: <span style={{float: 'right', color: 'blue'}}>{userInfo.phone}</span></h5>
+                <h5>Phone: {userInfo && <span style={{float: 'right', color: 'blue'}}>{userInfo.phone}</span>}</h5>
                 <hr/>
                 <h5>Town/City: <span style={{float: 'right', color: 'blue'}}>{town}</span></h5>
                 <hr/>
@@ -342,17 +354,23 @@ const Checkout = (props) => {
 
                     <div className="order-button-payment">
                       <input value="Place order" type="button" onClick={()=>{
-                        if(document.getElementById('checktopay').checked){
-
-                          if(town != '' && address != ''){
-                            initializePayment(onSuccess, onClosed)
-                          }else{
-                            alert('Enter your address details to proceed')
-                          }
-                          
+                        if(!userInfo){
+                          alert('Login to proceed with the transaction')
                         }else{
-                          alert('Check the payment method in order to initialize payment')
+
+                          if(document.getElementById('checktopay').checked){
+
+                            if(town != '' && address != ''){
+                              initializePayment(onSuccess, onClosed)
+                            }else{
+                              alert('Enter your address details to proceed')
+                            }
+                            
+                          }else{
+                            alert('Check the payment method in order to initialize payment')
+                          }
                         }
+                        
                         
                       }}/>
                     </div>
