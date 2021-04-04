@@ -18,23 +18,29 @@ const Orders = require("../models/Order");
 router.post("/api/order", function (req, res) {
     const {
         customerId,
+        customerName,
         customerPhone,
         products,
         isPaid,
         amountPaid,
         paymentMethod,
-        deliveryAddress,
+        customerTown,
+        customerAddress,
+        customerGPS,
         isDelivered
     } = req.body
     
     const newOrder = new Orders({
         customerId: customerId,
+        customerName: customerName,
         customerPhone: customerPhone,
         products: products,
         isPaid: isPaid,
         amountPaid: amountPaid,
         paymentMethod: paymentMethod,
-        deliveryAddress: deliveryAddress,
+        customerTown: customerTown,
+        customerAddress: customerAddress,
+        customerGPS: customerGPS,
         isDelivered: isDelivered
     })
     newOrder.save().then(order=>{

@@ -5,6 +5,10 @@ const OrderSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    customerName :{
+        type: String,
+        required: true
+    },
     customerPhone :{
         type: String,
         required: true
@@ -25,9 +29,16 @@ const OrderSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    deliveryAddress :{
+    customerTown :{
         type: String,
         required: true
+    },
+    customerAddress :{
+        type: String,
+        required: true
+    },
+    customerGPS :{
+        type: String,
     },
     isDelivered:{
         type: Boolean,

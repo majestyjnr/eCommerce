@@ -5,7 +5,7 @@ import $ from "jquery";
 import { useDispatch, useSelector } from "react-redux";
 import { createUserOrder } from "../../actions/orderActions";
 
-const Checkout = () => {
+const Checkout = (props) => {
   var totalPrice = 0;
   const [address, setAddress] = useState('')
   const [gps, setGps] = useState('')
@@ -29,7 +29,7 @@ const Checkout = () => {
     currency: 'GHS',
     publicKey: 'SOMETHING_SECRET' 
   }
-  pk_test_b04312da97a2903ed61414f221d55aca27304c22
+
   const createOrder = useSelector(state => state.createOrder)
   const {order, success, orderError} = createOrder
 
@@ -37,11 +37,14 @@ const Checkout = () => {
     dispatch(createUserOrder({
       customerId: userInfo._id,
       customerPhone: userInfo.phone,
+      customerName: userInfo.firstname + ' ' + userInfo.lastname,
       products: cartItems,
       isPaid: true,
       amountPaid: amount,
-      paymentMethod: 'Paystack',
-      deliveryAddress: `Town: ${town} \n\n Address: ${address}`,
+      paymentMethod: 'Paystack Payment',
+      customerTown: town,
+      customerAddress: address,
+      customerGPS: gps ? gps : null,
       isDelivered: false
     }))
     // Cookie.remove('cartItems')
@@ -60,6 +63,7 @@ const Checkout = () => {
 
     if(success){
       window.location = `/order/${order._id}`
+      console.log('New Page loading....')
     }
 
     // showlogin toggle
